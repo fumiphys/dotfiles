@@ -1,0 +1,15 @@
+# ===================================================
+# completion
+# ===================================================
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+depends = 'context_filetype.vim'
+if = "has('nvim')"
+on_i = 1
+hook_source = '''
+source ~/.config/nvim/plugins/deoplete.rc.vim
+'''
