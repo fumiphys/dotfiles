@@ -27,3 +27,20 @@ source ~/.config/nvim/plugins/lightline.rc.vim
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+# =============================================
+# tex
+# =============================================
+
+[[plugins]]
+repo = 'lervag/vimtex'
+
+# =============================================
+# quickrun
+# =============================================
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-quickrun.rc.vim
+'''
