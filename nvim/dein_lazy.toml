@@ -13,3 +13,11 @@ on_i = 1
 hook_source = '''
 source ~/.config/nvim/plugins/deoplete.rc.vim
 '''
+
+# ===================================================
+# proc
+# ===================================================
+
+[[plugins]]
+repo = 'Shougo/vimproc.vim'
+build = 'make'
