@@ -15,3 +15,15 @@ source ~/.config/nvim/plugins/vim-colorschemes.rc.vim
 # status bar
 # =============================================
 
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/lightline.rc.vim
+'''
+
+# =============================================
+# git
+# =============================================
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
