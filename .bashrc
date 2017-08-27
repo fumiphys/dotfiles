@@ -37,7 +37,7 @@ fi
 
 # set a fancy prompt (non-color, unless we know we "want" color)
 case "$TERM" in
-    xterm-color|*-256color) color_prompt=yes;;
+    xterm-color) color_prompt=yes;;
 esac
 
 # uncomment for a colored prompt, if the terminal has the capability; turned
@@ -75,7 +75,7 @@ esac
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    #alias ls='ls --color=auto'
+    alias ls='ls --color=auto'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -88,13 +88,6 @@ fi
 alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
-alias subl='/mnt/c/"Program Files (x86)"/"Sublime Text 3"/subl.exe'
-#alias vscode='/mnt/c/"Program Files (x86)"/"Microsoft VS Code"/Code.exe'
-function vscode(){
-(/mnt/c/"Program Files (x86)"/"Microsoft VS Code"/Code.exe $1)&
-}
-alias gnuplot='gnuplot -persist'
-alias cdriron='cd ~/../../mnt/d/rironensyuu/rirongit/2017s-b4-project'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
@@ -119,15 +112,22 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
-# for Xming
-export DISPLAY=localhost:0.0
 
-#color setting
-export PS1='\[\033[32;1m\]\u@\h\[\033[00m\]:\[\033[34;1m\]\w\[\033[31;1m\]$(__git_ps1)\[\033[00m\]\n fumi-bash \$'
+function parse_git_branch {
+    git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ [\1]/'
+}
+function promps {
+    local  BLUE="\[\e[1;34m\]"
+    local  RED="\[\e[1;31m\]"
+    local  GREEN="\[\e[1;32m\]"
+    local  WHITE="\[\e[00m\]"
+    local  GRAY="\[\e[1;37m\]"
 
-#ls setting
-eval `dircolors -b ~/.dir_colors`
-alias ls='ls -F --color=auto'
-
-export XDG_CONFIG_HOME=~/.config
-#export TERM=xterm-256color
+    case $TERM in
+        xterm*) TITLEBAR='\[\e]0;\W\007\]';;
+        *)      TITLEBAR="";;
+    esac
+    local BASE="\u@\h"
+    PS1="${TITLEBAR}${GREEN}${BASE}${WHITE}:${BLUE}\W${GREEN}\$(parse_git_branch)${BLUE}\$${WHITE} "
+}
+promps
