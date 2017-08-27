@@ -1,9 +1,3 @@
-autocmd MyAutoCmd VimEnter,ColorScheme highlight LightlineLeft_normal_0 cterm=NONE
-
-
-"autocmd Filetype c ClangFormatAutoEnable
-
-" 編集箇所のカーソルを記憶
 if has("autocmd")
   augroup redhat
 " In text files, always limit the width of text to 78 characters

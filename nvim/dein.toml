@@ -41,13 +41,6 @@ source ~/.config/nvim/plugins/lightline.rc.vim
 repo = 'tpope/vim-fugitive'
 
 # =============================================
-# tex
-# =============================================
-
-[[plugins]]
-repo = 'lervag/vimtex'
-
-# =============================================
 # quickrun
 # =============================================
 
@@ -57,3 +50,10 @@ depends = ['vimproc.vim']
 hook_add = '''
 source ~/.config/nvim/plugins/vim-quickrun.rc.vim
 '''
+
+# =============================================
+# bracket
+# =============================================
+
+[[plugins]]
+repo = 'cohama/lexima.vim'

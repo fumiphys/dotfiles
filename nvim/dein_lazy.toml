@@ -21,3 +21,23 @@ source ~/.config/nvim/plugins/deoplete.rc.vim
 [[plugins]]
 repo = 'Shougo/vimproc.vim'
 build = 'make'
+
+# ===================================================
+# tex
+# ===================================================
+
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex']
+
+# ===================================================
+# c
+# ===================================================
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+hook_add = '''
+source ~/.config/nvim/plugins/deoplete-clang.rc.vim
+'''
+on_ft = ['c','cpp','cmake']
+depends = ['deoplete.nvim']
