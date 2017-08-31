@@ -57,3 +57,14 @@ source ~/.config/nvim/plugins/vim-quickrun.rc.vim
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
+
+# =============================================
+# filer
+# =============================================
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['vim-fugitive']
