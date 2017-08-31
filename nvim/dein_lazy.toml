@@ -51,3 +51,6 @@ repo = 'zchee/deoplete-jedi'
 depends = ['deoplete.nvim']
 on_i = 1
 on_ft = 'python'
+hook_add = '''
+py3(sys.path.append('~/.local/lib/python3.5/site-packages'))
+'''
