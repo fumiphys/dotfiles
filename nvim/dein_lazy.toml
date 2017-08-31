@@ -41,3 +41,13 @@ source ~/.config/nvim/plugins/deoplete-clang.rc.vim
 '''
 on_ft = ['c','cpp','cmake']
 depends = ['deoplete.nvim']
+
+# ===================================================
+# python
+# ===================================================
+
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+depends = ['deoplete.nvim']
+on_i = 1
+on_ft = 'python'
