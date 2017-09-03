@@ -41,3 +41,6 @@ syntax enable
 
 runtime! options.rc.vim
 runtime! keymap.rc.vim
+runtime! python.rc.vim
+
+set completeopt-=preview

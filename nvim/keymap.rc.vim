@@ -1,7 +1,7 @@
 nnoremap j gj
 nnoremap k gk
 
-nnoremap<ESC><ESC> :nohlsearch<CR><Esc>
+nmap<silent> <ESC><ESC> :nohlsearch<CR>
 if has('nvim')
   tnoremap <silent> <ESC> <C-\><c-n>
 endif

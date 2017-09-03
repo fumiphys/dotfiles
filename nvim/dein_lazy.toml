@@ -54,3 +54,10 @@ on_ft = 'python'
 hook_add = '''
 py3(sys.path.append('~/.local/lib/python3.5/site-packages'))
 '''
+
+[[plugins]]
+repo = 'neomake/neomake'
+hook_add = '''
+autocmd BufEnter,BufWritePost * Neomake
+let g:neomake_python_enabled_makers = ['python','flake8','mypy']
+'''
