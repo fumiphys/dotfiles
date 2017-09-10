@@ -7,7 +7,7 @@ nvim/
 - tex (completed)
 - c/cpp (completed)
 - Markdown
-- python
+- python (completed)
 - completion(bracket...) (completed)
 ## latexmk
 .latexmkrc
