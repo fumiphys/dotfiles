@@ -1,5 +1,4 @@
 set number
-set cursorline
 set ruler
 set showcmd
 set showmatch
