@@ -1,6 +1,5 @@
 let g:lightline = {
         \ 'mode_map': {'c': 'NORMAL'},
-        \ 'colorscheme' : 'hybrid',
         \ 'active': {
         \   'left': [ [ 'mode', 'paste' ], [ 'fugitive', 'filename' ] ]
         \ },
@@ -56,5 +55,6 @@ endfunction
 function! LightlineMode()
   return winwidth(0) > 60 ? lightline#mode() : ''
 endfunction
+
 
 source ~/.config/nvim/plugins/lightline-colors.vim

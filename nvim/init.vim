@@ -8,6 +8,7 @@ augroup END
 
 if has('nvim')
 	let s:dein_cache_path = expand('~/.cache/nvim/dein')
+  set t_Co=256
 else
 	let s:dein_cache_path = expand('~/.cache/nvim/dein')
 endif

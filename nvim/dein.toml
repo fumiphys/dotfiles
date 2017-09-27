@@ -15,23 +15,23 @@ source ~/.config/nvim/plugins/vim-colorschemes.rc.vim
 # status bar
 # =============================================
 
-#[[plugins]]
-#repo = 'itchyny/lightline.vim'
-#hook_add = '''
-#source ~/.config/nvim/plugins/lightline.rc.vim
-#'''
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+source ~/.config/nvim/plugins/lightline.rc.vim
+'''
 
 [[plugins]]
 repo = 'vim-airline/vim-airline'
 depends = ['tagbar', 'vim-fugitive']
 hook_add = '''
-source ~/.config/nvim/plugins/vim-airline.rc.vim
+ source ~/.config/nvim/plugins/vim-airline.rc.vim
 '''
 
-[[plugins]]
-repo = 'vim-airline/vim-airline-themes'
-hook_add = '''
-'''
+#[[plugins]]
+#repo = 'vim-airline/vim-airline-themes'
+#hook_add = '''
+#'''
 
 # =============================================
 # git
