@@ -13,3 +13,4 @@ nvim/
 .latexmkrc
 ## bashrc
 .bashrc
+
