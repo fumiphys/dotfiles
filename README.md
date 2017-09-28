@@ -4,11 +4,11 @@ dotfiles/To do
 ## neovim
 nvim/
 - filer
-- tex (completed)
-- c/cpp (completed)
+- tex
+- c/cpp
 - Markdown
-- python (completed)
-- completion(bracket...) (completed)
+- python
+- completion(bracket...)
 ## latexmk
 .latexmkrc
 ## bashrc
