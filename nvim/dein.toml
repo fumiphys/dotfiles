@@ -8,7 +8,9 @@ repo = 'Shougo/dein.vim'
 # ============================================================ 
 # colorscheme
 # ============================================================ 
+
 [[plugins]]
+repo = 'flazz/vim-colorschemes'
 
 # ============================================================ 
 # statusline
@@ -29,3 +31,10 @@ source ~/.config/nvim/plugins/vim-airline.rc.vim
 
 [[plugins]]
 repo = 'tpope/vim-fugitive'
+
+# ============================================================ 
+# denite.nvim
+# ============================================================ 
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
