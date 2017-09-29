@@ -38,3 +38,6 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'Shougo/denite.nvim'
+hook_post_source = '''
+source ~/.config/nvim/plugins/denite.rc.vim
+'''
