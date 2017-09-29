@@ -13,3 +13,6 @@ nvim/
 
 ## bashrc
 .bashrc
+
+## tmux
+.tmux.conf
