@@ -11,6 +11,17 @@ repo = 'Shougo/dein.vim'
 
 [[plugins]]
 repo = 'flazz/vim-colorschemes'
+hook_add = '''
+colorscheme iceberg
+augroup ColorTrans
+  autocmd!
+  autocmd Colorscheme * highlight Normal ctermbg=none
+  autocmd Colorscheme * highlight NonText ctermbg=none
+  autocmd Colorscheme * highlight LineNr ctermbg=none
+  autocmd Colorscheme * highlight Folded ctermbg=none
+  autocmd Colorscheme * highlight EndOfBuff ctermbg=none
+augroup END
+'''
 
 # ============================================================ 
 # statusline

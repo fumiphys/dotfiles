@@ -36,7 +36,7 @@ set smartindent
 set cindent
 
 "other
-set timeout timeoutlen=200 ttimeoutlen=75
+set timeout timeoutlen=200 ttimeoutlen=50
 set wildmode=list:longest
 set wildmenu
 set clipboard=unnamedplus
