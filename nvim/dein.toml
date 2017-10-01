@@ -65,3 +65,10 @@ repo = 'Shougo/neomru.vim'
 
 [[plugins]]
 repo = 'Shougo/neoyank.vim'
+
+# ============================================================ 
+# bracket completion
+# ============================================================ 
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
