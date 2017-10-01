@@ -72,3 +72,14 @@ repo = 'Shougo/neoyank.vim'
 
 [[plugins]]
 repo = 'cohama/lexima.vim'
+
+# ============================================================ 
+# tagbar
+# ============================================================ 
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = '''
+let g:tagbar_width=30
+let g:tagbar_autoshowtag=1
+'''

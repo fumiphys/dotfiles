@@ -8,6 +8,10 @@ nvim/
 - git : vim-fugitive
 - filer, grep, etc.. : denite.nvim, neomru.vim, neoyank.vim
 
+### initial
+- filer(Nerdtree?)
+- tagbar
+
 ## latexmk
 .latexmkrc
 
