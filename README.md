@@ -12,6 +12,11 @@ nvim/
 - filer(Nerdtree?)
 - tagbar
 
+### will add
+- quickrun
+- vimproc
+- each language tools
+
 ## latexmk
 .latexmkrc
 

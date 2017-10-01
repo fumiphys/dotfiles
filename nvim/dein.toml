@@ -101,3 +101,7 @@ repo = 'Shougo/context_filetype.vim'
 
 [[plugins]]
 repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['vim-fugitive']
