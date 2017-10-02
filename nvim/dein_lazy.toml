@@ -5,3 +5,14 @@
 [[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
+
+# ============================================================ 
+# completion
+# ============================================================ 
+
+[[plugins]]
+repo = 'Shougo/deoplete.nvim'
+on_i = 1
+hook_add = '''
+let g:deoplete#enable_at_startup=1
+'''

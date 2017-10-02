@@ -7,6 +7,7 @@ nvim/
 - colorscheme : vim-colorschemes
 - git : vim-fugitive
 - filer, grep, etc.. : denite.nvim, neomru.vim, neoyank.vim
+- completion : deoplete.nvim (tab completion will be implemented soon..)
 
 ### initial
 - filer(Nerdtree?)
