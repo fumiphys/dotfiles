@@ -10,11 +10,6 @@ nvim/
 - completion : deoplete.nvim (tab completion will be implemented soon..)
 - markdown : vim-markdown, open-browser, previm
 
-```c
-#include<stdio.h>
-printf("aaaa\n")
-```
-
 ### initial
 - filer(Nerdtree?)
 - tagbar
