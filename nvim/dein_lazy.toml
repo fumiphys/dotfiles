@@ -16,3 +16,23 @@ on_i = 1
 hook_add = '''
 let g:deoplete#enable_at_startup=1
 '''
+
+# ============================================================ 
+# markdown
+# ============================================================ 
+
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['md','mkd','markdown']
+
+# ============================================================ 
+# open brower
+# ============================================================ 
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_ft = ['md','mkd','markdown']
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['md','mkd','markdown']

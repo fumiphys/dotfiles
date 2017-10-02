@@ -105,10 +105,3 @@ repo = 'scrooloose/nerdtree'
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 depends = ['vim-fugitive']
-
-# ============================================================ 
-# open brower
-# ============================================================ 
-#
-#[[plugins]]
-#repo = 'tyru/open-browser.vim'
