@@ -13,6 +13,7 @@ nvim/
 ### initial
 - filer(Nerdtree?)
 - tagbar
+- consider more ..
 
 ### will add
 - quickrun
