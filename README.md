@@ -20,6 +20,7 @@ nvim/
 - quickrun
 - vimproc
 - each language tools
+- code format
 
 ## latexmk
 .latexmkrc
