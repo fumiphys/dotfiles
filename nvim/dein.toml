@@ -100,11 +100,28 @@ repo = 'Shougo/context_filetype.vim'
 # ============================================================ 
 
 [[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
+'''
+
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
 depends = ['vim-fugitive']
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = '''
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+let g:NERDTreeHighlightFolders = 1
+let g:NERDTreeHighlightFoldersFullName = 1
+'''
 
 # ============================================================ 
 # open brower
