@@ -121,6 +121,11 @@ let g:NERDTreePatternMatchHighlightFullName = 1
 
 let g:NERDTreeHighlightFolders = 1
 let g:NERDTreeHighlightFoldersFullName = 1
+
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 22
+
+let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
 
 # ============================================================ 
