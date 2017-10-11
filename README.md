@@ -21,6 +21,7 @@ nvim/
 - vimproc
 - each language tools
 - code-format
+- remember where I was last time
 
 ## latexmk
 .latexmkrc
