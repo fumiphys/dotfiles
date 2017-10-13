@@ -29,5 +29,8 @@ nvim/
 ## bashrc
 .bashrc
 
+## zshrc
+.zshrc
+
 ## tmux
 .tmux.conf
