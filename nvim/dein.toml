@@ -10,7 +10,7 @@ repo = 'Shougo/dein.vim'
 # ============================================================ 
 
 [[plugins]]
-repo = 'flazz/vim-colorschemes'
+repo = 'cocopon/iceberg.vim'
 hook_add = '''
 colorscheme iceberg
 augroup ColorTrans
