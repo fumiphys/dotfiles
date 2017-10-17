@@ -37,24 +37,29 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # zplug setting
-#source ~/.zplug/init.zsh
-#
-##plugins
-#zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-#zplug 'mafredri/zsh-async', from github
+source ~/.zplug/init.zsh
+
+#plugins
+zplug 'zplug/zplug', hook-build:'zplug --self-manage'
+zplug 'mafredri/zsh-async', from:github
 #zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
-#zplug 'zsh-users/zsh-autosuggestions'
-#zplug 'zsh-users/zsh-syntax-highlighting'
+zplug 'zsh-users/zsh-autosuggestions'
+zplug 'zsh-users/zsh-syntax-highlighting'
 #zplug 'ascii-soup/zsh-url-highlighter'
-#zplug 'chrissicool/zsh-256color'
+zplug 'chrissicool/zsh-256color'
 #
-##Install plugins
-#
-#if ! zplug check --verbose; then
-#  printf "Install? [y/N]: "
-#  if read -q; then
-#    echo; zplug install
-#  fi
-#fi
-#
-#zplug load --verbose > /dev/null
+#Install plugins
+
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+
+zplug load --verbose > /dev/null
+
+# alias
+alias la='ls -a'
+alias ls='ls --color=auto'
+alias ll='ls -alF'
