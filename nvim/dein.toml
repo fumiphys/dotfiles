@@ -9,18 +9,26 @@ repo = 'Shougo/dein.vim'
 # colorscheme
 # ============================================================ 
 
+#[[plugins]]
+#repo = 'cocopon/iceberg.vim'
+#hook_add = '''
+#colorscheme iceberg
+#augroup ColorTrans
+#  autocmd!
+#  autocmd Colorscheme * highlight Normal ctermbg=none
+#  autocmd Colorscheme * highlight NonText ctermbg=none
+#  autocmd Colorscheme * highlight LineNr ctermbg=none
+#  autocmd Colorscheme * highlight Folded ctermbg=none
+#  autocmd Colorscheme * highlight EndOfBuff ctermbg=none
+#augroup END
+#'''
+
 [[plugins]]
-repo = 'cocopon/iceberg.vim'
+repo = 'liuchengxu/space-vim-dark'
 hook_add = '''
-colorscheme iceberg
-augroup ColorTrans
-  autocmd!
-  autocmd Colorscheme * highlight Normal ctermbg=none
-  autocmd Colorscheme * highlight NonText ctermbg=none
-  autocmd Colorscheme * highlight LineNr ctermbg=none
-  autocmd Colorscheme * highlight Folded ctermbg=none
-  autocmd Colorscheme * highlight EndOfBuff ctermbg=none
-augroup END
+colorscheme space-vim-dark
+let g:space_vim_dark_background = 233
+color space-vim-dark
 '''
 
 # ============================================================ 
