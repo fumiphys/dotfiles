@@ -50,6 +50,9 @@ source ~/.config/nvim/plugins/vim-airline.rc.vim
 
 [[plugins]]
 repo = 'edkolev/tmuxline.vim'
+hook_add='''
+let g:tmuxline_theme = 'papercolor'
+'''
 
 # ============================================================ 
 # git
