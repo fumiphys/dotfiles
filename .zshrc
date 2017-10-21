@@ -79,3 +79,4 @@ zplug load --verbose > /dev/null
 alias la='ls -a'
 alias ls='ls --color=auto'
 alias ll='ls -alF'
+alias gnuplot='gnuplot -persist'
