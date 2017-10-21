@@ -2,7 +2,25 @@
 
 autoload -Uz promptinit
 promptinit
-prompt adam1
+
+# Set up git
+
+autoload -Uz vcs_info
+autoload -Uz colors
+colors
+
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{green}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{magenta}+"
+zstyle ':vcs_info:*' formats "%F{cyan}%c%u(%b)%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+
+precmd(){vcs_info}
+
+PROMPT='%B%{$fg[red]%}[%n@%m]%{$reset_color%}'
+PROMPT=$PROMPT'%B${vcs_info_msg_0_}%{${fg[red]}%}%}$ %{${reset_color}%}'
+RPROMPT='%B%{${fg[red]}%}[%~]%{${reset_color}%}'
 
 setopt histignorealldups sharehistory
 
@@ -42,10 +60,8 @@ source ~/.zplug/init.zsh
 #plugins
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'mafredri/zsh-async', from:github
-#zplug 'sindresorhus/pure', use:pure.zsh, from:github, as:theme
 zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-syntax-highlighting'
-#zplug 'ascii-soup/zsh-url-highlighter'
 zplug 'chrissicool/zsh-256color'
 #
 #Install plugins
