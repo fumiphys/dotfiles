@@ -8,18 +8,18 @@ nvim/
 - git : vim-fugitive
 - filer, grep, etc.. : denite.nvim, neomru.vim, neoyank.vim, nerdtree, nerdtree-git-plugin, vim-nerdtree-syntax-highlightm, vim-devicons
 - completion : deoplete.nvim (tab completion will be implemented soon..)
-- c completion : deoplete-clang
+- c completion : deoplete-clang, neoinclude.vim
 - markdown : vim-markdown, open-browser, previm
-
-### initial
-- filer(Nerdtree?)
-- tagbar
-- consider more ..
 
 ### will add
 - quickrun
 - vimproc
 - each language tools
+    - cpp (same as c?)
+    - python
+    - tex
+    - shell
+    - vimscript
 - code-format
 - remember where I was last time
 
