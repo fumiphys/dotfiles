@@ -9,7 +9,7 @@ augroup END
 if has('nvim')
 	let s:dein_cache_path = expand('~/.cache/nvim/dein')
 else
-	let s:dein_cache_path = expand('~/.cache/nvim/dein')
+	let s:dein_cache_path = expand('~/.cache/vim/dein')
 endif
 
 let s:dein_dir = s:dein_cache_path
