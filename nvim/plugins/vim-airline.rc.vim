@@ -1,5 +1,5 @@
 "airline configuration
-let g:airline_theme = 'jellybeans'
+let g:airline_theme = 'monochrome'
 
 "separator
 if !exists('g:airlline_symbols')
