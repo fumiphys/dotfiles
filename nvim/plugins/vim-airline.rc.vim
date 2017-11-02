@@ -26,6 +26,7 @@ let g:airline#extensions#tabline#right_sep = '⮂'
 let g:airline#extensions#tabline#right_alt_sep = '⮃'
 
 "section
+let g:airline_linecolumn_prefix = ''
 let g:airline_section_a = airline#section#create(['mode','','branch'])
 let s:sep = " %{get(g:, 'airline_right_alt_sep', '')} "
 let g:airline_section_x = 
@@ -36,3 +37,4 @@ let g:airline_section_y = '%3p%%'
 let g:airline_section_z = get(g:, 'airline_linecolumn_prefix', '').'%3l:%-2v'
 let g:airline_section_error = ''
 let g:airline_section_warning = ''
+let g:airline_inactive_collaspe = 0

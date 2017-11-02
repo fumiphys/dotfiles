@@ -43,5 +43,3 @@ runtime! options.rc.vim
 runtime! keymap.rc.vim
 
 set completeopt-=preview
-"autocmd VimEnter * NERDTree
-"autocmd VimEnter * Tagbar 
