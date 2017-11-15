@@ -31,10 +31,16 @@ repo = 'Shougo/dein.vim'
 #color space-vim-dark
 #'''
 
+#[[plugins]]
+#repo = 'flazz/vim-colorschemes'
+#hook_add = '''
+#colorscheme monochrome
+#'''
+
 [[plugins]]
-repo = 'flazz/vim-colorschemes'
-hook_add = '''
-colorscheme monochrome
+repo = 'whatyouhide/vim-gotham'
+hook_add='''
+colorscheme gotham256
 '''
 
 # ============================================================ 
@@ -117,12 +123,6 @@ repo = 'Shougo/context_filetype.vim'
 # ============================================================ 
 
 [[plugins]]
-repo = 'ryanoasis/vim-devicons'
-hook_add = '''
-let g:WebDevIconsNerdTreeGitPluginForceVAlign = 1
-'''
-
-[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]
@@ -142,7 +142,6 @@ let g:NERDTreeHighlightFoldersFullName = 1
 let g:NERDTreeDirArrows = 1
 let g:NERDTreeWinSize = 22
 
-let g:WebDevIconsUnicodeDecorateFolderNodes = 1
 '''
 
 # ============================================================ 
