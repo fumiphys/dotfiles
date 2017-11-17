@@ -44,6 +44,5 @@ syntax enable
 
 runtime! options.rc.vim
 runtime! keymap.rc.vim
-"runtime! color.rc.vim
 
 set completeopt-=preview
