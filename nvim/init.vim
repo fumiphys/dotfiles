@@ -6,6 +6,9 @@ augroup Myautocmd
 	autocmd!
 augroup END
 
+let g:python_host_prog = $PYENV_ROOT . '/versions/neovim2/bin/python'
+let g:python3_host_prog = $PYENV_ROOT . '/versions/neovim3/bin/python'
+
 if has('nvim')
 	let s:dein_cache_path = expand('~/.cache/nvim/dein')
 else
@@ -41,5 +44,6 @@ syntax enable
 
 runtime! options.rc.vim
 runtime! keymap.rc.vim
+"runtime! color.rc.vim
 
 set completeopt-=preview
