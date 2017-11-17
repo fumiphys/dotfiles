@@ -1,0 +1,153 @@
+# ============================================================ 
+# plugin manager
+# ============================================================ 
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+# ============================================================ 
+# colorscheme
+# ============================================================ 
+
+[[plugins]]
+repo = 'flazz/vim-colorschemes'
+hook_add = '''
+colorscheme onedark
+'''
+
+# ============================================================ 
+# statusline
+# ============================================================ 
+
+[[plugins]]
+repo = 'vim-airline/vim-airline'
+
+[[plugins]]
+repo = 'vim-airline/vim-airline-themes'
+hook_add = '''
+source ~/.config/nvim/plugins/vim-airline.rc.vim
+'''
+
+# ============================================================ 
+# tmux
+# ============================================================ 
+
+[[plugins]]
+repo = 'edkolev/tmuxline.vim'
+hook_add='''
+let g:tmuxline_theme = 'papercolor'
+'''
+
+# ============================================================ 
+# git
+# ============================================================ 
+
+[[plugins]]
+repo = 'tpope/vim-fugitive'
+
+# ============================================================ 
+# denite.nvim
+# ============================================================ 
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
+hook_post_source = '''
+source ~/.config/nvim/plugins/denite.rc.vim
+'''
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+
+# ============================================================ 
+# bracket completion
+# ============================================================ 
+
+[[plugins]]
+repo = 'cohama/lexima.vim'
+
+# ============================================================ 
+# tagbar
+# ============================================================ 
+
+[[plugins]]
+repo = 'majutsushi/tagbar'
+hook_add = '''
+let g:tagbar_width=30
+let g:tagbar_autoshowtag=1
+'''
+
+# ============================================================ 
+# filetype
+# ============================================================ 
+
+[[plugins]]
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]]
+repo = 'Shougo/context_filetype.vim'
+
+# ============================================================ 
+# filer
+# ============================================================ 
+
+[[plugins]]
+repo = 'scrooloose/nerdtree'
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['vim-fugitive']
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+hook_add = '''
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+let g:NERDTreeHighlightFolders = 1
+let g:NERDTreeHighlightFoldersFullName = 1
+
+let g:NERDTreeDirArrows = 1
+let g:NERDTreeWinSize = 22
+
+'''
+
+# ============================================================ 
+# open brower
+# ============================================================ 
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+
+# ============================================================
+# asynchronous
+# ============================================================
+
+[[plugins]]
+repo = 'Shougo/vimproc'
+build = 'make'
+
+# ============================================================
+# quickrun
+# ============================================================
+
+[[plugins]]
+repo = 'mattn/quickrunex-vim'
+
+[[plugins]]
+repo = 'thinca/vim-quickrun'
+depends = ['vimproc.vim', 'quickrunex-vim']
+hook_add = '''
+source ~/.config/nvim/plugins/quickrun.rc.vim
+'''
+
+# ============================================================
+# snippet
+# ============================================================
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
