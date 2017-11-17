@@ -136,8 +136,18 @@ build = 'make'
 # ============================================================
 
 [[plugins]]
+repo = 'mattn/quickrunex-vim'
+
+[[plugins]]
 repo = 'thinca/vim-quickrun'
-depends = ['vimproc.vim']
+depends = ['vimproc.vim', 'quickrunex-vim']
 hook_add = '''
 source ~/.config/nvim/plugins/quickrun.rc.vim
 '''
+
+# ============================================================
+# snippet
+# ============================================================
+
+[[plugins]]
+repo = 'Shougo/neosnippet-snippets'
