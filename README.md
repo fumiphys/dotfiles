@@ -12,6 +12,7 @@ nvim/
 - markdown : vim-markdown, open-browser, previm
 - quickrun : quickrun(c, cpp)
 - vimproc : vimproc
+- snippet : neosnippet-snippets, snippet
 
 ### will add
 - each language tools
@@ -19,6 +20,7 @@ nvim/
     - tex
     - shell
     - vimscript
+    - neomake? neoterm?
 
 ## latexmk
 .latexmkrc
