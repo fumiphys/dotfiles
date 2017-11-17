@@ -76,8 +76,15 @@ fi
 zplug load --verbose > /dev/null
 
 # alias
-alias la='ls -a'
+alias lS='ls -lSh'
+alias la='ls -A'
 alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias gnuplot='gnuplot -persist'
 alias nvi='nvim'
+
+# pyenv
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
