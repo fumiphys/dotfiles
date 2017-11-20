@@ -79,6 +79,22 @@ map ,x <Plug>(operator-clang-format)
 repo = 'zchee/deoplete-jedi'
 on_ft = ['python']
 
+[[plugins]]
+repo = 'Vimjas/vim-python-pep8-indent'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+on_ft = ['python']
+
+#[[plugins]]
+#repo = 'lambdalisue/vim-pyenv'
+#on_ft = ['python']
+#
+#[[plugins]]
+#repo = 'jmcantrell/vim-virtualenv'
+#on_ft = ['python']
+#
 # ============================================================
 # snippet
 # ============================================================
@@ -106,4 +122,7 @@ repo = 'w0rp/ale'
 on_ft = ['cmake', 'c', 'cpp', 'python']
 hook_add = '''
 let g:ale_echo_msg_format = '[%linter%] %s'
+let g:ale_lint_on_enter = 1
+let g:ale_line_on_save = 1
+let g:ale_lint_on_text_changed = 'never'
 '''

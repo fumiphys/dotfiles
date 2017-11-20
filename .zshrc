@@ -82,6 +82,7 @@ alias ls='ls --color=auto'
 alias ll='ls -alF'
 alias gnuplot='gnuplot -persist'
 alias nvi='nvim'
+alias vi='vim'
 
 # pyenv
 export PYENV_ROOT=$HOME/.pyenv
