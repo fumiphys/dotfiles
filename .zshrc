@@ -83,6 +83,7 @@ alias ll='ls -alF'
 alias gnuplot='gnuplot -persist'
 alias nvi='nvim'
 alias vi='vim'
+alias :q='exit'
 
 # pyenv
 export PYENV_ROOT=$HOME/.pyenv
