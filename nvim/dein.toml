@@ -32,11 +32,20 @@ source ~/.config/nvim/plugins/vim-airline.rc.vim
 # tmux
 # ============================================================ 
 
-[[plugins]]
-repo = 'edkolev/tmuxline.vim'
-hook_add='''
-let g:tmuxline_theme = 'papercolor'
-'''
+#[[plugins]]
+#repo = 'edkolev/tmuxline.vim'
+#hook_add='''
+#let g:tmuxlien_preset = 'nightly_fox'
+#let g:tmuxline_preset = {
+#      \'a'  :'#S',
+#      \'b'  :'#W',
+#      \'c'  :'#H',
+#      \'win'  :'#I #W',
+#      \'cwin'  :'#I #W',
+#      \'x'  :'%a',
+#      \'y'  :'#W %R',
+#      \'z'  :'#H'}
+#'''
 
 # ============================================================ 
 # git

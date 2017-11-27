@@ -7,7 +7,19 @@ promptinit
 
 autoload -Uz vcs_info
 autoload -Uz colors
+autoload -Uz add-zsh-hook
+autoload -Uz terminfo
 colors
+
+autoload -Uz colors; colors
+autoload -Uz add-zsh-hook
+autoload -Uz terminfo
+
+terminfo_down_sc=$terminfo[cud1]$terminfo[cuu1]$terminfo[sc]$terminfo[cud1]
+left_down_prompt_preexec() {
+    print -rn -- $terminfo[el]
+}
+add-zsh-hook preexec left_down_prompt_preexec
 
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
@@ -18,9 +30,32 @@ zstyle ':vcs_info:*' actionformats '[%b|%a]'
 
 precmd(){vcs_info}
 
-PROMPT='%B%{$fg[red]%}[%n@%m]%{$reset_color%}'
-PROMPT=$PROMPT'%B${vcs_info_msg_0_}%{${fg[red]}%}%}$ %{${reset_color}%}'
-RPROMPT='%B%{${fg[red]}%}[%~]%{${reset_color}%}'
+function zle-keymap-select zle-line-init zle-line-finish
+{
+    case $KEYMAP in
+        main|viins)
+            PROMPT_2="%B$fg[cyan]-- INSERT --$reset_color"
+            ;;
+        vicmd)
+            PROMPT_2="%B$fg[white]-- NORMAL --$reset_color"
+            ;;
+        vivis|vivli)
+            PROMPT_2="%B$fg[yellow]-- VISUAL --$reset_color"
+            ;;
+    esac
+
+    PROMPT='%B%{$fg[red]%}[%n@%m]%{$reset_color%}'
+    PROMPT='%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}'$PROMPT'%B${vcs_info_msg_0_}%{${fg[red]}%}%}$ %{${reset_color}%}'
+    RPROMPT='%B%{${fg[red]}%}[%~]%{${reset_color}%}'
+
+    #PROMPT="%{$terminfo_down_sc$PROMPT_2$terminfo[rc]%}[%(?.%{${fg[green]}%}.%{${fg[red]}%})%n%{${reset_color}%}]%# "
+    zle reset-prompt
+}
+
+zle -N zle-line-init
+zle -N zle-line-finish
+zle -N zle-keymap-select
+zle -N edit-command-line
 
 setopt histignorealldups sharehistory
 
@@ -61,8 +96,9 @@ source ~/.zplug/init.zsh
 zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'mafredri/zsh-async', from:github
 zplug 'zsh-users/zsh-autosuggestions'
-zplug 'zsh-users/zsh-syntax-highlighting'
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug 'chrissicool/zsh-256color'
+zplug 'b4b4r07/zsh-vimode-visual', defer:3
 #
 #Install plugins
 
@@ -90,3 +126,7 @@ export PYENV_ROOT=$HOME/.pyenv
 export PATH=$PYENV_ROOT/bin:$PATH
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
+
+# completion
+fpath=($HOME/zsh-completions/src $fpath)
+
