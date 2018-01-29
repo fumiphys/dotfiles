@@ -12,7 +12,7 @@ repo = 'Shougo/dein.vim'
 [[plugins]]
 repo = 'flazz/vim-colorschemes'
 hook_add = '''
-colorscheme onedark
+colorscheme pride
 '''
 
 # ============================================================ 

@@ -99,6 +99,10 @@ zplug 'zsh-users/zsh-autosuggestions'
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 zplug 'chrissicool/zsh-256color'
 zplug 'b4b4r07/zsh-vimode-visual', defer:3
+zplug 'mollifier/cd-gitroot'
+zplug 'supercrabtree/k'
+zplug 'b4b4r07/enhancd', use:init.sh
+zplug 'junegunn/fzf-bin', from:gh-r, as:command, rename-to:fzf, on:'b4b4r07/enhancd'
 #
 #Install plugins
 
@@ -120,6 +124,7 @@ alias gnuplot='gnuplot -persist'
 alias nvi='nvim'
 alias vi='vim'
 alias :q='exit'
+alias root='root -l'
 
 # pyenv
 export PYENV_ROOT=$HOME/.pyenv
@@ -129,4 +134,4 @@ eval "$(pyenv virtualenv-init -)"
 
 # completion
 fpath=($HOME/zsh-completions/src $fpath)
-
+export IDEROOT="/home/fumiphys/develop/electron-ide"
