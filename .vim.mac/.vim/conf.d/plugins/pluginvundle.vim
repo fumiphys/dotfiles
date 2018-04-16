@@ -5,6 +5,16 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
+" completion
+Plugin 'Valloric/YouCompleteMe'
+
+" language
+Plugin 'scrooloose/syntastic'
+
+"" markdown
+Plugin 'plasticboy/vim-markdown'
+Plugin 'kannokanno/previm'
+
 " code display
 Plugin 'flazz/vim-colorschemes'
 

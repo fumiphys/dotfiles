@@ -41,4 +41,6 @@ nvim/
 cd .vim.mac
 ./setting.sh
 ```
-and then open vim, execute :PluginInstall
+
+## to be fixed
+ - mathjax for markdown
