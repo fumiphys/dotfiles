@@ -33,3 +33,12 @@ nvim/
 
 ## tmux
 .tmux.conf
+
+## vim(mac)
+.vim.mac/
+ - install
+```
+cd .vim.mac
+./setting.sh
+```
+and then open vim, execute :PluginInstall
