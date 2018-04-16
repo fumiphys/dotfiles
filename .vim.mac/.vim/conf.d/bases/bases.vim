@@ -9,3 +9,4 @@ set tabstop=4
 set number
 set nowrap
 set nofoldenable
+set completeopt-=preview
