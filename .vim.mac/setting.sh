@@ -15,10 +15,11 @@ if [ ! -e YouCompleteMe ]; then git clone --recursive https://github.com/Vallori
 cd YouCompleteMe
 git pull
 git submodule update --init --recursive
+# mkdir -p YouCompleteMe/ycmbuild && cd YouCompleteMe/ycmbuild
+# cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/
+# make ycm_core
+python install.py --clang-completer --system-libclang
 cd ..
-mkdir -p YouCompleteMe/ycmbuild && cd YouCompleteMe/ycmbuild
-cmake -G "Unix Makefiles" . ~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/
-make ycm_core
 
 # vundle
 vim +PluginInstall +qall

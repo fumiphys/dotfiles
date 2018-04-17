@@ -10,3 +10,6 @@ augroup PrevimSettings
     autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
 augroup END
 let g:previm_open_cmd = 'open -a Safari'
+
+" C, C++
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
