@@ -15,6 +15,9 @@ Plugin 'scrooloose/syntastic'
 Plugin 'plasticboy/vim-markdown'
 Plugin 'kannokanno/previm'
 
+" tex
+Plugin 'lervag/vimtex'
+
 " code display
 Plugin 'flazz/vim-colorschemes'
 
