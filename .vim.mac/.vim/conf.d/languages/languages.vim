@@ -19,6 +19,7 @@ let g:vimtex_compiler_latexmk = {
 	\ 'background': 1,
 	\ 'build_dir': '',
 	\ 'continunous': 1,
+	\ 'callback': 0,
 	\ 'options': [
 	\	'-pdfdvi',
 	\	'-verbose',
