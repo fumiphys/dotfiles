@@ -44,4 +44,5 @@ cd .vim.mac
 
 ## to be fixed
  - mathjax for markdown
+ - switch to dein.vim and deoplete.nvim
  - syntax check

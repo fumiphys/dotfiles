@@ -6,8 +6,6 @@ augroup END
 let g:previm_open_cmd = 'open -a Safari'
 
 " C, C++
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-let g:ycm_show_diagnostics_ui = 0
 
 " tex
 let g:vimtex_compiler_latexmk = {
