@@ -10,3 +10,4 @@ set number
 set nowrap
 set nofoldenable
 set completeopt-=preview
+set backspace=indent,eol,start
