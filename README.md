@@ -44,3 +44,4 @@ cd .vim.mac
 
 ## to be fixed
  - mathjax for markdown
+ - syntax check

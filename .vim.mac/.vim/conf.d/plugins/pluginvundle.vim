@@ -5,9 +5,6 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
-" syntax check
-Plugin 'scrooloose/syntastic'
-
 " completion
 Plugin 'Valloric/YouCompleteMe'
 

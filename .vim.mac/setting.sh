@@ -22,7 +22,6 @@ python install.py --clang-completer --system-libclang
 cd ..
 
 # python check
-pip3 install pep8 pyflakes --upgrade
 PYTHONSUPPORT=`vim --version | grep +python3`
 if [ ! ${#PYTHONSUPPORT} -gt 0 ]; then
 		echo "vim does not support python3. please reinstall by brew install vim --with-python3"
