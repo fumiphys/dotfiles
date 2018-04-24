@@ -1,0 +1,43 @@
+# markdown
+[[plugins]]
+repo = 'plasticboy/vim-markdown'
+on_ft = ['md', 'markdown']
+
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['md', 'mkd', 'markdown']
+
+# tex
+[[plugins]]
+repo = 'lervag/vimtex'
+on_ft = ['tex', 'latex']
+
+# python
+[[plugins]]
+repo = 'zchee/deoplete-jedi'
+on_ft = ['python']
+depends = ['deoplete.nvim']
+
+[[plugins]]
+repo = 'Vimjas/vim-python-pep8-indent'
+on_ft = ['python']
+
+[[plugins]]
+repo = 'nathanaelkane/vim-indent-guides'
+on_ft = ['python']
+hook_add = 'IndentGuidesEnable'
+
+# snippet
+[[plugins]]
+repo = 'Shougo/neosnippet.vim'
+on_i = 1
+on_ft = ['snippet']
+depends = ['neosnippet-snippets']
+hook_source = '''
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_or_jump)
+if has('conceal')
+  set conceallevel=2 concealcursor=niv
+endif
+'''
