@@ -16,8 +16,3 @@ pip3 install neovim --upgrade
 # dein.vim
 vim +"call dein#install()" +qall
 vim +"call dein#update()" +qall
-
-# jedi-vim
-cd ~/.vim/bundle
-if [ ! -e ~/.vim/bundle/jedi-vim ]; then git clone https://github.com/davidhalter/jedi-vim ; fi
-cd ~/.vim/bundle/jedi-vim && git submodule update --init

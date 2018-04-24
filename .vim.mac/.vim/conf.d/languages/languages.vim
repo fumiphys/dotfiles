@@ -26,4 +26,4 @@ let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSuppor
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
 
 " python
-let g:jedi#force_py_version = 3
+py3 import sys;sys.path.append('/usr/local/lib/python3.6/site-packages')
