@@ -13,6 +13,11 @@ if [ ! ${#PYTHONSUPPORT} -gt 0 ]; then
 fi
 pip3 install neovim --upgrade
 
+# clang check
+brew update
+brew install llvm --with-clang
+brew install clang-format
+
 # dein.vim
 vim +"call dein#install()" +qall
 vim +"call dein#update()" +qall
