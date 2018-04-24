@@ -11,3 +11,11 @@ set nowrap
 set nofoldenable
 set completeopt-=preview
 set backspace=indent,eol,start
+set showmatch
+source $VIMRUNTIME/macros/matchit.vim
+
+" search
+set incsearch
+set ignorecase
+set smartcase
+set hlsearch

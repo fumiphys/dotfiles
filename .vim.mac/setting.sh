@@ -5,16 +5,17 @@ mkdir -p ~/.vim
 lndir ${NPWD}/.vim ~/.vim
 mkdir -p ~/.vim/bundle
 
-# dein.vim
-vim +"call dein#install()" +qall
-vim +"call dein#update()" +qall
-
 # python check
 PYTHONSUPPORT=`vim --version | grep +python3`
 if [ ! ${#PYTHONSUPPORT} -gt 0 ]; then
 		echo "vim does not support python3. please reinstall by brew install vim --with-python3"
 		exit
 fi
+pip3 install neovim --upgrade
+
+# dein.vim
+vim +"call dein#install()" +qall
+vim +"call dein#update()" +qall
 
 # jedi-vim
 cd ~/.vim/bundle
