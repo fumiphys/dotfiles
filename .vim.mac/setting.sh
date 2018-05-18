@@ -11,7 +11,7 @@ if [ ! ${#PYTHONSUPPORT} -gt 0 ]; then
 		echo "vim does not support python3. please reinstall by brew install vim --with-python3"
 		exit
 fi
-pip3 install neovim --upgrade
+pip3 install neovim --upgrade --user
 
 # clang check
 brew update
