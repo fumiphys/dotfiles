@@ -36,3 +36,10 @@ repo = 'Shougo/neco-syntax'
 
 [[plugins]]
 repo = 'Shougo/neosnippet-snippets'
+
+# syntax check
+[[plugins]]
+repo = 'scrooloose/syntastic'
+hook_add = '''
+let g:syntastic_python_checkers = ['pyflakes', 'pep8']
+'''

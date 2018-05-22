@@ -12,11 +12,15 @@ if [ ! ${#PYTHONSUPPORT} -gt 0 ]; then
 		exit
 fi
 pip3 install neovim --upgrade
+pip3 install pep8 --upgrade
+pip3 install pyflakes --upgrade
 
 # clang check
 brew update
+set +e
 brew install llvm --with-clang
 brew install clang-format
+set -e
 
 # dein.vim
 vim +"call dein#install()" +qall
