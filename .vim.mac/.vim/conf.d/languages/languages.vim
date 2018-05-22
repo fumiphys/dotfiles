@@ -30,6 +30,10 @@ function! s:expand_namespace()
 endfunction
 
 " tex
+augroup TexSettings
+    autocmd!
+    autocmd BufNewFile,BufRead *.{tex} set filetype=tex
+augroup END
 let g:vimtex_compiler_latexmk = {
 	\ 'background': 1,
 	\ 'build_dir': '',
@@ -46,6 +50,7 @@ let g:vimtex_compiler_latexmk = {
 
 let g:vimtex_view_general_viewer = '/Applications/Skim.app/Contents/SharedSupport/displayline'
 let g:vimtex_view_general_options = '-r @line @pdf @tex'
+let g:tex_conceal = ""
 
 " python
 py3 import sys;sys.path.append('/usr/local/lib/python3.6/site-packages')
