@@ -15,6 +15,11 @@ pip3 install neovim --upgrade
 pip3 install pep8 --upgrade
 pip3 install pyflakes --upgrade
 
+# rust
+set +e
+cargo install racer
+set -e
+
 # clang check
 brew update
 set +e

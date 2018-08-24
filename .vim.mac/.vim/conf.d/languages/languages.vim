@@ -54,3 +54,6 @@ let g:tex_conceal = ""
 
 " python
 py3 import sys;sys.path.append('/usr/local/lib/python3.6/site-packages')
+
+" rust
+let g:deoplete#sources#rust#racer_binary='/usr/local/bin/racer'
