@@ -13,3 +13,6 @@ This repository is now being reconstructed. To use old version, use branch 'clea
 chmod +x setting.sh
 ./setting.sh
 ```
+
+## detail
+ - [vim](vim/vim.md)
