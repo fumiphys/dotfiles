@@ -15,4 +15,4 @@ chmod +x setting.sh
 ```
 
 ## detail
- - [vim](vim/vim.md)
+ - [vim](vim/)
