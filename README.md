@@ -16,3 +16,10 @@ chmod +x setting.sh
 
 ## detail
  - [vim](vim/)
+
+## TODO
+ - vim
+ - python (pyenv, virtualenv)
+ - latex
+ - zsh
+ - (tmux?)
