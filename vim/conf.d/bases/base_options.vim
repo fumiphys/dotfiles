@@ -24,9 +24,6 @@ set expandtab
 set tabstop=2
 set shiftwidth=2
 
-" move
-source $VIMRUMTIME/macros/matchit.vim
-
 " insert
 set backspace=indent,eol,start
 

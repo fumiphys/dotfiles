@@ -19,3 +19,27 @@ else
 	echo "Supported platform is: [Mac, Linux, Cygwin]"
 	exit 1
 fi
+
+# vim configuraion
+NPWD="$(cd $(dirname $0); pwd)"
+
+# check original .vimrc
+if [ -e ~/.vimrc ]; then
+	echo "file ~/.vimrc already exists. overwrite?"
+fi
+
+if [ -L ~/.vimrc ]; then
+	echo "symbolic link ~/.vimrc already exists. overwrite?"
+fi
+
+# link configuration files
+ln -F -s ${NPWD}/vim/.vimrc ~/.vimrc
+mkdir -p ~/.vim/
+mkdir -p ~/.vim/conf.d
+mkdir -p ~/.vim/conf.d/bases
+ln -F -s ${NPWD}/vim/conf.d/bases/base_options.vim ~/.vim/conf.d/bases/base_options.vim
+ln -F -s ${NPWD}/vim/conf.d/bases/keymap.vim ~/.vim/conf.d/bases/keymap.vim
+ln -F -s ${NPWD}/vim/conf.d/bases/gui.vim ~/.vim/conf.d/bases/gui.vim
+mkdir -p ~/.vim/conf.d/languages
+mkdir -p ~/.vim/conf.d/plugins
+mkdir -p ~/.vim/bundle
