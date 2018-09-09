@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # written by fumiphys
 # To use this script, execute
 # $ chmod +x setting.sh
@@ -25,12 +25,16 @@ NPWD="$(cd $(dirname $0); pwd)"
 
 # check original .vimrc
 if [ -e ~/.vimrc ]; then
-	echo "file ~/.vimrc already exists. overwrite?"
+	echo -n "file ~/.vimrc already exists. overwrite? [y/n] "
+  read VIMRC_YN
+
+  case $VIMRC_YN in
+    "" | "Y" | "y" | "yes" | "Yes" | "YES" ) echo "~/.vimrc will be overwritten";;
+    * ) echo "stop configuration!"
+        exit 1;;
+  esac
 fi
 
-if [ -L ~/.vimrc ]; then
-	echo "symbolic link ~/.vimrc already exists. overwrite?"
-fi
 
 # link configuration files
 ln -F -s ${NPWD}/vim/.vimrc ~/.vimrc
