@@ -60,7 +60,6 @@ if [ -e ~/.vim/conf.d/bases/gui.vim ]; then
 fi
 ln -F -s ${NPWD}/vim/conf.d/bases/gui.vim ~/.vim/conf.d/bases/gui.vim
 
-mkdir -p ~/.vim/conf.d/languages
 mkdir -p ~/.vim/conf.d/plugins
 
 if [ -e ~/.vim/conf.d/plugins/dein_root.vim ]; then
@@ -77,6 +76,13 @@ if [ -e ~/.vim/conf.d/plugins/dein_lazy.toml ]; then
   rm ~/.vim/conf.d/plugins/dein_lazy.toml
 fi
 ln -F -s ${NPWD}/vim/conf.d/plugins/dein_lazy.toml ~/.vim/conf.d/plugins/dein_lazy.toml
+
+mkdir -p ~/.vim/conf.d/languages
+
+if [ -e ~/.vim/conf.d/languages/ccpp.toml ]; then
+  rm ~/.vim/conf.d/languages/ccpp.toml
+fi
+ln -F -s ${NPWD}/vim/conf.d/languages/ccpp.toml ~/.vim/conf.d/languages/ccpp.toml
 
 mkdir -p ~/.vim/bundle
 

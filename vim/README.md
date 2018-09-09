@@ -11,5 +11,11 @@
 ## languages
 ### Vim script
  - [neco-vim](https://github.com/Shougo/neco-vim)
+### C/C++
+ - [vim-cpp](https://github.com/vim-jp/vim-cpp)
+ - [deoplete-clang](https://github.com/zchee/deoplete-clang)
+ - [vim-clang-format](https://github.com/rhysd/vim-clang-format)
 ## other
  - [lexima.vim](https://github.com/cohama/lexima.vim)
+ - [DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim)
+ - [vim-operator-user](https://github.com/kana/vim-operator-user)
