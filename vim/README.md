@@ -9,5 +9,7 @@
  - [neco-syntax](https://github.com/Shougo/neco-syntax)
  - [neco-look](https://github.com/ujihisa/neco-look)
 ## languages
+### Vim script
+ - [neco-vim](https://github.com/Shougo/neco-vim)
 ## other
  - [lexima.vim](https://github.com/cohama/lexima.vim)
