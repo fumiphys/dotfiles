@@ -62,4 +62,20 @@ ln -F -s ${NPWD}/vim/conf.d/bases/gui.vim ~/.vim/conf.d/bases/gui.vim
 
 mkdir -p ~/.vim/conf.d/languages
 mkdir -p ~/.vim/conf.d/plugins
+
+if [ -e ~/.vim/conf.d/plugins/dein_root.vim ]; then
+  rm ~/.vim/conf.d/plugins/dein_root.vim
+fi
+ln -F -s ${NPWD}/vim/conf.d/plugins/dein_root.vim ~/.vim/conf.d/plugins/dein_root.vim
+
+if [ -e ~/.vim/conf.d/plugins/dein.toml ]; then
+  rm ~/.vim/conf.d/plugins/dein.toml
+fi
+ln -F -s ${NPWD}/vim/conf.d/plugins/dein.toml ~/.vim/conf.d/plugins/dein.toml
+
+if [ -e ~/.vim/conf.d/plugins/dein_lazy.toml ]; then
+  rm ~/.vim/conf.d/plugins/dein_lazy.toml
+fi
+ln -F -s ${NPWD}/vim/conf.d/plugins/dein_lazy.toml ~/.vim/conf.d/plugins/dein_lazy.toml
+
 mkdir -p ~/.vim/bundle
