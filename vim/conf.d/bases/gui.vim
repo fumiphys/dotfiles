@@ -1,4 +1,4 @@
 " configuration for gui
 " colorscheme
-colorscheme darkblue
+colorscheme onedark
 set background=dark
