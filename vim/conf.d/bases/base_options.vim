@@ -36,3 +36,6 @@ set hlsearch
 
 " completion
 set completeopt-=preview
+
+" yank
+set clipboard=unnamed,autoselect
