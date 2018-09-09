@@ -19,7 +19,6 @@ chmod +x setting.sh
 
 ## TODO
  - vim
- - python (pyenv, virtualenv)
  - latex
  - zsh
  - (tmux?)

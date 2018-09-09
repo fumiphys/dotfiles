@@ -79,3 +79,6 @@ fi
 ln -F -s ${NPWD}/vim/conf.d/plugins/dein_lazy.toml ~/.vim/conf.d/plugins/dein_lazy.toml
 
 mkdir -p ~/.vim/bundle
+
+# setting for python3
+pip3 install --upgrade neovim
