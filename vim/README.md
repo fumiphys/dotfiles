@@ -19,3 +19,11 @@
  - [lexima.vim](https://github.com/cohama/lexima.vim)
  - [DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim)
  - [vim-operator-user](https://github.com/kana/vim-operator-user)
+ - [ale](https://github.com/w0rp/ale)
+
+## TODO
+ - statusline (+ ale)
+ - markdown
+ - sql
+ - python
+ - git

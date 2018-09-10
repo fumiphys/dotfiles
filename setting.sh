@@ -88,3 +88,5 @@ mkdir -p ~/.vim/bundle
 
 # setting for python3
 pip3 install --upgrade neovim
+# for ale
+pip3 install --upgrade flake8
