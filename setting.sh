@@ -90,3 +90,5 @@ mkdir -p ~/.vim/bundle
 pip3 install --upgrade neovim
 # for ale
 pip3 install --upgrade flake8
+# for deoplete-jedi
+pip3 install --upgrade jedi

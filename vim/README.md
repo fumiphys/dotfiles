@@ -15,7 +15,9 @@
  - [vim-cpp](https://github.com/vim-jp/vim-cpp)
  - [deoplete-clang](https://github.com/zchee/deoplete-clang)
  - [vim-clang-format](https://github.com/rhysd/vim-clang-format)
-## other
+###
+ - [deoplete-jedi](https://github.com/zchee/deoplete-jedi)
+### other
  - [lexima.vim](https://github.com/cohama/lexima.vim)
  - [DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim)
  - [vim-operator-user](https://github.com/kana/vim-operator-user)
@@ -25,5 +27,4 @@
  - statusline (+ ale)
  - markdown
  - sql
- - python
  - git
