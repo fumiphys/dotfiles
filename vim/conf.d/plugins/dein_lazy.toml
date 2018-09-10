@@ -36,3 +36,9 @@ map ,x <Plug>(operator-clang-format)
 [[plugins]]
 repo = 'vim-scripts/DoxygenToolkit.vim'
 on_ft = ['c', 'cpp', 'python']
+
+# look
+[[plugins]]
+repo = 'ujihisa/neco-look'
+on_ft = ['python']
+

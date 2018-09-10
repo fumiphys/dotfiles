@@ -32,6 +32,3 @@ repo = 'roxma/vim-hug-neovim-rpc'
 # advanced completion
 [[plugins]]
 repo = 'Shougo/neco-syntax'
-
-[[plugins]]
-repo = 'ujihisa/neco-look'
