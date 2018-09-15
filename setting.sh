@@ -84,6 +84,11 @@ if [ -e ~/.vim/conf.d/languages/ccpp.toml ]; then
 fi
 ln -F -s ${NPWD}/vim/conf.d/languages/ccpp.toml ~/.vim/conf.d/languages/ccpp.toml
 
+if [ -e ~/.vim/conf.d/languages/markdown.css ]; then
+  rm ~/.vim/conf.d/languages/markdown.css
+fi
+ln -F -s ${NPWD}/vim/conf.d/languages/markdown.css ~/.vim/conf.d/languages/markdown.css
+
 mkdir -p ~/.vim/bundle
 
 # setting for python3

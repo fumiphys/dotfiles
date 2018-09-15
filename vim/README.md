@@ -17,9 +17,11 @@
  - [vim-clang-format](https://github.com/rhysd/vim-clang-format)
 ### Python
  - [deoplete-jedi](https://github.com/zchee/deoplete-jedi)
+### Markdown
+ - [previm](https://github.com/previm/previm)
+ - [open-browser](https://github.com/tyru/open-browser.vim)
 ### Git
  - [vim-fugitive](https://github.com/tpope/vim-fugitive)
-
 ### statusline
  - [lightline.vim](https://github.com/itchyny/lightline.vim)
 ### other
@@ -30,6 +32,7 @@
 
 ## TODO
  - statusline (+ ale)
- - markdown
+ - shell
+ - tex
  - sql
  - git

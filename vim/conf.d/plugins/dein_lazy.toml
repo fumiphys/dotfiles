@@ -48,3 +48,19 @@ on_ft = ['python']
 hook_add = '''
 let g:deoplete#sources#jedi#python_path = "/Users/fkiyozawa/.pyenv/shims/python3.6"
 '''
+
+# markdown
+[[plugins]]
+repo = 'kannokanno/previm'
+on_ft = ['markdown', 'md']
+hook_add = '''
+let g:previm_disable_default_css = 1
+let g:previm_custom_css_path = '~/.vim/conf.d/languages/markdown.css'
+if has('mac')
+  let g:previm_open_cmd = 'open -a /Applications/Google\ Chrome.app'
+endif
+'''
+
+[[plugins]]
+repo = 'tyru/open-browser.vim'
+on_ft = ['markdown', 'md']
