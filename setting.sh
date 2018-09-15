@@ -79,10 +79,10 @@ ln -F -s ${NPWD}/vim/conf.d/plugins/dein_lazy.toml ~/.vim/conf.d/plugins/dein_la
 
 mkdir -p ~/.vim/conf.d/languages
 
-if [ -e ~/.vim/conf.d/languages/ccpp.toml ]; then
-  rm ~/.vim/conf.d/languages/ccpp.toml
+if [ -e ~/.vim/conf.d/languages/ccpp.vim ]; then
+  rm ~/.vim/conf.d/languages/ccpp.vim
 fi
-ln -F -s ${NPWD}/vim/conf.d/languages/ccpp.toml ~/.vim/conf.d/languages/ccpp.toml
+ln -F -s ${NPWD}/vim/conf.d/languages/ccpp.vim ~/.vim/conf.d/languages/ccpp.vim
 
 if [ -e ~/.vim/conf.d/languages/markdown.css ]; then
   rm ~/.vim/conf.d/languages/markdown.css
