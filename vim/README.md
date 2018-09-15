@@ -19,6 +19,9 @@
  - [deoplete-jedi](https://github.com/zchee/deoplete-jedi)
 ### Git
  - [vim-fugitive](https://github.com/tpope/vim-fugitive)
+
+### statusline
+ - [lightline.vim](https://github.com/itchyny/lightline.vim)
 ### other
  - [lexima.vim](https://github.com/cohama/lexima.vim)
  - [DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim)

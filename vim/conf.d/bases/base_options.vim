@@ -15,10 +15,10 @@ set wildmenu
 set number
 set nowrap
 set cursorline
-set virtualedit=onemore
 set smartindent
 set showmatch
 set laststatus=2
+set noshowmode
 
 set expandtab
 set tabstop=2
