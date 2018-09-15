@@ -15,8 +15,10 @@
  - [vim-cpp](https://github.com/vim-jp/vim-cpp)
  - [deoplete-clang](https://github.com/zchee/deoplete-clang)
  - [vim-clang-format](https://github.com/rhysd/vim-clang-format)
-###
+### Python
  - [deoplete-jedi](https://github.com/zchee/deoplete-jedi)
+### Git
+ - [vim-fugitive](https://github.com/tpope/vim-fugitive)
 ### other
  - [lexima.vim](https://github.com/cohama/lexima.vim)
  - [DoxygenToolkit.vim](https://github.com/vim-scripts/DoxygenToolkit.vim)
