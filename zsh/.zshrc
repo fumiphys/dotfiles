@@ -39,3 +39,8 @@ bindkey -v
 
 alias la='ls -a'
 alias ll='ls -l'
+
+# alias for programming contest
+# https://github.com/fumiphys/programming_contest
+alias utem='~/github/programming_contest/utils/use_template.sh'
+alias tcas='~/github/programming_contest/utils/test_case.sh'
