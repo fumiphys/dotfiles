@@ -32,7 +32,5 @@
 
 ## TODO
  - statusline (+ ale)
- - shell
  - tex
  - sql
- - git
