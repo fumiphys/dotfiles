@@ -9,6 +9,11 @@ This repository is now being reconstructed. To use old version, use branch 'clea
  - Cygwin
 
 ## use (installation)
+To use zplug, you should install zplug.
+```
+curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+```
+Execute setting.sh
 ```
 chmod +x setting.sh
 ./setting.sh
@@ -21,9 +26,9 @@ let g:deoplete#sources#jedi#python_path = `which python3`
 
 ## detail
  - [vim](vim/)
+ - [zsh](zsh/)
 
 ## TODO
  - vim
  - latex
- - zsh
  - (tmux?)

@@ -97,3 +97,9 @@ pip3 install --upgrade neovim
 pip3 install --upgrade flake8
 # for deoplete-jedi
 pip3 install --upgrade jedi
+
+# zsh
+if [ -e ~/.zshrc ]; then
+  rm ~/.zshrc
+fi
+ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
