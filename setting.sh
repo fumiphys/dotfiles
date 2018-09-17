@@ -111,3 +111,4 @@ if [ -e ~/.zshrc ]; then
   rm ~/.zshrc
 fi
 ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
+source ~/.zshrc
