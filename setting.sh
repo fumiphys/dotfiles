@@ -45,16 +45,19 @@ mkdir -p ~/.vim/
 mkdir -p ~/.vim/conf.d
 mkdir -p ~/.vim/conf.d/bases
 
+# base_options.vim
 if [ -e ~/.vim/conf.d/bases/base_options.vim ]; then
   rm ~/.vim/conf.d/bases/base_options.vim
 fi
 ln -F -s ${NPWD}/vim/conf.d/bases/base_options.vim ~/.vim/conf.d/bases/base_options.vim
 
+# keymap.vim
 if [ -e ~/.vim/conf.d/bases/keymap.vim ]; then
   rm ~/.vim/conf.d/bases/keymap.vim
 fi
 ln -F -s ${NPWD}/vim/conf.d/bases/keymap.vim ~/.vim/conf.d/bases/keymap.vim
 
+# gui.vim
 if [ -e ~/.vim/conf.d/bases/gui.vim ]; then
   rm ~/.vim/conf.d/bases/gui.vim
 fi
@@ -62,16 +65,19 @@ ln -F -s ${NPWD}/vim/conf.d/bases/gui.vim ~/.vim/conf.d/bases/gui.vim
 
 mkdir -p ~/.vim/conf.d/plugins
 
+# dein_root.vim
 if [ -e ~/.vim/conf.d/plugins/dein_root.vim ]; then
   rm ~/.vim/conf.d/plugins/dein_root.vim
 fi
 ln -F -s ${NPWD}/vim/conf.d/plugins/dein_root.vim ~/.vim/conf.d/plugins/dein_root.vim
 
+# dein.toml
 if [ -e ~/.vim/conf.d/plugins/dein.toml ]; then
   rm ~/.vim/conf.d/plugins/dein.toml
 fi
 ln -F -s ${NPWD}/vim/conf.d/plugins/dein.toml ~/.vim/conf.d/plugins/dein.toml
 
+# dein_lazy.toml
 if [ -e ~/.vim/conf.d/plugins/dein_lazy.toml ]; then
   rm ~/.vim/conf.d/plugins/dein_lazy.toml
 fi
@@ -79,11 +85,13 @@ ln -F -s ${NPWD}/vim/conf.d/plugins/dein_lazy.toml ~/.vim/conf.d/plugins/dein_la
 
 mkdir -p ~/.vim/conf.d/languages
 
+# ccpp.vim
 if [ -e ~/.vim/conf.d/languages/ccpp.vim ]; then
   rm ~/.vim/conf.d/languages/ccpp.vim
 fi
 ln -F -s ${NPWD}/vim/conf.d/languages/ccpp.vim ~/.vim/conf.d/languages/ccpp.vim
 
+# markdown.css
 if [ -e ~/.vim/conf.d/languages/markdown.css ]; then
   rm ~/.vim/conf.d/languages/markdown.css
 fi
