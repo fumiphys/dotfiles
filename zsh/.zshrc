@@ -44,4 +44,5 @@ alias ll='ls -l'
 # https://github.com/fumiphys/programming_contest
 alias utem='~/github/programming_contest/utils/use_template.sh'
 alias tcas='~/github/programming_contest/utils/test_case.sh'
+alias ftes='~/github/programming_contest/utils/atcoder/fetch_testcase.sh'
 alias vi='vim'
