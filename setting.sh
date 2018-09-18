@@ -106,9 +106,17 @@ pip3 install --upgrade flake8
 # for deoplete-jedi
 pip3 install --upgrade jedi
 
+# markdown
+# this will be fixed if previm module has some changes
+cd ~/.vim/bundle/repos/github.com/kannokanno/previm
+git checkout .
+patch -u preview/_/index.html < "${NPWD}/vim/conf.d/languages/mathjax_html.patch"
+patch -u preview/_/js/previm.js < "${NPWD}/vim/conf.d/languages/mathjax_js.patch"
+cd ${NPWD}
+
+
 # zsh
 if [ -e ~/.zshrc ]; then
   rm ~/.zshrc
 fi
 ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
-source ~/.zshrc

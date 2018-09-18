@@ -1,0 +1,13 @@
+--- previm.js	2018-09-18 21:23:09.000000000 +0900
++++ previm.js.a	2018-09-18 21:23:00.000000000 +0900
+@@ -94,6 +94,10 @@
+       Array.prototype.forEach.call(_doc.querySelectorAll('pre code'), hljs.highlightBlock);
+       autoScroll('body', beforePageYOffset);
+       style_header();
++
++      // for MathJax
++      MathJax.Hub.Config({ tex2jax: { inlineMath: [['$','$'], ["\\(","\\)"]] } });
++      MathJax.Hub.Typeset(document.getElementById("preview"));
+     }
+   }
+ 
