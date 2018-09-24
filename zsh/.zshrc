@@ -46,3 +46,7 @@ alias utem='~/github/programming_contest/utils/use_template.sh'
 alias tcas='~/github/programming_contest/utils/test_case.sh'
 alias ftes='~/github/programming_contest/utils/atcoder/fetch_testcase.sh'
 alias vi='vim'
+
+# pyenv
+export PATH=$HOME/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
