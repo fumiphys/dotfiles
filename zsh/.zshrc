@@ -50,3 +50,10 @@ alias vi='vim'
 # pyenv
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"
+
+# editor
+export LESSEDIT='/usr/local/bin/vim %f'
+
+# encoding
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
