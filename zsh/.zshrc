@@ -60,3 +60,5 @@ export LC_ALL=en_US.UTF-8
 
 # openssl
 export PATH=/usr/local/Cellar/openssl/1.0.2p/bin/:$PATH
+export OPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2p
+export OPENSSL_LIBRARIES=/usr/local/Cellar/openssl/1.0.2p/lib
