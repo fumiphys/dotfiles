@@ -57,3 +57,6 @@ export LESSEDIT='/usr/local/bin/vim %f'
 # encoding
 export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
+
+# openssl
+export PATH=/usr/local/Cellar/openssl/1.0.2p/bin/:$PATH
