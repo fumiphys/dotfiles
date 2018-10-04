@@ -18,14 +18,14 @@ zplug 'zsh-users/zsh-syntax-highlighting', nice:9
 # enhanced cd
 zplug 'b4b4r07/enhancd', use:init.sh
 
-if ! zplug check --verbose; then
+if ! zplug check > /dev/null 2>&1; then
   printf "Install? [y/N]: "
   if read -q; then
     echo; zplug install
   fi
 fi
 
-zplug load --verbose
+zplug load > /dev/null 2>&1
 
 # alias
 if [ "$(uname)" = 'Darwin' ]; then
