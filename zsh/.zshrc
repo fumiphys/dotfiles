@@ -42,9 +42,13 @@ alias ll='ls -l'
 
 # alias for programming contest
 # https://github.com/fumiphys/programming_contest
-alias utem='~/github/programming_contest/utils/use_template.sh'
-alias tcas='~/github/programming_contest/utils/test_case.sh'
-alias ftes='~/github/programming_contest/utils/atcoder/fetch_testcase.sh'
+if [ "$(uname)" = 'Darwin' ]; then
+  alias utem='~/github/programming_contest/utils/use_template.sh'
+  alias tcas='~/github/programming_contest/utils/test_case.sh'
+  alias ftes='~/github/programming_contest/utils/atcoder/fetch_testcase.sh'
+fi
+
+# vim
 alias vi='vim'
 
 # pyenv
@@ -59,7 +63,9 @@ export LC_CTYPE=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 
 # openssl
-export PATH=/usr/local/Cellar/openssl/1.0.2p/bin/:$PATH
-export OPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2p
-export OPENSSL_LIBRARIES=/usr/local/Cellar/openssl/1.0.2p/lib
-export CPATH=$CPATH:/usr/local/Cellar/openssl/1.0.2p/include
+if [ "$(uname)" = 'Darwin' ]; then
+  export PATH=/usr/local/Cellar/openssl/1.0.2p/bin/:$PATH
+  export OPENSSL_ROOT_DIR=/usr/local/Cellar/openssl/1.0.2p
+  export OPENSSL_LIBRARIES=/usr/local/Cellar/openssl/1.0.2p/lib
+  export CPATH=$CPATH:/usr/local/Cellar/openssl/1.0.2p/include
+fi
