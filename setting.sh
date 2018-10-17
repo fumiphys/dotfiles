@@ -91,6 +91,12 @@ if [ -e ~/.vim/conf.d/languages/ccpp.vim ]; then
 fi
 ln -F -s ${NPWD}/vim/conf.d/languages/ccpp.vim ~/.vim/conf.d/languages/ccpp.vim
 
+# tex.vim
+if [ -e ~/.vim/conf.d/languages/tex.vim ]; then
+  rm ~/.vim/conf.d/languages/tex.vim
+fi
+ln -F -s ${NPWD}/vim/conf.d/languages/tex.vim ~/.vim/conf.d/languages/tex.vim
+
 # markdown.css
 if [ -e ~/.vim/conf.d/languages/markdown.css ]; then
   rm ~/.vim/conf.d/languages/markdown.css
