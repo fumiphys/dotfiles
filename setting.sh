@@ -126,3 +126,19 @@ if [ -e ~/.zshrc ]; then
   rm ~/.zshrc
 fi
 ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
+
+# tex
+if [ -e ~/.latexmkrc ]; then
+  rm ~/.latexmkrc
+fi
+if [ OS="Mac" ]; then
+  set +e
+  brew install evince
+  set -e
+  # latexmkrc
+  ln -F -s ${NPWD}/latex/.latexmkrc.mac ~/.latexmkrc
+elif [ OS="Linux" ]; then
+  # latexmkrc
+  sudo apt install mupdf
+  ln -F -s ${NPWD}/latex/.latexmkrc.linux ~/.latexmkrc
+fi
