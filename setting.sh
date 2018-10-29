@@ -142,3 +142,9 @@ elif [ ${OS} = "Linux" ]; then
   sudo apt install mupdf
   ln -F -s ${NPWD}/latex/.latexmkrc.linux ~/.latexmkrc
 fi
+
+# github
+if [ -e ~/.gitignore_global ]; then
+  rm ~/.gitignore_global
+fi
+ln -F -s ${NPWD}/github/.gitignore_global ~/.gitignore_global
