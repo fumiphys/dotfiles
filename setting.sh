@@ -148,3 +148,6 @@ if [ -e ~/.gitignore_global ]; then
   rm ~/.gitignore_global
 fi
 ln -F -s ${NPWD}/github/.gitignore_global ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
+
+echo "done!"
