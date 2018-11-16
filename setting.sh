@@ -20,6 +20,8 @@ else
 	exit 1
 fi
 
+printf "\e[32mConfiguration for ${OS} Start!\e[m\n"
+
 # vim configuraion
 NPWD="$(cd $(dirname $0); pwd)"
 
@@ -35,7 +37,23 @@ if [ -e ~/.vimrc ]; then
   esac
 fi
 
+printf "\e[32mInstalling python3 and depending packages ...\e[m\n"
+if [ ${OS} = "Mac" ]; then
+  set +e
+  brew install python3
+  set -e
+elif [ ${OS} = "Linux" ]; then
+  sudo apt install python3-pip python3-dev
+fi
 
+# setting for python3
+pip3 install --upgrade neovim
+# for ale
+pip3 install --upgrade flake8
+# for deoplete-jedi
+pip3 install --upgrade jedi
+
+printf "\e[32mConfiguration for vim ...\e[m\n"
 # link configuration files
 if [ -e ~/.vimrc ]; then
   rm ~/.vimrc
@@ -105,13 +123,6 @@ ln -F -s ${NPWD}/vim/conf.d/languages/markdown.css ~/.vim/conf.d/languages/markd
 
 mkdir -p ~/.vim/bundle
 
-# setting for python3
-pip3 install --upgrade neovim
-# for ale
-pip3 install --upgrade flake8
-# for deoplete-jedi
-pip3 install --upgrade jedi
-
 # markdown
 # this will be fixed if previm module has some changes
 cd ~/.vim/bundle/repos/github.com/kannokanno/previm
@@ -121,12 +132,14 @@ patch -u preview/_/js/previm.js < "${NPWD}/vim/conf.d/languages/mathjax_js.patch
 cd ${NPWD}
 
 
+printf "\e[32mConfiguration for zsh ...\e[m\n"
 # zsh
 if [ -e ~/.zshrc ]; then
   rm ~/.zshrc
 fi
 ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
 
+printf "\e[32mConfiguration for tex ...\e[m\n"
 # tex
 if [ -e ~/.latexmkrc ]; then
   rm ~/.latexmkrc
@@ -143,6 +156,7 @@ elif [ ${OS} = "Linux" ]; then
   ln -F -s ${NPWD}/latex/.latexmkrc.linux ~/.latexmkrc
 fi
 
+printf "\e[32mConfiguration for github ...\e[m\n"
 # github
 if [ -e ~/.gitignore_global ]; then
   rm ~/.gitignore_global
@@ -150,4 +164,4 @@ fi
 ln -F -s ${NPWD}/github/.gitignore_global ~/.gitignore_global
 git config --global core.excludesfile ~/.gitignore_global
 
-echo "done!"
+printf "\e[32mDone!\e[m\n"
