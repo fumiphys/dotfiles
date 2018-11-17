@@ -20,6 +20,17 @@ else
 	exit 1
 fi
 
+for opt in "$@"; do
+  case "${opt}" in
+    '--with-zsh' )
+      WZSH=true; break
+      ;;
+    '--with-zplug' )
+      WZPLUG=true; break
+      ;;
+  esac
+done
+
 printf "\e[32mConfiguration for ${OS} Start!\e[m\n"
 
 # vim configuraion
@@ -132,12 +143,19 @@ patch -u preview/_/js/previm.js < "${NPWD}/vim/conf.d/languages/mathjax_js.patch
 cd ${NPWD}
 
 
-printf "\e[32mConfiguration for zsh ...\e[m\n"
-# zsh
-if [ -e ~/.zshrc ]; then
-  rm ~/.zshrc
+if [ ${WZSH} ]; then
+  printf "\e[32mConfiguration for zsh ...\e[m\n"
+  # zsh
+  if [ -e ~/.zshrc ]; then
+    rm ~/.zshrc
+  fi
+  ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
+  if [ ${WZPLUG} ]; then
+    curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+  fi
+else
+  printf "\e[32mSkip configuration for zsh ...\e[m\n"
 fi
-ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
 
 printf "\e[32mConfiguration for tex ...\e[m\n"
 # tex
