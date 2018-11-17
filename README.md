@@ -21,8 +21,11 @@ Execute setting.sh
 chmod +x setting.sh
 ./setting.sh [--with-zsh] [--with-zplug]
 ```
-  - --with-zsh: use zshrc
-  - --with-zplug: install zplug
+  |option|about|
+  |:---:|:---:|
+  |--with-zsh|use zshrc|
+  |--with-zplug|install zplug|
+  
 and then, rewrite vim/conf.d/plugins/dein_lazy.toml
 ```
 let g:deoplete#sources#jedi#python_path = `which python3`
