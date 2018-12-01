@@ -7,7 +7,8 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'mollifier/cd-gitroot'
 
 # colorscheme
-zplug 'yous/lime'
+# zplug 'yous/lime'
+zplug "sorin-ionescu/prezto"
 
 # advenced completion
 zplug 'zsh-users/zsh-completions'
@@ -73,3 +74,6 @@ if [ "$(uname)" = 'Darwin' ]; then
   export OPENSSL_LIBRARIES=/usr/local/Cellar/openssl/1.0.2p/lib
   export CPATH=$CPATH:/usr/local/Cellar/openssl/1.0.2p/include
 fi
+
+# zprezto
+source ~/.zprezto/prezto/init.zsh

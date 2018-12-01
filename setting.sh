@@ -153,6 +153,28 @@ if [ ${WZSH} ]; then
   if [ ${WZPLUG} ]; then
     curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
   fi
+  mkdir -p ~/.zprezto
+  ln -sf ~/.zplug/repos/sorin-ionescu/prezto ~/.zprezto
+  if [ -e ~/.zlogin ]; then
+    rm ~/.zlogin
+  fi
+  ln -s ~/.zprezto/prezto/runcoms/zlogin ~/.zlogin
+  if [ -e ~/.zlogout ]; then
+    rm ~/.zlogout
+  fi
+  ln -s ~/.zprezto/prezto/runcoms/zlogout ~/.zlogout
+  if [ -e ~/.zpreztorc ]; then
+    rm ~/.zpreztorc
+  fi
+  ln -s ~/.zprezto/prezto/runcoms/zpreztorc ~/.zpreztorc
+  if [ -e ~/.zprofile ]; then
+    rm ~/.zprofile
+  fi
+  ln -s ~/.zprezto/prezto/runcoms/zprofile ~/.zprofile
+  if [ -e ~/.zshenv ]; then
+    rm ~/.zshenv
+  fi
+  ln -s ~/.zprezto/prezto/runcoms/zshenv ~/.zshenv
 else
   printf "\e[32mSkip configuration for zsh ...\e[m\n"
 fi
