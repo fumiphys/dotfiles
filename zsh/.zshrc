@@ -13,7 +13,7 @@ zplug 'yous/lime'
 zplug 'zsh-users/zsh-completions'
 
 # syntax highlight
-zplug 'zsh-users/zsh-syntax-highlighting', nice:9
+zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 
 # enhanced cd
 zplug 'b4b4r07/enhancd', use:init.sh
