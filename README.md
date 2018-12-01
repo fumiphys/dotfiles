@@ -7,6 +7,10 @@ This repository is now being reconstructed. To use old version, use branch 'clea
  - Mac os X
  - Ubuntu
 
+# Screen Shots
+![zsh](assets/zsh_screen.png)
+![vim](assets/vim_screen.png)
+
 ## use (installation)
 ### requirements
   - homebrew (Mac os X)
