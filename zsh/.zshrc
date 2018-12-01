@@ -52,6 +52,9 @@ fi
 # vim
 alias vi='vim'
 
+# kubernetes
+alias k='kubectl'
+
 # pyenv
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"
