@@ -38,6 +38,12 @@ fi
 # keybind
 bindkey -v
 
+
+# vim
+if [ "$(uname)" = 'Darwin' ]; then
+  alias vim='/usr/local/bin/vim'
+fi
+
 alias la='ls -a'
 alias ll='ls -l'
 
@@ -52,7 +58,6 @@ fi
 
 # vim
 # alias vi='vim'
-alias vim='/usr/local/Cel'
 
 # kubernetes
 alias k='kubectl'
