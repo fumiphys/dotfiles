@@ -51,10 +51,12 @@ if [ "$(uname)" = 'Darwin' ]; then
 fi
 
 # vim
-alias vi='vim'
+# alias vi='vim'
+alias vim='/usr/local/Cel'
 
 # kubernetes
 alias k='kubectl'
+source <(kubectl completion zsh)
 
 # pyenv
 export PATH=$HOME/.pyenv/bin:$PATH
