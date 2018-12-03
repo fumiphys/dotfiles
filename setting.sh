@@ -145,6 +145,11 @@ cd ${NPWD}
 
 if [ ${WZSH} ]; then
   printf "\e[32mConfiguration for zsh ...\e[m\n"
+  set +e
+  if [ ${OS} = "Mac" ]; then
+    brew install peco
+  fi
+  set -e
   # zsh
   if [ -e ~/.zshrc ]; then
     rm ~/.zshrc
