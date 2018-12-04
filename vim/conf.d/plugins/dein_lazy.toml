@@ -46,7 +46,7 @@ repo = 'ujihisa/neco-look'
 repo = 'zchee/deoplete-jedi'
 on_ft = ['python']
 hook_add = '''
-let g:deoplete#sources#jedi#python_path = "/Users/fkiyozawa/.pyenv/shims/python3.6"
+let g:deoplete#sources#jedi#python_path = $VIM_PYTHON_PATH
 '''
 
 # markdown

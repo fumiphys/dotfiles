@@ -40,6 +40,7 @@ bindkey -v
 
 
 # vim
+export VIM_PYTHON3_PATH="$(which python3)"
 if [ "$(uname)" = 'Darwin' ]; then
   alias vim='/usr/local/bin/vim'
 fi
