@@ -23,10 +23,12 @@ fi
 for opt in "$@"; do
   case "${opt}" in
     '--with-zsh' )
-      WZSH=true; break
+      echo "configuration for zsh: True"
+      WZSH=true;
       ;;
     '--with-zplug' )
-      WZPLUG=true; break
+      echo "configuration for zplug: True"
+      WZPLUG=true;
       ;;
   esac
 done
