@@ -9,6 +9,8 @@
 # if you use linux, apt will be used.
 # if you use windows, I will think it later.
 
+OS=""
+
 WZSH=true
 WZPLUG=true
 
@@ -67,6 +69,23 @@ ask_resetting() {
   fi
 }
 
+install_python() {
+  if [ ${OS} = "Mac" ]; then
+    set +e
+    brew install python3
+    set -e
+  elif [ ${OS} = "Linux" ]; then
+    sudo apt install python3-pip python3-dev
+  fi
+
+  # setting for python3
+  pip3 install --upgrade neovim
+  # for ale
+  pip3 install --upgrade flake8
+  # for deoplete-jedi
+  pip3 install --upgrade jedi
+}
+
 # check os is valid
 check_os
 echo "OS: $OS"
@@ -79,23 +98,11 @@ printf "\e[32mConfiguration for ${OS} Start!\e[m\n"
 # ask whether to reinstall setting if setting already exists
 ask_resetting
 
-exit 1
-
+# install python and depending packages
 printf "\e[32mInstalling python3 and depending packages ...\e[m\n"
-if [ ${OS} = "Mac" ]; then
-  set +e
-  brew install python3
-  set -e
-elif [ ${OS} = "Linux" ]; then
-  sudo apt install python3-pip python3-dev
-fi
+install_python
 
-# setting for python3
-pip3 install --upgrade neovim
-# for ale
-pip3 install --upgrade flake8
-# for deoplete-jedi
-pip3 install --upgrade jedi
+exit 1
 
 printf "\e[32mConfiguration for vim ...\e[m\n"
 # link configuration files
