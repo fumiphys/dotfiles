@@ -22,22 +22,40 @@ check_os() {
   fi
 }
 
+WZSH=true
+WZPLUG=true
+
+check_opt() {
+  for opt in "$@"; do
+    case "${opt}" in
+      '--no-zsh' )
+        WZSH=false;
+        ;;
+      '--no-zplug' )
+        WZPLUG=false;
+        ;;
+    esac
+  done
+
+  if [ ${WZSH} = "true" ]; then
+    echo "Configuration for zsh: True"
+  else
+    echo "Configuration for zsh: False"
+  fi
+  if [ ${WZPLUG} = "true" ]; then
+    echo "Configuration for zplug: True"
+  else
+    echo "Configuration for zplug: False"
+  fi
+}
+
 # check os is valid
 check_os
 echo "OS: $OS"
 
-for opt in "$@"; do
-  case "${opt}" in
-    '--with-zsh' )
-      echo "configuration for zsh: True"
-      WZSH=true;
-      ;;
-    '--with-zplug' )
-      echo "configuration for zplug: True"
-      WZPLUG=true;
-      ;;
-  esac
-done
+# check option
+check_opt $@
+
 
 printf "\e[32mConfiguration for ${OS} Start!\e[m\n"
 
