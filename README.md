@@ -16,19 +16,19 @@ This repository is now being reconstructed. To use old version, use branch 'clea
   - homebrew (Mac os X)
   - apt (Ubuntu)
 
-To use zplug, you should install zplug. (see --with-zplug option)
+To use zplug, you should install zplug. (see --no-zplug option)
 ```
 curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
 ```
 Execute setting.sh
 ```
 chmod +x setting.sh
-./setting.sh [--with-zsh] [--with-zplug]
+./setting.sh [--no-zsh] [--no-zplug]
 ```
   |option|about|
   |:---:|:---:|
-  |--with-zsh|use zshrc|
-  |--with-zplug|install zplug|
+  |--no-zsh|do not use zshrc|
+  |--no-zplug|do not install zplug|
   
 and then, rewrite vim/conf.d/plugins/dein_lazy.toml
 ```
