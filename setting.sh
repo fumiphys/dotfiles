@@ -2,12 +2,19 @@
 # written by fumiphys
 # To use this script, execute
 # $ chmod +x setting.sh
-# $ ./setting.sh [--with-zsh, --with-zplug]
+# $ ./setting.sh [--no-zsh, --no-zplug]
 
 # os information
 # if you use mac, brew will be used.
 # if you use linux, apt will be used.
 # if you use windows, I will think it later.
+
+WZSH=true
+WZPLUG=true
+
+# script dir
+NPWD="$(cd $(dirname $0); pwd)"
+
 check_os() {
   if [ "$(uname)" = 'Darwin' ]; then
     OS="Mac"
@@ -21,9 +28,6 @@ check_os() {
     exit 1
   fi
 }
-
-WZSH=true
-WZPLUG=true
 
 check_opt() {
   for opt in "$@"; do
@@ -49,6 +53,20 @@ check_opt() {
   fi
 }
 
+ask_resetting() {
+  # check original .vimrc
+  if [ -e ~/.vimrc ]; then
+    echo -n "configuration files ~/.vimrc already exists. overwrite? [y/n] "
+    read VIMRC_YN
+
+    case $VIMRC_YN in
+      "" | "Y" | "y" | "yes" | "Yes" | "YES" ) echo "configuration files will be overwritten";;
+      * ) echo "stop configuration!"
+          exit 1;;
+    esac
+  fi
+}
+
 # check os is valid
 check_os
 echo "OS: $OS"
@@ -56,23 +74,12 @@ echo "OS: $OS"
 # check option
 check_opt $@
 
-
 printf "\e[32mConfiguration for ${OS} Start!\e[m\n"
 
-# vim configuraion
-NPWD="$(cd $(dirname $0); pwd)"
+# ask whether to reinstall setting if setting already exists
+ask_resetting
 
-# check original .vimrc
-if [ -e ~/.vimrc ]; then
-	echo -n "configuration files ~/.vimrc already exists. overwrite? [y/n] "
-  read VIMRC_YN
-
-  case $VIMRC_YN in
-    "" | "Y" | "y" | "yes" | "Yes" | "YES" ) echo "configuration files will be overwritten";;
-    * ) echo "stop configuration!"
-        exit 1;;
-  esac
-fi
+exit 1
 
 printf "\e[32mInstalling python3 and depending packages ...\e[m\n"
 if [ ${OS} = "Mac" ]; then
