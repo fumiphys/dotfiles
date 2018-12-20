@@ -55,6 +55,7 @@ if [ "$(uname)" = 'Darwin' ]; then
   alias tcas='~/github/programming_contest/utils/test_case.sh'
   alias ftes='~/github/programming_contest/utils/atcoder/fetch_testcase.sh'
   alias ates='~/github/programming_contest/utils/add_testcase.sh'
+  alias gtes='~/github/programming_contest/utils/gen_test/generate_testcase.sh'
 fi
 
 # vim
