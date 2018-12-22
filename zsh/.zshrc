@@ -51,11 +51,7 @@ alias ll='ls -l'
 # alias for programming contest
 # https://github.com/fumiphys/programming_contest
 if [ "$(uname)" = 'Darwin' ]; then
-  alias utem='~/github/programming_contest/utils/use_template.sh'
-  alias tcas='~/github/programming_contest/utils/test_case.sh'
-  alias ftes='~/github/programming_contest/utils/atcoder/fetch_testcase.sh'
-  alias ates='~/github/programming_contest/utils/add_test/add_testcase.sh'
-  alias gtes='~/github/programming_contest/utils/gen_test/generate_testcase.sh'
+  source ~/github/programming_contest/utils/pc_scripts.sh
 fi
 
 # vim
