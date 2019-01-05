@@ -84,6 +84,8 @@ install_python() {
   pip3 install --upgrade flake8
   # for deoplete-jedi
   pip3 install --upgrade jedi
+  # for lsp
+  pip3 install python-language-server
 }
 
 link_vim_settings() {
