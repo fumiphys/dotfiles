@@ -86,6 +86,7 @@ install_python() {
   pip3 install --upgrade jedi
   # for lsp
   pip3 install python-language-server
+  pip install 'python-language-server[pycodestyle]'
 }
 
 link_vim_settings() {
