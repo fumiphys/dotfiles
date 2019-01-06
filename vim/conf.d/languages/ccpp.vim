@@ -19,3 +19,9 @@ function! s:expand_namespace()
     return ';'
   endif
 endfunction
+
+function! Gen_comjson()
+  let temp = expand('%:p')
+  let dir = expand('%:h')
+  echo system('echo ''[{"directory": "' . dir . '","command": "/usr/bin/c++  ' . temp . ' -std=c++11","file": "' . temp . '"}]'' > compile_commands.json')
+endfunction
