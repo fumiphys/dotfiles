@@ -61,6 +61,9 @@ fi
 alias k='kubectl'
 source <(kubectl completion zsh)
 
+# cquery
+export PATH=$HOME/github/cquery/build/release/bin:$PATH
+
 # pyenv
 export PATH=$HOME/.pyenv/bin:$PATH
 eval "$(pyenv init -)"

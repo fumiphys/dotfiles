@@ -15,6 +15,18 @@ repo = 'cohama/lexima.vim'
 repo = 'prabirshrestha/async.vim'
 
 [[plugins]]
+repo = 'pdavydov108/vim-lsp-cquery'
+
+[[plugins]]
+repo = 'Shougo/neoinclude.vim'
+hook_add = '''
+let g:neoinclude#paths = {'cpp': '/usr/local/include/c++/8.2.0'}
+'''
+
+[[plugins]]
+repo = 'kyouryuukunn/asyncomplete-neoinclude.vim'
+
+[[plugins]]
 repo = 'prabirshrestha/vim-lsp'
 hook_add = '''
 if executable('pyls')
@@ -25,6 +37,23 @@ if executable('pyls')
         \ 'workspace_config': {'pyls': {'plugins': {'pydocstyle': {'enabled': v:true}}}}
         \ })
 endif
+
+if executable('cquery')
+   au User lsp_setup call lsp#register_server({
+      \ 'name': 'cquery',
+      \ 'cmd': {server_info->['cquery']},
+      \ 'root_uri': {server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'compile_commands.json'))},
+      \ 'initialization_options': { 'cacheDirectory': '/tmp/cquery/cache' },
+      \ 'whitelist': ['c', 'cpp', 'objc', 'objcpp', 'cc'],
+      \ })
+endif
+
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#neoinclude#get_source_options({
+    \ 'name': 'neoinclude',
+    \ 'whitelist': ['cpp'],
+    \ 'refresh_pattern': '\(<\|"\|/\)$',
+    \ 'completor': function('asyncomplete#sources#neoinclude#completor'),
+    \ }))
 
 let g:lsp_signs_enabled = 1
 let g:lsp_diagnostics_echo_cursor = 1
