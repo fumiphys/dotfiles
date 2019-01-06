@@ -2,6 +2,7 @@
 augroup cpp-path
   autocmd!
   autocmd Filetype cpp setlocal path=.,/usr/include/c++/4.2.1,/usr/include
+  autocmd Filetype cpp call Gen_comjson()
 augroup END
 
 augroup cpp-namespace
@@ -18,4 +19,10 @@ function! s:expand_namespace()
   else
     return ';'
   endif
+endfunction
+
+function! Gen_comjson()
+  let temp = expand('%:p')
+  let dir = expand('%:h')
+  echo system('echo ''[{"directory": "' . dir . '","command": "/usr/bin/c++  ' . temp . ' -std=c++11","file": "' . temp . '"}]'' > compile_commands.json')
 endfunction
