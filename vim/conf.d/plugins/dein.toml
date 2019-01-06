@@ -25,6 +25,76 @@ let g:neoinclude#paths = {'cpp': '/usr/local/include/c++/8.2.0'}
 
 [[plugins]]
 repo = 'kyouryuukunn/asyncomplete-neoinclude.vim'
+hook_add = '''
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#neoinclude#get_source_options({
+    \ 'name': 'neoinclude',
+    \ 'whitelist': ['cpp'],
+    \ 'refresh_pattern': '\(<\|"\|/\)$',
+    \ 'completor': function('asyncomplete#sources#neoinclude#completor'),
+    \ }))
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-buffer.vim'
+hook_add = '''
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#buffer#get_source_options({
+    \ 'name': 'buffer',
+    \ 'priority': 5,
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#buffer#completor'),
+    \ }))
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-file.vim'
+hook_add = '''
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#file#get_source_options({
+    \ 'name': 'file',
+    \ 'priority': 3,
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#file#completor'),
+    \ }))
+'''
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-necosyntax.vim'
+depends = ['neco-syntax']
+hook_add = '''
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necosyntax#get_source_options({
+    \ 'name': 'necosyntax',
+    \ 'priority': 7,
+    \ 'whitelist': ['*'],
+    \ 'completor': function('asyncomplete#sources#necosyntax#completor'),
+    \ }))
+'''
+
+[[plugins]]
+repo = 'Shougo/neco-syntax'
+
+[[plugins]]
+repo = 'prabirshrestha/asyncomplete-necovim.vim'
+depends = ['neco-vim']
+hook_add = '''
+au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#necovim#get_source_options({
+    \ 'name': 'necovim',
+    \ 'whitelist': ['vim'],
+    \ 'priority': 10,
+    \ 'completor': function('asyncomplete#sources#necovim#completor'),
+    \ }))
+'''
+
+[[plugins]]
+repo = 'Shougo/neco-vim'
+
+[[plugins]]
+repo = 'yami-beta/asyncomplete-omni.vim'
+hook_add = '''
+au User call asyncomplete#register_source(asyncomplete#sources#omni#get_source_options({
+  \ 'name': 'omni',
+  \ 'whitelist': ['*'],
+  \ 'completor': function('asyncomplete#sources#omni#completor')
+  \  }))
+'''
 
 [[plugins]]
 repo = 'prabirshrestha/vim-lsp'
@@ -48,17 +118,7 @@ if executable('cquery')
       \ })
 endif
 
-au User asyncomplete_setup call asyncomplete#register_source(asyncomplete#sources#neoinclude#get_source_options({
-    \ 'name': 'neoinclude',
-    \ 'whitelist': ['cpp'],
-    \ 'refresh_pattern': '\(<\|"\|/\)$',
-    \ 'completor': function('asyncomplete#sources#neoinclude#completor'),
-    \ }))
-
-let g:lsp_signs_enabled = 1
-let g:lsp_diagnostics_echo_cursor = 1
-let g:lsp_signs_error = {'text': '✗'}
-let g:lsp_signs_warning = {'text': '‼'}
+let g:lsp_signs_enabled = 0
 '''
 
 [[plugins]]
