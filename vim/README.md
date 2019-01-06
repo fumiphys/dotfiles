@@ -5,18 +5,29 @@
 ## colorscheme
  - [onedark](https://github.com/joshdick/onedark.vim)
 ## completion
- - [deoplete.nvim](https://github.com/Shougo/deoplete.nvim)
+ - [vim-lsp](https://github.com/prabirshrestha/vim-lsp)
+ - [async.vim](https://github.com/prabirshrestha/async.vim)
+ - [asyncomplete.vim](https://github.com/prabirshrestha/asyncomplete.vim)
+ - [asyncomplete-lsp.vim](https://github.com/prabirshrestha/asyncomplete-lsp.vim)
  - [neco-syntax](https://github.com/Shougo/neco-syntax)
- - [neco-look](https://github.com/ujihisa/neco-look)
+ - [asyncomplete-buffer.vim](https://github.com/prabirshrestha/asyncomplete-buffer.vim)
+ - [asyncomplete-file.vim](https://github.com/prabirshrestha/asyncomplete-file.vim)
+ - [asyncomplete-necosyntax.vim](https://github.com/prabirshrestha/asyncomplete-necosyntax.vim)
+ - [asyncomplete-omni.vim](https://github.com/prabirshrestha/asyncomplete-omni.vim)
+ - [neosnippet.vim](https://github.com/Shougo/neosnippet.vim)
+ - [neosnippet-snippets](https://github.com/Shougo/neosnippet-snippets)
+ - [asyncomplete-neosnippet.vim](https://github.com/prabirshrestha/asyncomplete-neosnippet.vim)
 ## languages
 ### Vim script
  - [neco-vim](https://github.com/Shougo/neco-vim)
+ - [asyncomplete-necovim.vim](https://github.com/prabirshrestha/asyncomplete-necovim.vim)
 ### C/C++
- - [vim-cpp](https://github.com/vim-jp/vim-cpp)
- - [deoplete-clang](https://github.com/zchee/deoplete-clang)
  - [vim-clang-format](https://github.com/rhysd/vim-clang-format)
+ - [vim-lsp-cquery](https://github.com/pdavydov108/vim-lsp-cquery)
+ - [neoinclude.vim](https://github.com/Shougo/neoinclude.vim)
+ - [asyncomplete-neoinclude.vim](https://github.com/kyouryuukunn/asyncomplete-neoinclude.vim)
 ### Python
- - [deoplete-jedi](https://github.com/zchee/deoplete-jedi)
+ - python-language-server
 ### Markdown
  - [previm](https://github.com/previm/previm)
  - [open-browser](https://github.com/tyru/open-browser.vim)
