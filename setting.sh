@@ -89,6 +89,18 @@ install_python() {
   pip install 'python-language-server[pycodestyle]'
 }
 
+install_cquery() {
+  mkdir -p ~/github
+  cd ~/github
+  git clone --recursive https://github.com/cquery-project/cquery.git
+  cd cquery
+  mkdir build && cd build
+  cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
+  cmake --build .
+  cmake --build . --target install
+  cd ${NPWD}
+}
+
 link_vim_settings() {
   # link configuration files
   if [ -e ~/.vimrc ]; then
@@ -253,6 +265,9 @@ ask_resetting
 printf "\e[32mInstalling python3 and depending packages ...\e[m\n"
 install_python
 
+# install cquery
+printf "\e[32mConfiguration for cquery ...\e[m\n"
+install_cquery
 
 # link vim settings
 printf "\e[32mConfiguration for vim ...\e[m\n"
