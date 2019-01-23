@@ -92,9 +92,11 @@ install_python() {
 install_cquery() {
   mkdir -p ~/github
   cd ~/github
-  git clone --recursive https://github.com/cquery-project/cquery.git
+  if [ ! -e ~/github/cquery ]; then
+    git clone --recursive https://github.com/cquery-project/cquery.git
+  fi
   cd cquery
-  mkdir build && cd build
+  mkdir -p build && cd build
   cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
   cmake --build .
   cmake --build . --target install
@@ -170,6 +172,12 @@ link_vim_settings() {
   ln -F -s ${NPWD}/vim/conf.d/languages/markdown.css ~/.vim/conf.d/languages/markdown.css
 
   mkdir -p ~/.vim/bundle
+
+  # snippets
+  mkdir -p ~/.vim/bundle/neosnippet-snippets/snippets/
+  if [ -e ~/github/programming_contest ]; then
+    ln -F -s ~/github/programming_contest/vim/cpp.snip ~/.vim/bundle/neosnippet-snippets/snippets/cpp.snip
+  fi
 }
 
 patch_markdown() {
