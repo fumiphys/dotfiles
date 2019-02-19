@@ -86,7 +86,7 @@ install_python() {
   pip3 install --upgrade jedi
   # for lsp
   pip3 install python-language-server
-  pip install 'python-language-server[pycodestyle]'
+  pip3 install 'python-language-server[pycodestyle]'
 }
 
 install_cquery() {
