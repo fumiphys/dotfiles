@@ -79,6 +79,8 @@ install_python() {
   fi
 
   # setting for python3
+  pip3 install --upgrade pip
+  # for vim
   pip3 install --upgrade neovim
   # for ale
   pip3 install --upgrade flake8
@@ -203,7 +205,9 @@ link_zsh() {
     fi
     ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
     if [ ${WZPLUG} = "true" ]; then
-      curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+      if [ ! -e ~/.zplug ]; then
+        curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
+      fi
     fi
     mkdir -p ~/.zprezto
     ln -sf ~/.zplug/repos/sorin-ionescu/prezto ~/.zprezto
