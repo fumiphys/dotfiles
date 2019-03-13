@@ -191,7 +191,7 @@ link_vim_settings() {
     ln -F -s ~/github/programming_contest/vim/cpp.snip ~/.vim/bundle/neosnippet-snippets/snippets/cpp.snip
   fi
 
-  vim +"call dein#update()" + qall
+  vim +"call dein#update()!" +qall
 }
 
 patch_markdown() {
