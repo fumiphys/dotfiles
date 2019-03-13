@@ -69,6 +69,16 @@ ask_resetting() {
   fi
 }
 
+install_essential() {
+  if [ ${OS} = "Mac" ]; then
+    set +e
+    brew install cmake
+    set -e
+  elif [ ${OS} = "Linux" ]; then
+    sudo apt install build-essential
+  fi
+}
+
 install_python() {
   if [ ${OS} = "Mac" ]; then
     set +e
@@ -274,6 +284,10 @@ printf "\e[32mConfiguration for ${OS} Start!\e[m\n"
 
 # ask whether to reinstall setting if setting already exists
 ask_resetting
+
+# install essential libraryes
+printf "\e[32mInstalling essential libraries ...\e[m\n"
+install_essential
 
 # install python and depending packages
 printf "\e[32mInstalling python3 and depending packages ...\e[m\n"
