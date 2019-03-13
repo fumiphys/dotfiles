@@ -180,6 +180,8 @@ link_vim_settings() {
   if [ -e ~/github/programming_contest ]; then
     ln -F -s ~/github/programming_contest/vim/cpp.snip ~/.vim/bundle/neosnippet-snippets/snippets/cpp.snip
   fi
+
+  vim +"call dein#update()" + qall
 }
 
 patch_markdown() {
