@@ -75,7 +75,7 @@ install_essential() {
     brew install cmake
     set -e
   elif [ ${OS} = "Linux" ]; then
-    sudo apt install build-essential
+    sudo apt install -y build-essential
   fi
 }
 
@@ -85,7 +85,7 @@ install_python() {
     brew install python3
     set -e
   elif [ ${OS} = "Linux" ]; then
-    sudo apt install python3-pip python3-dev
+    sudo apt install -y python3-pip python3-dev
   fi
 
   # setting for python3
@@ -260,7 +260,7 @@ link_tex() {
     ln -F -s ${NPWD}/latex/.latexmkrc.mac ~/.latexmkrc
   elif [ ${OS} = "Linux" ]; then
     # latexmkrc
-    sudo apt install mupdf
+    sudo apt install -y mupdf
     ln -F -s ${NPWD}/latex/.latexmkrc.linux ~/.latexmkrc
   fi
 }
