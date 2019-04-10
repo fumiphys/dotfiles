@@ -7,8 +7,7 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'mollifier/cd-gitroot'
 
 # colorscheme
-# zplug 'yous/lime'
-zplug "sorin-ionescu/prezto"
+zplug 'yous/lime'
 
 # advenced completion
 zplug 'zsh-users/zsh-completions'
@@ -84,7 +83,7 @@ if [ "$(uname)" = 'Darwin' ]; then
 fi
 
 # zprezto
-source ~/.zprezto/prezto/init.zsh
+# source ~/.zprezto/prezto/init.zsh
 
 # peco
 function peco-history-selection() {
