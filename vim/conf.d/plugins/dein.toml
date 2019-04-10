@@ -4,7 +4,7 @@ repo = 'Shougo/dein.vim'
 
 # visualization
 [[plugins]]
-repo = 'joshdick/onedark.vim'
+repo = 'cocopon/iceberg.vim'
 
 # bracket completion
 [[plugins]]

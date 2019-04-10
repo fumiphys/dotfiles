@@ -1,4 +1,4 @@
 " configuration for gui
 " colorscheme
-colorscheme onedark
+colorscheme iceberg
 set background=dark
