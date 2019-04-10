@@ -47,6 +47,10 @@ fi
 alias la='ls -a'
 alias ll='ls -l'
 
+if [ "$(uname)" = 'Darwin' ]; then
+  alias pbc='pbcopy'
+fi
+
 # alias for programming contest
 # https://github.com/fumiphys/programming_contest
 if [ "$(uname)" = 'Darwin' ]; then
@@ -57,15 +61,21 @@ fi
 # alias vi='vim'
 
 # kubernetes
-alias k='kubectl'
-source <(kubectl completion zsh)
+which kubectl > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  alias k='kubectl'
+  source <(kubectl completion zsh)
+fi
 
 # cquery
 export PATH=$HOME/github/cquery/build/release/bin:$PATH
 
 # pyenv
-export PATH=$HOME/.pyenv/bin:$PATH
-eval "$(pyenv init -)"
+which pyenv > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  export PATH=$HOME/.pyenv/bin:$PATH
+  eval "$(pyenv init -)"
+fi
 
 # editor
 export LESSEDIT='/usr/local/bin/vim %f'
