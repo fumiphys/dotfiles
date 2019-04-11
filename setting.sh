@@ -109,7 +109,7 @@ install_cquery() {
   fi
   cd cquery
   mkdir -p build && cd build
-  cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES
+  cmake .. -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=release -DCMAKE_EXPORT_COMPILE_COMMANDS=YES -DCMAKE_OSX_SYSROOT=/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX10.14.sdk
   cmake --build .
   cmake --build . --target install
   cd ${NPWD}
@@ -265,6 +265,13 @@ link_tex() {
   fi
 }
 
+link_tmux() {
+  if [ -e ~/.tmux.conf ]; then
+    rm ~/.tmux.conf
+  fi
+  ln -F -s ${NPWD}/tmux/.tmux.conf ~/.tmux.conf
+  }
+
 config_github() {
   if [ -e ~/.gitignore_global ]; then
     rm ~/.gitignore_global
@@ -309,6 +316,9 @@ link_zsh
 # link tex
 link_tex
 printf "\e[32mConfiguration for tex ...\e[m\n"
+
+# link tmux
+link_tmux
 
 # config github
 printf "\e[32mConfiguration for github ...\e[m\n"
