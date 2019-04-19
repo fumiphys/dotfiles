@@ -314,10 +314,11 @@ printf "\e[32mConfiguration for zsh ...\e[m\n"
 link_zsh
 
 # link tex
-link_tex
 printf "\e[32mConfiguration for tex ...\e[m\n"
+link_tex
 
 # link tmux
+printf "\e[32mConfiguration for tmux ...\e[m\n"
 link_tmux
 
 # config github
