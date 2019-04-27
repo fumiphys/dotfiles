@@ -189,3 +189,11 @@ let g:lightline = {
   \ }
   \ }
 '''
+
+# indent
+[[plugins]]
+repo = 'Yggdroot/indentLine'
+hook_add = '''
+set list listchars=tab:\¦\ 
+let g:indentLine_fileTypeExclude = ['help']
+'''
