@@ -72,9 +72,12 @@ ask_resetting() {
 install_essential() {
   if [ ${OS} = "Mac" ]; then
     set +e
+    brew update
+    brew upgrade
     brew install cmake
     set -e
   elif [ ${OS} = "Linux" ]; then
+    sudo apt update
     sudo apt install -y build-essential
   fi
 }
