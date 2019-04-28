@@ -1,7 +1,7 @@
 " configuration for C/C++
 augroup cpp-path
   autocmd!
-  autocmd Filetype cpp setlocal path=.,/usr/include/c++/4.2.1,/usr/include
+  autocmd Filetype cpp setlocal path=.,/usr/local/include/c++/8.3.0
   autocmd Filetype cpp call Gen_comjson()
 augroup END
 
