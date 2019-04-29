@@ -176,7 +176,7 @@ repo = 'tpope/vim-rhubarb'
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 let g:lightline = {
-  \ 'colorscheme': 'solarized',
+  \ 'colorscheme': 'landscape',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
