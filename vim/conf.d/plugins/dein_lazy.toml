@@ -19,8 +19,6 @@ map ,x <Plug>(operator-clang-format)
 repo = 'vim-scripts/DoxygenToolkit.vim'
 on_ft = ['c', 'cpp', 'python']
 
-# python
-
 # markdown
 [[plugins]]
 repo = 'kannokanno/previm'

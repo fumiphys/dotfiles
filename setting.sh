@@ -100,8 +100,13 @@ install_python() {
   # for deoplete-jedi
   pip3 install --upgrade jedi
   # for lsp
-  pip3 install python-language-server
-  pip3 install 'python-language-server[pycodestyle]'
+  pip3 install --upgrade autopep8
+  pip3 install --upgrade pydocstyle
+  pip3 install --upgrade pylint
+  pip3 install --upgrade rope
+  pip3 install --upgrade yapf
+  pip3 install --upgrade python-language-server
+  pip3 install --upgrade 'python-language-server[pycodestyle]'
 }
 
 install_cquery() {
