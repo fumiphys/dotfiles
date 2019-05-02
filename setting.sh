@@ -107,6 +107,8 @@ install_python() {
   pip3 install --upgrade yapf
   pip3 install --upgrade python-language-server
   pip3 install --upgrade 'python-language-server[pycodestyle]'
+  # for denite
+  pip3 install --upgrade pynvim
 }
 
 install_cquery() {

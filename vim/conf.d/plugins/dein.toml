@@ -207,3 +207,19 @@ hook_add = '''
 set list listchars=tab:\¦\ 
 let g:indentLine_fileTypeExclude = ['help']
 '''
+
+# denite
+[[plugins]]
+repo = 'roxma/nvim-yarp'
+
+[[plugins]]
+repo = 'roxma/vim-hug-neovim-rpc'
+
+[[plugins]]
+repo = 'Shougo/neomru.vim'
+
+[[plugins]]
+repo = 'Shougo/neoyank.vim'
+
+[[plugins]]
+repo = 'Shougo/denite.nvim'
