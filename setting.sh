@@ -199,6 +199,7 @@ link_vim_settings() {
   mkdir -p ~/.vim/bundle/neosnippet-snippets/snippets/
   if [ -e ~/github/programming_contest ]; then
     ln -F -s ~/github/programming_contest/vim/cpp.snip ~/.vim/bundle/neosnippet-snippets/snippets/cpp.snip
+    ln -F -s ~/github/programming_contest/utils/vim/programming_contest.vim ~/.vim/conf.d/languages/programming_contest.vim
   fi
 
   vim +"call dein#update()!" +qall
