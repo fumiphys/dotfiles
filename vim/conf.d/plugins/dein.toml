@@ -189,7 +189,7 @@ repo = 'arcticicestudio/nord-vim'
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 let g:lightline = {
-  \ 'colorscheme': 'nord',
+  \ 'colorscheme': 'deus',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -203,6 +203,21 @@ let g:lightline = {
 "  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
 " \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
+let s:p = g:lightline#colorscheme#deus#palette
+let s:term_red = 204
+let s:term_green = 30
+let s:term_yellow = 180
+let s:term_blue = 39
+let s:term_purple = 196
+let s:term_white = 145
+let s:term_black = 235
+let s:term_grey = 236
+let s:p.normal.left = [ [ '#292c33', '#98c379', s:term_white, s:term_green, 'bold' ], [ '#98c379', '#292c33', s:term_white, s:term_black ] ]
+let s:p.normal.right = [ [ '#292c33', '#98c379', s:term_white, s:term_green ], [ '#abb2bf', '#3e4452', s:term_white, s:term_grey ], [ '#98c379', '#292c33', s:term_green, s:term_black ] ]
+let s:p.insert.left = [ [ '#292c33', '#61afef', s:term_black, s:term_blue, 'bold' ], [ '#61afef', '#292c33', s:term_blue, s:term_black ] ]
+let s:p.insert.right = [ [ '#292c33', '#61afef', s:term_black, s:term_blue ], [ '#ABB2BF', '#3E4452', s:term_white, s:term_grey ], [ '#61afef', '#292c33', s:term_blue, s:term_black ] ]
+let s:p.visual.left = [ [ '#292c33', '#c678dd', s:term_black, s:term_purple, 'bold' ], [ '#c678dd', '#292c33', s:term_purple, s:term_black ] ]
+let s:p.visual.right = [ [ '#292c33', '#c678dd', s:term_black, s:term_purple, 'bold' ], s:p.normal.right[1], [ '#c678dd', '#292c33', s:term_purple, s:term_black ] ]
 '''
 
 # indent
