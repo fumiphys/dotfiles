@@ -24,5 +24,5 @@ endfunction
 function! Gen_comjson()
   let temp = expand('%:p')
   let dir = expand('%:p:h')
-  echo system('echo ''[{"directory": "' . dir . '","command": "/usr/bin/c++ ' . temp . ' -std=c++11 ","file": "' . temp . '"}]'' > .cquery')
+  silent echo system('echo ''[{"directory": "' . dir . '","command": "/usr/bin/c++ ' . temp . ' -std=c++11 ","file": "' . temp . '"}]'' > .cquery')
 endfunction
