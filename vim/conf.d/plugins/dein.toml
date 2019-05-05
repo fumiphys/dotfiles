@@ -2,10 +2,6 @@
 [[plugins]]
 repo = 'Shougo/dein.vim'
 
-# visualization
-[[plugins]]
-repo = 'cocopon/iceberg.vim'
-
 # bracket completion
 [[plugins]]
 repo = 'cohama/lexima.vim'
@@ -181,12 +177,19 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'tpope/vim-rhubarb'
 
+# visualization
+# [[plugins]]
+# repo = 'cocopon/iceberg.vim'
+
+[[plugins]]
+repo = 'arcticicestudio/nord-vim'
+
 # statusline
 [[plugins]]
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 let g:lightline = {
-  \ 'colorscheme': 'landscape',
+  \ 'colorscheme': 'nord',
   \ 'active': {
   \   'left': [ [ 'mode', 'paste' ],
   \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
@@ -196,7 +199,9 @@ let g:lightline = {
   \ },
   \ 'component_function': {
   \   'gitbranch': 'fugitive#head'
-  \ }
+  \ },
+"  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+" \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
 '''
 
