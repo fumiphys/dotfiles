@@ -35,7 +35,7 @@ colors
 zstyle ':vcs_info:git:*' check-for-changes true
 zstyle ':vcs_info:git:*' unstagedstr '!'
 zstyle ':vcs_info:git:*' stagedstr '+'
-zstyle ':vcs_info:*' formats ' %c%u(%s:%b)'
+zstyle ':vcs_info:*' formats ' %c%u(%s:%b) '
 zstyle ':vcs_info:*' actionformats ' %c%u(%s:%b|%a)'
 precmd () {
   psvar=()
@@ -43,7 +43,7 @@ precmd () {
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
 PROMPT='%{[38;5;002m%}❯❯ %{[38;5;004m%}%~ %{[0m%}%{[38;5;002m%}❯%{[0m%}'
-PROMPT=$PROMPT'%{[38;5;090m%}%1(v|%1v|) %{[0m%}%{[38;5;002m%}❯ %{[0m%}'
+PROMPT=$PROMPT'%{[38;5;090m%}%1(v|%1v|)%{[0m%}%{[38;5;002m%}❯ %{[0m%}'
 RPROMPT='%{[38;5;002m%}❯ %? ❯ %* ❯%{[0m%}'
 
 # alias
