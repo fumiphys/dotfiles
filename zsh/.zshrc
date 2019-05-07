@@ -7,7 +7,7 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 zplug 'mollifier/cd-gitroot'
 
 # colorscheme
-zplug 'yous/lime'
+# zplug 'yous/lime'
 
 # advenced completion
 zplug 'zsh-users/zsh-completions'
@@ -27,6 +27,25 @@ fi
 
 zplug load > /dev/null 2>&1
 
+# prompt
+autoload -Uz colors
+autoload -Uz vcs_info
+setopt prompt_subst
+colors
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' unstagedstr '!'
+zstyle ':vcs_info:git:*' stagedstr '+'
+zstyle ':vcs_info:*' formats ' %c%u(%s:%b)'
+zstyle ':vcs_info:*' actionformats ' %c%u(%s:%b|%a)'
+precmd () {
+  psvar=()
+  LANG=en_US.UTF-8 vcs_info
+  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
+}
+PROMPT='%{[38;5;002m%}❯❯ %{[38;5;004m%}%~ %{[0m%}%{[38;5;002m%}❯%{[0m%}'
+PROMPT=$PROMPT'%{[38;5;090m%}%1(v|%1v|) %{[0m%}%{[38;5;002m%}❯ %{[0m%}'
+RPROMPT='%{[38;5;002m%}❯ %? ❯ %* ❯%{[0m%}'
+
 # alias
 if [ "$(uname)" = 'Darwin' ]; then
   alias ls='ls -G'
@@ -36,7 +55,6 @@ fi
 
 # keybind
 bindkey -v
-
 
 # vim
 export VIM_PYTHON3_PATH="$(which python3)"
