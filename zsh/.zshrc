@@ -18,12 +18,12 @@ zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 # enhanced cd
 zplug 'b4b4r07/enhancd', use:init.sh
 
-if ! zplug check > /dev/null 2>&1; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
+# if ! zplug check > /dev/null 2>&1; then
+#   printf "Install? [y/N]: "
+#   if read -q; then
+#     echo; zplug install
+#   fi
+# fi
 
 zplug load > /dev/null 2>&1
 
@@ -79,11 +79,11 @@ fi
 # alias vi='vim'
 
 # kubernetes
-which kubectl > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-  alias k='kubectl'
-  source <(kubectl completion zsh)
-fi
+# which kubectl > /dev/null 2>&1
+# if [ $? -eq 0 ]; then
+#   alias k='kubectl'
+#   source <(kubectl completion zsh)
+# fi
 
 # cquery
 export PATH=$HOME/github/cquery/build/release/bin:$PATH
@@ -109,9 +109,6 @@ if [ "$(uname)" = 'Darwin' ]; then
   export OPENSSL_LIBRARIES=/usr/local/Cellar/openssl/1.0.2p/lib
   export CPATH=$CPATH:/usr/local/Cellar/openssl/1.0.2p/include
 fi
-
-# zprezto
-# source ~/.zprezto/prezto/init.zsh
 
 # peco
 function peco-history-selection() {
