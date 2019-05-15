@@ -70,6 +70,16 @@ if [ "$(uname)" = 'Darwin' ]; then
   alias pbc='pbcopy'
 fi
 
+# git
+alias gst='git status'
+alias gco='git commit'
+alias gph='git push'
+alias gphm='git push origin master'
+alias gpl='git pull'
+alias gplm='git pull origin master'
+alias gad='git add'
+alias gdi='git diff'
+
 # alias for programming contest
 # https://github.com/fumiphys/programming_contest
 if [ "$(uname)" = 'Darwin' ]; then
