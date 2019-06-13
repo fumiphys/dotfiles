@@ -9,9 +9,7 @@
 # if you use linux, apt will be used.
 # if you use windows, I will think it later.
 
-OS=""
-
-WZSH=true
+OS="" WZSH=true
 WZPLUG=true
 
 # script dir
@@ -211,9 +209,14 @@ link_vim_settings() {
 
 link_sublime_settings(){
   if [ ${OS} = "Mac" ]; then
-    mkdir -p "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
     if [ -e ~/github/programming_contest ]; then
-      ln -F -s ~/github/programming_contest/sublime/cpp_common.sublime-snippet "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets/cpp_common.sublime-snippet"
+      if [ -e "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets" ]; then
+        rm -rf "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
+      fi
+      mkdir -p "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
+      cd ~/github/programming_contest/sublime
+      ls *.sublime-snippet | xargs -I{} ln -F -s ~/github/programming_contest/sublime/{} "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets/"{}
+      cd ${NPWD}
     fi
   fi
 }
