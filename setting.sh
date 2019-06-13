@@ -82,7 +82,7 @@ install_essential() {
   fi
 }
 
-install cpp() {
+install_cpp() {
   brew install cppcheck
 }
 
@@ -209,6 +209,15 @@ link_vim_settings() {
   vim +"call dein#update()!" +qall
 }
 
+link_sublime_settings(){
+  if [ ${OS} = "Mac" ]; then
+    mkdir -p "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
+    if [ -e ~/github/programming_contest ]; then
+      ln -F -s ~/github/programming_contest/sublime/cpp_common.sublime-snippet "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets/cpp_common.sublime-snippet"
+    fi
+  fi
+}
+
 patch_markdown() {
   # markdown
   # this will be fixed if previm module has some changes
@@ -326,6 +335,10 @@ install_cquery
 printf "\e[32mConfiguration for vim ...\e[m\n"
 link_vim_settings
 patch_markdown
+
+# link sublime settings
+printf "\e[32mConfiguration for sublime ...\e[m\n"
+link_sublime_settings
 
 # link zsh
 printf "\e[32mConfiguration for zsh ...\e[m\n"
