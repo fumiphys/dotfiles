@@ -82,6 +82,10 @@ install_essential() {
   fi
 }
 
+install cpp() {
+  brew install cppcheck
+}
+
 install_python() {
   if [ ${OS} = "Mac" ]; then
     set +e
@@ -306,6 +310,9 @@ ask_resetting
 # install essential libraryes
 printf "\e[32mInstalling essential libraries ...\e[m\n"
 install_essential
+
+# install c++ packages
+install_cpp
 
 # install python and depending packages
 printf "\e[32mInstalling python3 and depending packages ...\e[m\n"
