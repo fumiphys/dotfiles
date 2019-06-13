@@ -1,0 +1,11 @@
+{
+   "options_default": {
+    "indent": "tab"
+   },
+   "options_c": { 
+    "style": "java"
+   },
+   "options_c++": {
+    "style": "java"
+   }, 
+}

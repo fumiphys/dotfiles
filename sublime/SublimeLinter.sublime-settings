@@ -1,0 +1,10 @@
+// SublimeLinter Settings - User
+{
+        "paths": {
+            "linux": [],
+            "osx": [
+                "/Users/fkiyozawa/.pyenv/versions/3.7.3/bin/"
+            ],
+            "windows": []
+        },
+}

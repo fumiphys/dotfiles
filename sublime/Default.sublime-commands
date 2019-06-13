@@ -1,0 +1,35 @@
+[
+	{
+        "caption": "Terminus: Open Zsh",
+        "command": "terminus_open",
+        "args": {
+        	"cmd": "zsh",
+	        "cwd": "${file_path:${folder}}",	
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "right"}]
+            ]
+        }
+    },
+	{
+        "caption": "Terminus: Open Bash",
+        "command": "terminus_open",
+        "args": {
+        	"cmd": "bash",
+	        "cwd": "${file_path:${folder}}",	
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "right"}]
+            ]
+        }
+    },
+	{
+        "caption": "Terminus: Open Ipython",
+        "command": "terminus_open",
+        "args": {
+        	"cmd": "ipython",
+	        "cwd": "${file_path:${folder}}",	
+            "post_window_hooks": [
+                ["carry_file_to_pane", {"direction": "right"}]
+            ]
+        }
+    },
+]
