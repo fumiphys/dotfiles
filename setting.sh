@@ -221,6 +221,13 @@ link_sublime_settings(){
   fi
 }
 
+link_spacemacs_settings(){
+    if [ -e "~/.spacemacs" ]; then
+        rm ~/.spacemacs
+    fi
+    ln -F -s ${NPWD}/spacemacs/.spacemacs ~/.spacemacs
+}
+
 patch_markdown() {
   # markdown
   # this will be fixed if previm module has some changes
@@ -342,6 +349,10 @@ patch_markdown
 # link sublime settings
 printf "\e[32mConfiguration for sublime ...\e[m\n"
 link_sublime_settings
+
+# link spacemacs settings
+printf "\e[32mConfiguration for spacemacs ...\e[m\n"
+link_spacemacs_settings
 
 # link zsh
 printf "\e[32mConfiguration for zsh ...\e[m\n"
