@@ -384,6 +384,13 @@ you should place your code here."
   (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))
   (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
   (flycheck-pos-tip-mode nil)
+  (add-hook 'c++-mode-hook
+    (lambda ()
+      (setq flycheck-checker 'c/c++-gcc)
+        (flycheck-mode 1)))
+  ;; flycheck
+  (setq flycheck-display-errors-function 'flycheck-display-error-messages-unless-error-list)
+  (setq flycheck-display-errors-delay 0)
   ;; python
   ;;(add-hook 'python-mode-hook 'flycheck-mode)
   ;;(add-hook 'python-mode-hook 'auto-fill-mode)
