@@ -390,6 +390,14 @@ you should place your code here."
   ;; neotree
   (with-eval-after-load 'neotree
     (add-to-list 'neo-hidden-regexp-list "__pycache__"))
+  ;; latex
+  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
+  (add-hook 'LaTeX-mode-hook
+    (function (lambda ()
+      (add-to-list 'TeX-command-list
+        '("LatexMk"
+          "latexmk -pvc %t"
+          TeX-run-TeX nil (latex-mode) :help "Run Latexmk")))))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
