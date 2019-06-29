@@ -221,6 +221,18 @@ link_sublime_settings(){
   fi
 }
 
+link_spacemacs_settings(){
+    if [ -e "~/.spacemacs" ]; then
+        rm ~/.spacemacs
+    fi
+    ln -F -s ${NPWD}/spacemacs/.spacemacs ~/.spacemacs
+    if [ -e ~/github/programming_contest ]; then
+      mkdir -p "/Users/fkiyozawa/.emacs.d/private/snippets/c++-mode/"
+      cd ~/github/programming_contest/spacemacs/
+      ls * | xargs -I{} ln -F -s ~/github/programming_contest/spacemacs/{} "/Users/fkiyozawa/.emacs.d/private/snippets/c++-mode/"{}
+    fi
+}
+
 patch_markdown() {
   # markdown
   # this will be fixed if previm module has some changes
@@ -342,6 +354,10 @@ patch_markdown
 # link sublime settings
 printf "\e[32mConfiguration for sublime ...\e[m\n"
 link_sublime_settings
+
+# link spacemacs settings
+printf "\e[32mConfiguration for spacemacs ...\e[m\n"
+link_spacemacs_settings
 
 # link zsh
 printf "\e[32mConfiguration for zsh ...\e[m\n"

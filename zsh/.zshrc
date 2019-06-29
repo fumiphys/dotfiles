@@ -62,6 +62,7 @@ export VIM_PYTHON3_PATH="$(which python3)"
 if [ "$(uname)" = 'Darwin' ]; then
   alias vim='/usr/local/bin/vim'
   alias vi='vim'
+  alias emacs='/usr/local/Cellar/emacs-plus/26.2/bin/emacs'
 fi
 
 alias la='ls -a'
