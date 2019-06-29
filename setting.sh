@@ -9,8 +9,10 @@
 # if you use linux, apt will be used.
 # if you use windows, I will think it later.
 
-OS="" WZSH=true
+OS=""
+WZSH=true
 WZPLUG=true
+ONLY_SPACEMACS=false
 
 # script dir
 NPWD="$(cd $(dirname $0); pwd)"
@@ -38,6 +40,9 @@ check_opt() {
       '--no-zplug' )
         WZPLUG=false;
         ;;
+      '--spacemacs' )
+        ONLY_SPACEMACS=true;
+        ;;
     esac
   done
 
@@ -50,6 +55,9 @@ check_opt() {
     echo "Configuration for zplug: True"
   else
     echo "Configuration for zplug: False"
+  fi
+  if [ ${ONLY_SPACEMACS} = "true" ]; then
+    echo "Configuration only for spacemacs: True"
   fi
 }
 
@@ -68,6 +76,7 @@ ask_resetting() {
 }
 
 install_essential() {
+  printf "\e[32mInstalling essential libraries ...\e[m\n"
   if [ ${OS} = "Mac" ]; then
     set +e
     brew update
@@ -85,6 +94,7 @@ install_cpp() {
 }
 
 install_python() {
+  printf "\e[32mInstalling python3 and depending packages ...\e[m\n"
   if [ ${OS} = "Mac" ]; then
     set +e
     brew install python3
@@ -114,6 +124,7 @@ install_python() {
 }
 
 install_cquery() {
+  printf "\e[32mConfiguration for cquery ...\e[m\n"
   mkdir -p ~/github
   cd ~/github
   if [ ! -e ~/github/cquery ]; then
@@ -128,6 +139,7 @@ install_cquery() {
 }
 
 link_vim_settings() {
+  printf "\e[32mConfiguration for vim ...\e[m\n"
   # link configuration files
   if [ -e ~/.vimrc ]; then
     rm ~/.vimrc
@@ -208,6 +220,7 @@ link_vim_settings() {
 }
 
 link_sublime_settings(){
+  printf "\e[32mConfiguration for sublime ...\e[m\n"
   if [ ${OS} = "Mac" ]; then
     if [ -e ~/github/programming_contest ]; then
       if [ -e "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets" ]; then
@@ -222,6 +235,7 @@ link_sublime_settings(){
 }
 
 link_spacemacs_settings(){
+    printf "\e[32mConfiguration for spacemacs ...\e[m\n"
     if [ -e "~/.spacemacs" ]; then
         rm ~/.spacemacs
     fi
@@ -244,6 +258,7 @@ patch_markdown() {
 }
 
 link_zsh() {
+  printf "\e[32mConfiguration for zsh ...\e[m\n"
   if [ ${WZSH} = "true" ]; then
     set +e
     if [ ${OS} = "Mac" ]; then
@@ -288,6 +303,7 @@ link_zsh() {
 }
 
 link_tex() {
+  printf "\e[32mConfiguration for tex ...\e[m\n"
   if [ -e ~/.latexmkrc ]; then
     rm ~/.latexmkrc
   fi
@@ -305,6 +321,7 @@ link_tex() {
 }
 
 link_tmux() {
+  printf "\e[32mConfiguration for tmux ...\e[m\n"
   if [ -e ~/.tmux.conf ]; then
     rm ~/.tmux.conf
   fi
@@ -312,6 +329,7 @@ link_tmux() {
   }
 
 config_github() {
+  printf "\e[32mConfiguration for github ...\e[m\n"
   if [ -e ~/.gitignore_global ]; then
     rm ~/.gitignore_global
   fi
@@ -326,53 +344,49 @@ echo "OS: $OS"
 # check option
 check_opt $@
 
+# only spacemacs
+if [ ${ONLY_SPACEMACS} = "true" ]; then
+    link_spacemacs_settings
+    exit 0
+fi
+
 printf "\e[32mConfiguration for ${OS} Start!\e[m\n"
 
 # ask whether to reinstall setting if setting already exists
 ask_resetting
 
 # install essential libraryes
-printf "\e[32mInstalling essential libraries ...\e[m\n"
 install_essential
 
 # install c++ packages
 install_cpp
 
 # install python and depending packages
-printf "\e[32mInstalling python3 and depending packages ...\e[m\n"
 install_python
 
 # install cquery
-printf "\e[32mConfiguration for cquery ...\e[m\n"
 install_cquery
 
 # link vim settings
-printf "\e[32mConfiguration for vim ...\e[m\n"
 link_vim_settings
 patch_markdown
 
 # link sublime settings
-printf "\e[32mConfiguration for sublime ...\e[m\n"
 link_sublime_settings
 
 # link spacemacs settings
-printf "\e[32mConfiguration for spacemacs ...\e[m\n"
 link_spacemacs_settings
 
 # link zsh
-printf "\e[32mConfiguration for zsh ...\e[m\n"
 link_zsh
 
 # link tex
-printf "\e[32mConfiguration for tex ...\e[m\n"
 link_tex
 
 # link tmux
-printf "\e[32mConfiguration for tmux ...\e[m\n"
 link_tmux
 
 # config github
-printf "\e[32mConfiguration for github ...\e[m\n"
 config_github
 
 printf "\e[32mDone!\e[m\n"
