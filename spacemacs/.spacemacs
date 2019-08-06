@@ -412,6 +412,7 @@ you should place your code here."
         '("LatexMk"
           "latexmk -pvc %t"
           TeX-run-TeX nil (latex-mode) :help "Run Latexmk")))))
+  (setq doc-view-continuous t)
   ;; theme
   (load-theme 'atom-one-dark)
   )
