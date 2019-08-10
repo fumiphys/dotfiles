@@ -10,6 +10,7 @@ This repository is now being reconstructed. To use old version, use branch 'clea
 # Screen Shots
 ![zsh](assets/zsh_screen.png)
 ![vim](assets/vim_screen.png)
+![spacemacs](assets/spacemacs_screen.png)
 
 ## use (installation)
 ### requirements
@@ -29,6 +30,7 @@ chmod +x setting.sh
   |:---:|:---:|
   |--no-zsh|do not use zshrc|
   |--no-zplug|do not install zplug|
+  |--spacemacs|spacemacs setting only|
   
 and then, rewrite vim/conf.d/plugins/dein_lazy.toml
 ```
