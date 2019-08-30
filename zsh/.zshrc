@@ -65,22 +65,15 @@ if [ "$(uname)" = 'Darwin' ]; then
   alias emacs='/usr/local/Cellar/emacs-plus/26.2/bin/emacs'
 fi
 
+# emacs
+alias spacemacs='emacs -nw'
+
 alias la='ls -a'
 alias ll='ls -l'
 
 if [ "$(uname)" = 'Darwin' ]; then
   alias pbc='pbcopy'
 fi
-
-# git
-alias gst='git status'
-alias gco='git commit'
-alias gph='git push'
-alias gphm='git push origin master'
-alias gpl='git pull'
-alias gplm='git pull origin master'
-alias gad='git add'
-alias gdi='git diff'
 
 # alias for programming contest
 # https://github.com/fumiphys/programming_contest
