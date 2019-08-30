@@ -31,70 +31,34 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     yaml
-     rust
-     sql
-     html
-     vimscript
-     markdown
-     (python :variables
-             python-sort-imports-on-save t)
-     (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode
-            c-c++-enable-clang-support t)
-     search-engine
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
      ivy
-     (auto-completion :variables
-                      auto-completion-enable-snippets-in-popup t)
+     ;; auto-completion
      ;; better-defaults
      emacs-lisp
-     git
-     markdown
-     (org :variables org-enable-github-support t)
-     (shell :variables
-            shell-default-height 50
-            shell-default-position 'right
-            shell-default-term-shell "zsh"
-            shell-default-shell 'multi-term
-            multi-term-program "zsh")
-     shell-scripts
+     ;; git
+     ;; markdown
+     ;; org
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
      ;; spell-checking
-     syntax-checking
-     (syntax-checking :variables
-                      syntax-checking-enable-by-default t)
+     ;; syntax-checking
      ;; version-control
-     (osx :variables osx-use-option-as-meta nil)
-     ranger
-     (latex :variables latex-build-command "LatexMk")
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages
-   '(
-     all-the-icons
-     projectile
-     magit-gitflow
-     evil-numbers
-     evil-vimish-fold
-     jedi
-     yasnippet-snippets
-     atom-one-dark-theme
-     doom-themes
-     doom-modeline
-     )
+   dotspacemacs-additional-packages '()
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '(
-                                    org-projectile
-                                    )
+   dotspacemacs-excluded-packages '()
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -169,7 +133,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 15
+                               :size 13
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -263,7 +227,7 @@ values."
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
-   dotspacemacs-maximized-at-startup t
+   dotspacemacs-maximized-at-startup nil
    ;; A value from the range (0..100), in increasing opacity, which describes
    ;; the transparency level of a frame when it's active or selected.
    ;; Transparency can be toggled through `toggle-transparency'. (default 90)
@@ -295,7 +259,7 @@ values."
    ;;                       text-mode
    ;;   :size-limit-kb 1000)
    ;; (default nil)
-   dotspacemacs-line-numbers t
+   dotspacemacs-line-numbers nil
    ;; Code folding method. Possible values are `evil' and `origami'.
    ;; (default 'evil)
    dotspacemacs-folding-method 'evil
@@ -336,7 +300,6 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
-  (setq exec-path-from-shell-check-startup-files nil)
   )
 
 (defun dotspacemacs/user-config ()
@@ -346,79 +309,6 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-
-  ;; backslash
-  (define-key evil-insert-state-map [165] [92])
-  (unless (display-graphic-p)
-    (setq linum-format "%3s "))
-  (unless (display-graphic-p)
-    (setq linum-format (concat linum-format " ")))
-  ;; line wrap
-  (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
-  ;; neotree
-  (setq-default neo-theme 'icons)
-  ;; mode line
-  (setq powerline-default-separator 'arrow)
-  (spaceline-toggle-buffer-modified-on)
-  (spaceline-toggle-buffer-encoding-on)
-  (spaceline-toggle-minor-modes-off)
-  (spaceline-toggle-version-control-on)
-  (spaceline-toggle-python-pyenv-on)
-  (spaceline-toggle-projectile-root-on)
-  ;; magit
-  (add-hook 'magit-mode-hook 'turn-on-magit-gitflow)
-  ;; cursor
-  (setq evil-insert-state-cursor '("chartreuse3" box))
-  ;; evil numbers
-  (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
-  (define-key evil-visual-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
-  (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
-  (define-key evil-visual-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
-  ;; single quotes
-  (setq-default sp-escape-quotes-after-insert nil)
-  ;; gj, gk
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-  ;; vimish folding
-  (evil-vimish-fold-mode 1)
-  ;; environmental variables
-  (setenv "LANG" "en_US.UTF-8")
-  ;; tramp
-  (setq tramp-default-method "ssh")
-  ;; completion
-  (global-company-mode)
-  (eval-after-load "company"
-    '(add-to-list 'company-backends 'company-anaconda))
-  ;; c++
-  (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++11")))
-  (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++11")))
-  (flycheck-pos-tip-mode nil)
-  (add-hook 'c++-mode-hook
-    (lambda ()
-      (setq flycheck-checker 'c/c++-gcc)
-        (flycheck-mode 1)))
-  ;; flycheck
-  (setq flycheck-display-errors-function 'flycheck-display-error-messages-unless-error-list)
-  (setq flycheck-display-errors-delay 0)
-  (setq flycheck-check-syntax-automatically '(mode-enabled save))
-  ;; python
-  ;;(add-hook 'python-mode-hook 'flycheck-mode)
-  ;;(add-hook 'python-mode-hook 'auto-fill-mode)
-  ;; neotree
-  (with-eval-after-load 'neotree
-    (add-to-list 'neo-hidden-regexp-list "__pycache__"))
-  ;; latex
-  (add-hook 'doc-view-mode-hook 'auto-revert-mode)
-  (add-hook 'LaTeX-mode-hook
-    (function (lambda ()
-      (add-to-list 'TeX-command-list
-        '("LatexMk"
-          "latexmk -pvc %t"
-          TeX-run-TeX nil (latex-mode) :help "Run Latexmk")))))
-  (setq doc-view-continuous t)
-  ;; theme
-  (load-theme 'doom-one)
-  (doom-modeline-mode 1)
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -428,14 +318,9 @@ you should place your code here."
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(custom-safe-themes
-   (quote
-    ("427fa665823299f8258d8e27c80a1481edbb8f5463a6fb2665261e9076626710" "4ea0aa360264ff861fb0212abe4161b83ad1d8c8b74d8a04bcd1baf0ebdceeae" "614e5089876ea69b515c50b6d7fa0a37eb7ed50fda224623ec49e1c91a0af6a1" "cb477d192ee6456dc2eb5ca5a0b7bd16bdb26514be8f8512b937291317c7b166" "cdb3e7a8864cede434b168c9a060bf853eeb5b3f9f758310d2a2e23be41a24ae" "2f0cbe053485bccbbbb582acdba7c7c9585ad808ee8ab32f0d727c3d39b42275" "a16e816774b437acb78beb9916a60ea236cfcd05784227a7d829623f8468c5a2" "8c847a5675ece40017de93045a28ebd9ede7b843469c5dec78988717f943952a" "ab9456aaeab81ba46a815c00930345ada223e1e7c7ab839659b382b52437b9ea" "34c99997eaa73d64b1aaa95caca9f0d64229871c200c5254526d0062f8074693" "ef4edbfc3ec509612f3cf82476beddd2aeb3da7bdc3a35726337a0cc838a4ef4" "e838d6375a73fda607820c65eb3ea1f9336be7bd9a5528c9161e10c4aa663b5b" "e3c87e869f94af65d358aa279945a3daf46f8185f1a5756ca1c90759024593dd" "4e132458143b6bab453e812f03208075189deca7ad5954a4abb27d5afce10a9a" "d0c943c37d6f5450c6823103544e06783204342430a36ac20f6beb5c2a48abe3" "db10381a554231a40b7474eaac28bd58f05067faacce3b25d294bb179a3511a1" "b0fd04a1b4b614840073a82a53e88fe2abc3d731462d6fde4e541807825af342" "9c27124b3a653d43b3ffa088cd092c34f3f82296cf0d5d4f719c0c0817e1afa6" "868abc288f3afe212a70d24de2e156180e97c67ca2e86ba0f2bf9a18c9672f07" "155a5de9192c2f6d53efcc9c554892a0d87d87f99ad8cc14b330f4f4be204445" "669e02142a56f63861288cc585bee81643ded48a19e36bfdf02b66d745bcc626" "9b35c097a5025d5da1c97dba45fed027e4fb92faecbd2f89c2a79d2d80975181" "862a0ccc73c12df4df325427f9285fa6a5bbba593a77257f43b01c84269f51b0" "43c808b039893c885bdeec885b4f7572141bd9392da7f0bd8d8346e02b2ec8da" "80365dd15f97396bdc38490390c23337063c8965c4556b8f50937e63b5e9a65c" "6b289bab28a7e511f9c54496be647dc60f5bd8f9917c9495978762b99d8c96a0" "93a0885d5f46d2aeac12bf6be1754faa7d5e28b27926b8aa812840fe7d0b7983" "75d3dde259ce79660bac8e9e237b55674b910b470f313cdf4b019230d01a982a" "151bde695af0b0e69c3846500f58d9a0ca8cb2d447da68d7fbf4154dcf818ebc" "d1b4990bd599f5e2186c3f75769a2c5334063e9e541e37514942c27975700370" "49ec957b508c7d64708b40b0273697a84d3fee4f15dd9fc4a9588016adee3dad" "6b2636879127bf6124ce541b1b2824800afc49c6ccd65439d6eb987dbf200c36" "9954ed41d89d2dcf601c8e7499b6bb2778180bfcaeb7cdfc648078b8e05348c6" "fe666e5ac37c2dfcf80074e88b9252c71a22b6f5d2f566df9a7aa4f9bea55ef8" "6d589ac0e52375d311afaa745205abb6ccb3b21f6ba037104d71111e7e76a3fc" "a8c210aa94c4eae642a34aaf1c5c0552855dfca2153fa6dd23f3031ce19453d4" "f0dc4ddca147f3c7b1c7397141b888562a48d9888f1595d69572db73be99a024" "d2e9c7e31e574bf38f4b0fb927aaff20c1e5f92f72001102758005e53d77b8c9" "bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" "a3fa4abaf08cc169b61dea8f6df1bbe4123ec1d2afeb01c17e11fdc31fc66379" "fd944f09d4d0c4d4a3c82bd7b3360f17e3ada8adf29f28199d09308ba01cc092" default)))
- '(evil-want-Y-yank-to-eol nil)
  '(package-selected-packages
    (quote
-    (yaml-mode toml-mode racer flycheck-rust cargo rust-mode atom-one-dark-theme flatland-theme madhat2r-theme doom-themes sql-indent pdf-tools tablist insert-shebang fish-mode company-shell ox-gfm org-projectile org-category-capture org-present org-pomodoro alert log4e gntp org-mime org-download htmlize gnuplot company-auctex auctex-latexmk auctex yasnippet-snippets jedi jedi-core python-environment epc ctable concurrent deferred irony web-mode tagedit slim-mode scss-mode sass-mode pug-mode haml-mode emmet-mode company-web web-completion-data evil-vimish-fold vimish-fold smeargle orgit magit-gitflow magit-popup gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit transient git-commit with-editor doom-modeline shrink-path spaceline-all-the-icons vimrc-mode dactyl-mode ranger engine-mode mmm-mode markdown-toc markdown-mode gh-md ac-clang auto-complete-c-headers all-the-icons memoize xterm-color shell-pop multi-term eshell-z eshell-prompt-extras esh-help disaster company-c-headers cmake-mode clang-format flycheck-pos-tip pos-tip flycheck origami reveal-in-osx-finder pbcopy osx-trash osx-dictionary launchctl fuzzy company-statistics company-anaconda company auto-yasnippet yasnippet ac-ispell auto-complete yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode dash-functional cython-mode anaconda-mode pythonic ws-butler winum which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra indent-guide hydra lv hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation helm-make google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist highlight evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu elisp-slime-nav dumb-jump popup f dash s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed async aggressive-indent adaptive-wrap ace-window ace-link avy)))
- '(spaceline-all-the-icons-clock-always-visible nil))
+    (define-word yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key wgrep web-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toml-mode toc-org tagedit sql-indent spaceline smex smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request ranger rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-gfm osx-trash osx-dictionary orgit org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint launchctl jedi ivy-hydra insert-shebang indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-rust flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-vimish-fold evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help engine-mode emmet-mode elisp-slime-nav dumb-jump doom-modeline disaster diminish dactyl-mode cython-mode counsel-projectile company-web company-statistics company-shell company-c-headers company-auctex company-anaconda column-enforce-mode cmake-mode clean-aindent-mode clang-format cargo auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk atom-one-dark-theme aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
