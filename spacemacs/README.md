@@ -5,7 +5,11 @@ configuration for spacemacs
  - yaml
 
 ### markdown
- - preview
+ - preview by vmd  
+ ```
+ # (after installation of node)
+ npm install vmd
+ ```
 
 ### c++
  - completion
