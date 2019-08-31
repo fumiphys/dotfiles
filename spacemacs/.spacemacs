@@ -47,9 +47,13 @@ values."
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
      ;; org
-     ;; (shell :variables
-     ;;        shell-default-height 30
-     ;;        shell-default-position 'bottom)
+     (shell :variables
+            shell-default-height 50
+            shell-default-position 'right
+            shell-default-term-shell "zsh"
+            shell-default-shell 'multi-term
+            multi-term-program "zsh")
+     shell-scripts
      ;; spell-checking
      (syntax-checking :variables
                       syntax-checking-enable-by-default t)
@@ -326,6 +330,13 @@ you should place your code here."
     (setq linum-format (concat linum-format " ")))
   ;; line wrap
   (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
+  ;; mode line
+  ;; (setq powerline-default-separator 'arrow)
+  (spaceline-toggle-buffer-modified-on)
+  (spaceline-toggle-buffer-encoding-on)
+  (spaceline-toggle-minor-modes-off)
+  (spaceline-toggle-version-control-on)
+  (spaceline-toggle-python-pyenv-on)
   ;; environment variables
   (setenv "LANG" "en_US.UTF-8")
   ;; cursor
@@ -367,7 +378,7 @@ you should place your code here."
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (vimish-fold stickyfunc-enhance srefactor pos-tip flycheck company yasnippet auto-complete vmd-mode markdown-mode magit-popup magit transient git-commit with-editor define-word yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key wgrep web-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toml-mode toc-org tagedit sql-indent spaceline smex smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request ranger rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-gfm osx-trash osx-dictionary orgit org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint launchctl jedi ivy-hydra insert-shebang indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-rust flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-vimish-fold evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help engine-mode emmet-mode elisp-slime-nav dumb-jump doom-modeline disaster diminish dactyl-mode cython-mode counsel-projectile company-web company-statistics company-shell company-c-headers company-auctex company-anaconda column-enforce-mode cmake-mode clean-aindent-mode clang-format cargo auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk atom-one-dark-theme aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
+    (dash-functional anaconda-mode pythonic vimish-fold stickyfunc-enhance srefactor pos-tip flycheck company yasnippet auto-complete vmd-mode markdown-mode magit-popup magit transient git-commit with-editor define-word yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key wgrep web-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toml-mode toc-org tagedit sql-indent spaceline smex smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request ranger rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-gfm osx-trash osx-dictionary orgit org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint launchctl jedi ivy-hydra insert-shebang indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-rust flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-vimish-fold evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help engine-mode emmet-mode elisp-slime-nav dumb-jump doom-modeline disaster diminish dactyl-mode cython-mode counsel-projectile company-web company-statistics company-shell company-c-headers company-auctex company-anaconda column-enforce-mode cmake-mode clean-aindent-mode clang-format cargo auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk atom-one-dark-theme aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
