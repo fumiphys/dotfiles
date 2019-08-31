@@ -14,7 +14,7 @@ configuration for spacemacs
 ### c++
  - completion by auto-completion (company)
  - snippet by yasnippet
- - syntax check by flycheck
+ - syntax check by flycheck, semantic refactor
  ```
  # (you should install clang)
  ```
@@ -71,6 +71,7 @@ configuration for spacemacs
 ### filer
 
 ### completion
+ - auto-completion (company)
 
 ### project management
 
@@ -78,6 +79,6 @@ configuration for spacemacs
  - magit
 
 ### remote
- - tramp
+ - tramp (by ssh)
 
 ### shell
