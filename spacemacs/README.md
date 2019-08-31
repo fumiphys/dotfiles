@@ -5,16 +5,19 @@ configuration for spacemacs
  - yaml
 
 ### markdown
- - preview by vmd  
+ - preview by vmd
  ```
  # (after installation of node)
  npm install vmd
  ```
 
 ### c++
- - completion
- - snippet
- - syntax check
+ - completion by auto-completion (company)
+ - snippet by yasnippet
+ - syntax check by flycheck
+ ```
+ # (you should install clang)
+ ```
 
 ### rust
  - completion
@@ -72,6 +75,7 @@ configuration for spacemacs
 ### project management
 
 ### git
+ - magit
 
 ### remote
  - tramp
