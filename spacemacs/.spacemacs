@@ -46,6 +46,9 @@ values."
      (c-c++ :variables
             c-c++-default-mode-for-headers 'c++-mode
             c-c++-enable-clang-support t)
+     (python :variables
+             python-enable-yapf-format-on-save t
+             python-sort-imports-on-save t)
      rust
      ;; org
      (shell :variables
