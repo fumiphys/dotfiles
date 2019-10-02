@@ -242,8 +242,8 @@ link_spacemacs_settings(){
     ln -F -s ${NPWD}/spacemacs/.spacemacs ~/.spacemacs
     if [ -e ~/github/programming_contest ]; then
       mkdir -p "/Users/fkiyozawa/.emacs.d/private/snippets/c++-mode/"
-      cd ~/github/programming_contest/spacemacs/
-      ls * | xargs -I{} ln -F -s ~/github/programming_contest/spacemacs/{} "/Users/fkiyozawa/.emacs.d/private/snippets/c++-mode/"{}
+      cd ~/github/programming_contest/editor/spacemacs/
+      ls * | xargs -I{} ln -F -s ~/github/programming_contest/editor/spacemacs/{} "/Users/fkiyozawa/.emacs.d/private/snippets/c++-mode/"{}
     fi
 }
 

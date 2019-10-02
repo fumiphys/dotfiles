@@ -42,10 +42,8 @@ precmd () {
   LANG=en_US.UTF-8 vcs_info
   [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
 }
-PROMPT='%{[38;5;004m%}%~ %{[0m%}%{[38;5;002m%}❯%{[0m%}'
-PROMPT=$PROMPT'%{[38;5;090m%}%1(v|%1v|)%{[0m%}%{[38;5;002m%}❯ %{[0m%}
-❯ '
-# RPROMPT='%{[38;5;002m%}❯ %? ❯ %* ❯%{[0m%}'
+PROMPT='%{[38;5;004m%}%~ %{[0m%}%{[38;5;002m%}%{[0m%}'
+PROMPT=$PROMPT'%{[38;5;090m%}%1(v|%1v|)%{[0m%}%{[38;5;002m%} %{[0m%}$ '
 
 # alias
 if [ "$(uname)" = 'Darwin' ]; then
@@ -134,3 +132,4 @@ export PGDATA=/usr/local/var/postgres
 
 # zsh
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+export PATH=$PATH:/Users/fkiyozawa/github/programming_contest/utils/procon_tools
