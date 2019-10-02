@@ -134,3 +134,4 @@ export PGDATA=/usr/local/var/postgres
 
 # zsh
 export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+export PATH=$PATH:/Users/fkiyozawa/github/programming_contest/utils/procon_tools
