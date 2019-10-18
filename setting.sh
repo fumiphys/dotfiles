@@ -13,6 +13,7 @@ OS=""
 WZSH=true
 WZPLUG=true
 ONLY_SPACEMACS=false
+ONLY_VSCODE=false
 
 # script dir
 NPWD="$(cd $(dirname $0); pwd)"
@@ -42,6 +43,9 @@ check_opt() {
         ;;
       '--spacemacs' )
         ONLY_SPACEMACS=true;
+        ;;
+      '--vscode' )
+        ONLY_VSCODE=true;
         ;;
     esac
   done
@@ -247,6 +251,27 @@ link_spacemacs_settings(){
     fi
 }
 
+link_vscode_settings(){
+  printf "\e[32mConfiguration for vscode ...\e[m\n"
+  if [ ${OS} = "Mac" ]; then
+    if [ -e "/Users/fkiyozawa/Library/Application Support/Code/User" ]; then
+      ln -F -s ${NPWD}/vscode/keybindings.json "/Users/fkiyozawa/Library/Application Support/Code/User/keybindings.json"
+      ln -F -s ${NPWD}/vscode/settings.json "/Users/fkiyozawa/Library/Application Support/Code/User/settings.json"
+      if [ -e ~/github/programming_contest ]; then
+        mkdir -p "/Users/fkiyozawa/Library/Application Support/Code/User/snippets"
+        ln -F -s "/Users/fkiyozawa/github/programming_contest/editor/vscode/cpp.json" "/Users/fkiyozawa/Library/Application Support/Code/User/snippets/cpp.json"
+      fi
+      which code > /dev/null 2>&1
+      if [ $? -eq 0 ]; then
+        cat ${NPWD}/vscode/extensions | while read line
+        do
+          code --install-extension $line
+        done
+      fi
+    fi
+  fi
+}
+
 patch_markdown() {
   # markdown
   # this will be fixed if previm module has some changes
@@ -350,6 +375,12 @@ if [ ${ONLY_SPACEMACS} = "true" ]; then
     exit 0
 fi
 
+# only vscode
+if [ ${ONLY_VSCODE} = "true" ]; then
+    link_vscode_settings
+    exit 0
+fi
+
 printf "\e[32mConfiguration for ${OS} Start!\e[m\n"
 
 # ask whether to reinstall setting if setting already exists
@@ -376,6 +407,9 @@ link_sublime_settings
 
 # link spacemacs settings
 link_spacemacs_settings
+
+# link vscode settings
+link_vscode_settings
 
 # link zsh
 link_zsh

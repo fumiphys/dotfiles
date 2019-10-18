@@ -43,6 +43,7 @@ let g:deoplete#sources#jedi#python_path = `which python3`
  - [zsh](zsh/)
  - [github](github/)
  - [latex](latex/)
+ - [vscode](vscode/)
 
 ## TODO
  - vim
