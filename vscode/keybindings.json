@@ -1,0 +1,5 @@
+// Place your key bindings in this file to override the defaults
+[
+    { "key": "cmd+shift+enter", "command": "workbench.action.terminal.focus" },
+    { "key": "cmd+shift+enter", "command": "workbench.action.focusActiveEditorGroup", "when":"terminalFocus" },
+]
