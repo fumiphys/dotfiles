@@ -6,7 +6,7 @@
 
     // python
     "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 1000,
+    "files.autoSaveDelay": 60000,
     "python.linting.lintOnSave": true,
     "python.linting.pylintEnabled": false,
     "python.linting.pycodestyleEnabled": false,
@@ -24,4 +24,12 @@
     "workbench.editor.enablePreview": false,
     "workbench.editor.enablePreviewFromQuickOpen": false,
     "terminal.integrated.fontSize": 14,
+    "editor.tabSize": 2,
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.startupEditor": "newUntitledFile",
+    "[python]": {
+        "editor.tabSize": 4
+    },
+    "C_Cpp.default.cppStandard": "c++14",
+    "material-icon-theme.folders.theme": "specific",
 }
