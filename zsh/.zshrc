@@ -6,44 +6,23 @@ zplug 'zplug/zplug', hook-build:'zplug --self-manage'
 # git
 zplug 'mollifier/cd-gitroot'
 
-# colorscheme
-# zplug 'yous/lime'
-
 # advenced completion
 zplug 'zsh-users/zsh-completions'
 
 # syntax highlight
 zplug 'zsh-users/zsh-syntax-highlighting', defer:2
 
-# enhanced cd
-zplug 'b4b4r07/enhancd', use:init.sh
+# powerline
+zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme, as:theme
 
-# if ! zplug check > /dev/null 2>&1; then
-#   printf "Install? [y/N]: "
-#   if read -q; then
-#     echo; zplug install
-#   fi
-# fi
+if ! zplug check > /dev/null 2>&1; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
 
 zplug load > /dev/null 2>&1
-
-# prompt
-autoload -Uz colors
-autoload -Uz vcs_info
-setopt prompt_subst
-colors
-zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' unstagedstr '!'
-zstyle ':vcs_info:git:*' stagedstr '+'
-zstyle ':vcs_info:*' formats ' %c%u(%s:%b) '
-zstyle ':vcs_info:*' actionformats ' %c%u(%s:%b|%a)'
-precmd () {
-  psvar=()
-  LANG=en_US.UTF-8 vcs_info
-  [[ -n "$vcs_info_msg_0_" ]] && psvar[1]="$vcs_info_msg_0_"
-}
-PROMPT='%{[38;5;004m%}%~ %{[0m%}%{[38;5;002m%}%{[0m%}'
-PROMPT=$PROMPT'%{[38;5;090m%}%1(v|%1v|)%{[0m%}%{[38;5;002m%} %{[0m%}$ '
 
 # alias
 if [ "$(uname)" = 'Darwin' ]; then
@@ -54,6 +33,11 @@ fi
 
 # keybind
 bindkey -v
+
+# powerline
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir newline vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vi_mode)
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # vim
 export VIM_PYTHON3_PATH="$(which python3)"
@@ -83,14 +67,14 @@ fi
 # alias vi='vim'
 
 # kubernetes
-# which kubectl > /dev/null 2>&1
-# if [ $? -eq 0 ]; then
-#   alias k='kubectl'
-#   source <(kubectl completion zsh)
-# fi
+which kubectl > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  alias k='kubectl'
+  source <(kubectl completion zsh)
+fi
 
 # cquery
-export PATH=$HOME/github/cquery/build/release/bin:$PATH
+# export PATH=$HOME/github/cquery/build/release/bin:$PATH
 
 # pyenv
 which pyenv > /dev/null 2>&1
@@ -113,16 +97,6 @@ if [ "$(uname)" = 'Darwin' ]; then
   export OPENSSL_LIBRARIES=/usr/local/Cellar/openssl/1.0.2p/lib
   export CPATH=$CPATH:/usr/local/Cellar/openssl/1.0.2p/include
 fi
-
-# peco
-function peco-history-selection() {
-    BUFFER=`history -n 1 | tail -r  | awk '!a[$0]++' | peco`
-    CURSOR=$#BUFFER
-    zle reset-prompt
-}
-
-zle -N peco-history-selection
-bindkey '^R' peco-history-selection
 
 # libffi
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
