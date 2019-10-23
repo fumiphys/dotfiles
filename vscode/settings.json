@@ -35,4 +35,6 @@
     "editor.fontFamily": "Source Code Pro",
     "editor.fontWeight": "600",
     "terminal.integrated.fontFamily": "Source Code Pro",
+    "git.ignoreLegacyWarning": true,
+    "latex-workshop.view.pdf.viewer": "tab",
 }
