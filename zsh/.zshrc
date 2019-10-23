@@ -67,21 +67,21 @@ fi
 # alias vi='vim'
 
 # kubernetes
-which kubectl > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-  alias k='kubectl'
-  source <(kubectl completion zsh)
-fi
+# which kubectl > /dev/null 2>&1
+# if [ $? -eq 0 ]; then
+#   alias k='kubectl'
+#   source <(kubectl completion zsh)
+# fi
 
 # cquery
 # export PATH=$HOME/github/cquery/build/release/bin:$PATH
 
 # pyenv
-which pyenv > /dev/null 2>&1
-if [ $? -eq 0 ]; then
-  export PATH=$HOME/.pyenv/bin:$PATH
-  eval "$(pyenv init -)"
-fi
+# which pyenv > /dev/null 2>&1
+# if [ $? -eq 0 ]; then
+#   export PATH=$HOME/.pyenv/bin:$PATH
+#   eval "$(pyenv init -)"
+# fi
 
 # editor
 export LESSEDIT='/usr/local/bin/vim %f'
@@ -105,5 +105,5 @@ export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 export PGDATA=/usr/local/var/postgres
 
 # zsh
-export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+# export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 export PATH=$PATH:/Users/fkiyozawa/github/programming_contest/utils/procon_tools
