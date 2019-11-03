@@ -77,11 +77,11 @@ fi
 # export PATH=$HOME/github/cquery/build/release/bin:$PATH
 
 # pyenv
-# which pyenv > /dev/null 2>&1
-# if [ $? -eq 0 ]; then
-#   export PATH=$HOME/.pyenv/bin:$PATH
-#   eval "$(pyenv init -)"
-# fi
+which pyenv > /dev/null 2>&1
+if [ $? -eq 0 ]; then
+  export PATH=$HOME/.pyenv/bin:$PATH
+  eval "$(pyenv init -)"
+fi
 
 # editor
 export LESSEDIT='/usr/local/bin/vim %f'
