@@ -32,9 +32,28 @@
     },
     "C_Cpp.default.cppStandard": "c++14",
     "material-icon-theme.folders.theme": "specific",
-    "editor.fontFamily": "Source Code Pro",
-    "editor.fontWeight": "600",
     "terminal.integrated.fontFamily": "Source Code Pro",
     "git.ignoreLegacyWarning": true,
+    // latex
     "latex-workshop.view.pdf.viewer": "tab",
+    "latex-workshop.latex.tools": [
+        {
+                "name": "latexmk",
+                "command": "latexmk",
+                "args": [
+                    "%DOCFILE%"
+                ],
+                "env": {}
+            },
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+                "name": "latexmk 🔃",
+                "tools": [
+                    "latexmk"
+                ]
+            }
+    ],
+    "terminal.integrated.rendererType": "dom",
+    "C_Cpp.updateChannel": "Insiders"
 }
