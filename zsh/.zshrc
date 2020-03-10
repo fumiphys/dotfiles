@@ -8,6 +8,19 @@ fi
 # keybind
 bindkey -v
 
+# prompt
+autoload -Uz vcs_info
+setopt prompt_subst
+zstyle ':vcs_info:git:*' check-for-changes true
+zstyle ':vcs_info:git:*' stagedstr "%F{red}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
+zstyle ':vcs_info:*' formats "%F{red}[%b]%c%u%f"
+zstyle ':vcs_info:*' actionformats '[%b|%a]'
+precmd () { vcs_info }
+
+PROMPT=$'%B[%*] > %b'
+RPROMPT='%B${vcs_info_msg_0_} %~%b'
+
 # vim
 export VIM_PYTHON3_PATH="$(which python3)"
 if [ "$(uname)" = 'Darwin' ]; then
