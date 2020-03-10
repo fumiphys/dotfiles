@@ -1,29 +1,3 @@
-# setting for zsh
-# zplug
-source ~/.zplug/init.zsh
-zplug 'zplug/zplug', hook-build:'zplug --self-manage'
-
-# git
-zplug 'mollifier/cd-gitroot'
-
-# advenced completion
-zplug 'zsh-users/zsh-completions'
-
-# syntax highlight
-zplug 'zsh-users/zsh-syntax-highlighting', defer:2
-
-# powerline
-zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme, as:theme
-
-if ! zplug check > /dev/null 2>&1; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
-
-zplug load > /dev/null 2>&1
-
 # alias
 if [ "$(uname)" = 'Darwin' ]; then
   alias ls='ls -G'
@@ -33,11 +7,6 @@ fi
 
 # keybind
 bindkey -v
-
-# powerline
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir newline vcs)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status vi_mode)
-ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # vim
 export VIM_PYTHON3_PATH="$(which python3)"
@@ -57,24 +26,12 @@ if [ "$(uname)" = 'Darwin' ]; then
   alias pbc='pbcopy'
 fi
 
-# alias for programming contest
-# https://github.com/fumiphys/programming_contest
-if [ "$(uname)" = 'Darwin' ]; then
-  source ~/github/programming_contest/utils/pc_scripts.sh
-fi
-
-# vim
-# alias vi='vim'
-
 # kubernetes
 # which kubectl > /dev/null 2>&1
 # if [ $? -eq 0 ]; then
 #   alias k='kubectl'
 #   source <(kubectl completion zsh)
 # fi
-
-# cquery
-# export PATH=$HOME/github/cquery/build/release/bin:$PATH
 
 # pyenv
 which pyenv > /dev/null 2>&1
@@ -106,4 +63,7 @@ export PGDATA=/usr/local/var/postgres
 
 # zsh
 # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
-export PATH=$PATH:/Users/fkiyozawa/github/programming_contest/utils/procon_tools
+
+if [ "$(uname)" = 'Darwin' ]; then
+  export PATH=$PATH:/Users/fkiyozawa/github/programming_contest/utils/procon_tools
+fi

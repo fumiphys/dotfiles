@@ -11,7 +11,6 @@
 
 OS=""
 WZSH=true
-WZPLUG=true
 ONLY_SPACEMACS=false
 ONLY_VSCODE=false
 
@@ -38,9 +37,6 @@ check_opt() {
       '--no-zsh' )
         WZSH=false;
         ;;
-      '--no-zplug' )
-        WZPLUG=false;
-        ;;
       '--spacemacs' )
         ONLY_SPACEMACS=true;
         ;;
@@ -54,11 +50,6 @@ check_opt() {
     echo "Configuration for zsh: True"
   else
     echo "Configuration for zsh: False"
-  fi
-  if [ ${WZPLUG} = "true" ]; then
-    echo "Configuration for zplug: True"
-  else
-    echo "Configuration for zplug: False"
   fi
   if [ ${ONLY_SPACEMACS} = "true" ]; then
     echo "Configuration only for spacemacs: True"
@@ -285,43 +276,11 @@ patch_markdown() {
 link_zsh() {
   printf "\e[32mConfiguration for zsh ...\e[m\n"
   if [ ${WZSH} = "true" ]; then
-    set +e
-    if [ ${OS} = "Mac" ]; then
-      brew install peco
-    fi
-    set -e
     # zsh
     if [ -e ~/.zshrc ]; then
       rm ~/.zshrc
     fi
     ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
-    if [ ${WZPLUG} = "true" ]; then
-      if [ ! -e ~/.zplug ]; then
-        curl -sL --proto-redir -all,https https://raw.githubusercontent.com/zplug/installer/master/installer.zsh| zsh
-      fi
-    fi
-    mkdir -p ~/.zprezto
-    ln -sf ~/.zplug/repos/sorin-ionescu/prezto ~/.zprezto
-    if [ -e ~/.zlogin ]; then
-      rm ~/.zlogin
-    fi
-    ln -s ~/.zprezto/prezto/runcoms/zlogin ~/.zlogin
-    if [ -e ~/.zlogout ]; then
-      rm ~/.zlogout
-    fi
-    ln -s ~/.zprezto/prezto/runcoms/zlogout ~/.zlogout
-    if [ -e ~/.zpreztorc ]; then
-      rm ~/.zpreztorc
-    fi
-    ln -s ~/.zprezto/prezto/runcoms/zpreztorc ~/.zpreztorc
-    if [ -e ~/.zprofile ]; then
-      rm ~/.zprofile
-    fi
-    ln -s ~/.zprezto/prezto/runcoms/zprofile ~/.zprofile
-    if [ -e ~/.zshenv ]; then
-      rm ~/.zshenv
-    fi
-    ln -s ~/.zprezto/prezto/runcoms/zshenv ~/.zshenv
   else
     printf "\e[32mSkip configuration for zsh ...\e[m\n"
   fi
@@ -396,7 +355,7 @@ install_cpp
 install_python
 
 # install cquery
-install_cquery
+# install_cquery
 
 # link vim settings
 link_vim_settings
