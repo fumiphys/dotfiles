@@ -78,7 +78,7 @@ export PGDATA=/usr/local/var/postgres
 # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
 if [ "$(uname)" = 'Darwin' ]; then
-  export PATH=$PATH:/Users/fkiyozawa/github/programming_contest/utils/procon_tools
+  export PATH=$PATH:/Users/${USERNAME}/github/programming_contest/utils/procon_tools
 fi
 
 # zsh-completions
@@ -93,4 +93,9 @@ fi
 # zsh-syntax-highlighting
 if [ "$(uname)" = 'Darwin' ]; then
   source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+# cd-gitroot
+if [ "$(uname)" = 'Darwin' ]; then
+  FPATH=/Users/${USERNAME}/.zsh_cd_gitroot/cd-gitroot:$FPATH
+  autoload -Uz cd-gitroot
 fi

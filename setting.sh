@@ -285,6 +285,9 @@ link_zsh() {
       brew install zsh-completions
       # rm -f ~/.zcompdump; compinit
       brew install zsh-syntax-highlighting
+
+      mkdir ~/.zsh_cd_gitroot
+      git clone https://github.com/mollifier/cd-gitroot.git ~/.zsh_cd_gitroot/cd-gitroot
     fi
   else
     printf "\e[32mSkip configuration for zsh ...\e[m\n"
