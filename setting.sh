@@ -222,7 +222,7 @@ link_sublime_settings(){
         rm -rf "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
       fi
       mkdir -p "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
-      cd ~/github/programming_contest/sublime
+      cd ~/github/programming_contest/editor/sublime
       ls *.sublime-snippet | xargs -I{} ln -F -s ~/github/programming_contest/sublime/{} "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets/"{}
       cd ${NPWD}
     fi
@@ -281,6 +281,9 @@ link_zsh() {
       rm ~/.zshrc
     fi
     ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
+    brew install zsh-completions
+    source ~/.zshrc
+    rm -f ~/.zcompdump; compinit
   else
     printf "\e[32mSkip configuration for zsh ...\e[m\n"
   fi

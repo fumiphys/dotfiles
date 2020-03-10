@@ -80,3 +80,11 @@ export PGDATA=/usr/local/var/postgres
 if [ "$(uname)" = 'Darwin' ]; then
   export PATH=$PATH:/Users/fkiyozawa/github/programming_contest/utils/procon_tools
 fi
+
+# zsh-completions
+if [ -e /usr/local/share/zsh-completions ]; then
+    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+
+    autoload -Uz compinit
+    compinit
+fi
