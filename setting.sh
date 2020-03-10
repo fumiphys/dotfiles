@@ -281,9 +281,11 @@ link_zsh() {
       rm ~/.zshrc
     fi
     ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
-    brew install zsh-completions
-    source ~/.zshrc
-    rm -f ~/.zcompdump; compinit
+    if [ ${OS} = "Mac" ]; then
+      brew install zsh-completions
+      # rm -f ~/.zcompdump; compinit
+      brew install zsh-syntax-highlighting
+    fi
   else
     printf "\e[32mSkip configuration for zsh ...\e[m\n"
   fi

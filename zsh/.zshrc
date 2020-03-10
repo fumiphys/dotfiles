@@ -82,9 +82,15 @@ if [ "$(uname)" = 'Darwin' ]; then
 fi
 
 # zsh-completions
-if [ -e /usr/local/share/zsh-completions ]; then
-    FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
+if [ "$(uname)" = 'Darwin' ]; then
+  if [ -e /usr/local/share/zsh-completions ]; then
+      FPATH=$(brew --prefix)/share/zsh/site-functions:$FPATH
 
-    autoload -Uz compinit
-    compinit
+      autoload -Uz compinit
+      compinit
+  fi
+fi
+# zsh-syntax-highlighting
+if [ "$(uname)" = 'Darwin' ]; then
+  source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 fi
