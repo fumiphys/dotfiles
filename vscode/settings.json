@@ -1,6 +1,5 @@
 {
     "breadcrumbs.enabled": true,
-    "workbench.colorTheme": "One Dark Pro",
     "editor.minimap.enabled": false,
 
     // python
@@ -57,5 +56,6 @@
     "C_Cpp.updateChannel": "Insiders",
     "latex-workshop.message.update.show": false,
     "window.zoomLevel": 0,
-    "editor.fontSize": 14.5
+    "editor.fontSize": 14.5,
+    "workbench.colorTheme": "Comrade (rainglow)"
 }
