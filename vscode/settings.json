@@ -1,6 +1,5 @@
 {
     "breadcrumbs.enabled": true,
-    "editor.fontSize": 14.5,
     "workbench.colorTheme": "One Dark Pro",
     "editor.minimap.enabled": false,
 
@@ -55,5 +54,8 @@
             }
     ],
     "terminal.integrated.rendererType": "dom",
-    "C_Cpp.updateChannel": "Insiders"
+    "C_Cpp.updateChannel": "Insiders",
+    "latex-workshop.message.update.show": false,
+    "window.zoomLevel": 0,
+    "editor.fontSize": 14.5
 }
