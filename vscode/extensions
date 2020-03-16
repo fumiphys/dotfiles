@@ -1,4 +1,6 @@
+arcticicestudio.nord-visual-studio-code
 CoenraadS.bracket-pair-colorizer
+daylerees.rainglow
 donjayamanne.githistory
 James-Yu.latex-workshop
 ms-python.python
@@ -9,6 +11,8 @@ ms-vscode-remote.remote-wsl
 ms-vscode-remote.vscode-remote-extensionpack
 ms-vscode.cpptools
 PKief.material-icon-theme
+ryanolsonx.solarized
+SolarLiner.linux-themes
 vscodevim.vim
 yzhang.markdown-all-in-one
-zhuangtongfa.Material-theme
+zhuangtongfa.material-theme
