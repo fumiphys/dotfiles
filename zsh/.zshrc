@@ -24,9 +24,9 @@ RPROMPT='%B${vcs_info_msg_0_} %~%b'
 # vim
 export VIM_PYTHON3_PATH="$(which python3)"
 if [ "$(uname)" = 'Darwin' ]; then
-  alias vim='/usr/local/bin/vim'
+  # alias vim='/usr/local/bin/vim'
   alias vi='vim'
-  alias emacs='/usr/local/Cellar/emacs-plus/26.2/bin/emacs'
+  # alias emacs='/usr/local/Cellar/emacs-plus/26.2/bin/emacs'
 fi
 
 # emacs
