@@ -218,12 +218,12 @@ link_sublime_settings(){
   printf "\e[32mConfiguration for sublime ...\e[m\n"
   if [ ${OS} = "Mac" ]; then
     if [ -e ~/github/programming_contest ]; then
-      if [ -e "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets" ]; then
-        rm -rf "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
+      if [ -e "/Users/${USER}/Library/Application Support/Sublime Text 3/Packages/User/Snippets" ]; then
+        rm -rf "/Users/${USER}/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
       fi
-      mkdir -p "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
+      mkdir -p "/Users/${USER}/Library/Application Support/Sublime Text 3/Packages/User/Snippets"
       cd ~/github/programming_contest/editor/sublime
-      ls *.sublime-snippet | xargs -I{} ln -F -s ~/github/programming_contest/sublime/{} "/Users/fkiyozawa/Library/Application Support/Sublime Text 3/Packages/User/Snippets/"{}
+      ls *.sublime-snippet | xargs -I{} ln -F -s ~/github/programming_contest/sublime/{} "/Users/${USER}/Library/Application Support/Sublime Text 3/Packages/User/Snippets/"{}
       cd ${NPWD}
     fi
   fi
@@ -236,21 +236,21 @@ link_spacemacs_settings(){
     fi
     ln -F -s ${NPWD}/spacemacs/.spacemacs ~/.spacemacs
     if [ -e ~/github/programming_contest ]; then
-      mkdir -p "/Users/fkiyozawa/.emacs.d/private/snippets/c++-mode/"
+      mkdir -p "/Users/${USER}/.emacs.d/private/snippets/c++-mode/"
       cd ~/github/programming_contest/editor/spacemacs/
-      ls * | xargs -I{} ln -F -s ~/github/programming_contest/editor/spacemacs/{} "/Users/fkiyozawa/.emacs.d/private/snippets/c++-mode/"{}
+      ls * | xargs -I{} ln -F -s ~/github/programming_contest/editor/spacemacs/{} "/Users/${USER}/.emacs.d/private/snippets/c++-mode/"{}
     fi
 }
 
 link_vscode_settings(){
   printf "\e[32mConfiguration for vscode ...\e[m\n"
   if [ ${OS} = "Mac" ]; then
-    if [ -e "/Users/fkiyozawa/Library/Application Support/Code/User" ]; then
-      ln -F -s ${NPWD}/vscode/keybindings.json "/Users/fkiyozawa/Library/Application Support/Code/User/keybindings.json"
-      ln -F -s ${NPWD}/vscode/settings.json "/Users/fkiyozawa/Library/Application Support/Code/User/settings.json"
+    if [ -e "/Users/${USER}/Library/Application Support/Code/User" ]; then
+      ln -F -s ${NPWD}/vscode/keybindings.json "/Users/${USER}/Library/Application Support/Code/User/keybindings.json"
+      ln -F -s ${NPWD}/vscode/settings.json "/Users/${USER}/Library/Application Support/Code/User/settings.json"
       if [ -e ~/github/programming_contest ]; then
-        mkdir -p "/Users/fkiyozawa/Library/Application Support/Code/User/snippets"
-        ln -F -s "/Users/fkiyozawa/github/programming_contest/editor/vscode/cpp.json" "/Users/fkiyozawa/Library/Application Support/Code/User/snippets/cpp.json"
+        mkdir -p "/Users/${USER}/Library/Application Support/Code/User/snippets"
+        ln -F -s "/Users/${USER}/github/programming_contest/editor/vscode/cpp.json" "/Users/${USER}/Library/Application Support/Code/User/snippets/cpp.json"
       fi
       which code > /dev/null 2>&1
       if [ $? -eq 0 ]; then
@@ -282,11 +282,13 @@ link_zsh() {
     fi
     ln -F -s ${NPWD}/zsh/.zshrc ~/.zshrc
     if [ ${OS} = "Mac" ]; then
+      set +e
       brew install zsh-completions
       # rm -f ~/.zcompdump; compinit
       brew install zsh-syntax-highlighting
+      set -e
 
-      mkdir ~/.zsh_cd_gitroot
+      mkdir -p ~/.zsh_cd_gitroot
       git clone https://github.com/mollifier/cd-gitroot.git ~/.zsh_cd_gitroot/cd-gitroot
     fi
   else
@@ -370,10 +372,10 @@ link_vim_settings
 patch_markdown
 
 # link sublime settings
-link_sublime_settings
+# link_sublime_settings
 
 # link spacemacs settings
-link_spacemacs_settings
+# link_spacemacs_settings
 
 # link vscode settings
 link_vscode_settings
@@ -382,10 +384,10 @@ link_vscode_settings
 link_zsh
 
 # link tex
-link_tex
+# link_tex
 
 # link tmux
-link_tmux
+# link_tmux
 
 # config github
 config_github
