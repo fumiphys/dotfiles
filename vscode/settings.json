@@ -60,5 +60,7 @@
     "workbench.panel.defaultLocation": "right",
     "explorer.autoReveal": false,
     "workbench.preferredDarkColorTheme": "Atom One Dark",
-    "workbench.tips.enabled": false
+    "workbench.tips.enabled": false,
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
 }
