@@ -99,3 +99,6 @@ if [ "$(uname)" = 'Darwin' ]; then
   FPATH=/Users/${USERNAME}/.zsh_cd_gitroot/cd-gitroot:$FPATH
   autoload -Uz cd-gitroot
 fi
+
+# rust
+export PATH=$PATH:${HOME}/.cargo/bin
