@@ -1,6 +1,7 @@
 akamud.vscode-theme-onedark
 CoenraadS.bracket-pair-colorizer
 donjayamanne.githistory
+ionutvmi.spacegray-vscode
 James-Yu.latex-workshop
 ms-python.python
 ms-vscode-remote.remote-containers
@@ -15,6 +16,7 @@ Pivotal.vscode-manifest-yaml
 Pivotal.vscode-spring-boot
 PKief.material-icon-theme
 redhat.java
+teabyii.ayu
 VisualStudioExptTeam.vscodeintellicode
 vscjava.vscode-java-debug
 vscjava.vscode-java-dependency

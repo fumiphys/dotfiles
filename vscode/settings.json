@@ -56,11 +56,13 @@
     "latex-workshop.message.update.show": false,
     "window.zoomLevel": 0,
     "editor.fontSize": 14.5,
-    "workbench.colorTheme": "Atom One Dark",
+    "workbench.colorTheme": "Spacegray Eighties Dark",
     "workbench.panel.defaultLocation": "right",
     "explorer.autoReveal": false,
     "workbench.preferredDarkColorTheme": "Atom One Dark",
     "workbench.tips.enabled": false,
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue"
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "java.configuration.checkProjectSettingsExclusions": false,
+    "java.semanticHighlighting.enabled": true
 }
