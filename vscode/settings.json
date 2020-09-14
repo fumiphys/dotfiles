@@ -56,7 +56,7 @@
     "latex-workshop.message.update.show": false,
     "window.zoomLevel": 0,
     "editor.fontSize": 14.5,
-    "workbench.colorTheme": "Spacegray Eighties Dark",
+    "workbench.colorTheme": "Atom One Dark",
     "workbench.panel.defaultLocation": "right",
     "explorer.autoReveal": false,
     "workbench.preferredDarkColorTheme": "Atom One Dark",
