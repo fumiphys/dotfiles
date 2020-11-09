@@ -12,14 +12,14 @@ bindkey -v
 autoload -Uz vcs_info
 setopt prompt_subst
 zstyle ':vcs_info:git:*' check-for-changes true
-zstyle ':vcs_info:git:*' stagedstr "%F{red}!"
-zstyle ':vcs_info:git:*' unstagedstr "%F{red}+"
-zstyle ':vcs_info:*' formats "%F{red}[%b]%c%u%f"
+zstyle ':vcs_info:git:*' stagedstr "%F{094}!"
+zstyle ':vcs_info:git:*' unstagedstr "%F{094}+"
+zstyle ':vcs_info:*' formats "%F{022}(%b)%c%u%f"
 zstyle ':vcs_info:*' actionformats '[%b|%a]'
 precmd () { vcs_info }
 
-PROMPT=$'%B[%*] > %b'
-RPROMPT='%B${vcs_info_msg_0_} %~%b'
+PROMPT=$'%B%F{245}%*%f %F{094}%~%f ${vcs_info_msg_0_} %b\n%F{022}>%f%F{028}>%f%F{029}>%f '
+RPROMPT=$'%F{090}%(?..[status: %?])%f'
 
 # vim
 export VIM_PYTHON3_PATH="$(which python3)"
