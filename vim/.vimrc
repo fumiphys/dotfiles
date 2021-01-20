@@ -9,3 +9,6 @@ set directory=/tmp
 
 " command line completion
 set wildmenu
+
+" editor appearance
+set number
