@@ -1,9 +1,5 @@
 " dein.vim configuration
 
-if &compatible
-	set nocompatible
-endif
-
 let s:dein_dir = expand('~/.vim/bundle')
 let s:dein_repo_dir = s:dein_dir . '/repos/github.com/Shougo/dein.vim'
 
