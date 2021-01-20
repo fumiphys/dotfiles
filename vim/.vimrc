@@ -3,3 +3,9 @@
 
 " plugins
 runtime! conf.d/plugins/*.vim
+
+" configure output dir for swap file
+set directory=/tmp
+
+" command line completion
+set wildmenu
