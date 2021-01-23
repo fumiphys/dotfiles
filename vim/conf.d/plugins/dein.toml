@@ -8,3 +8,37 @@ repo = 'tpope/vim-fugitive'
 
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
+
+# filer
+[[plugins]]
+repo = 'ryanoasis/vim-devicons'
+hook_add = '''
+let g:webdevicons_conceal_nerdtree_brackets = 1
+'''
+
+[[plugins]]
+repo = 'preservim/nerdtree'
+depends = ['vim-devicons']
+hook_add = '''
+let g:NERDTreeShowHidden = 1
+'''
+
+[[plugins]]
+repo = 'Xuyuanp/nerdtree-git-plugin'
+depends = ['nerdtree']
+hook_add = '''
+let g:NERDTreeGitStatusUseNerdFonts = 1
+let g:NERDTreeGitStatusConcealBrackets = 1
+'''
+
+[[plugins]]
+repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
+depends = ['nerdtree']
+hook_add = '''
+let g:NERDTreeFileExtensionHighlightFullName = 1
+let g:NERDTreeExactMatchHighlightFullName = 1
+let g:NERDTreePatternMatchHighlightFullName = 1
+
+let g:NERDTreeHighlightFolders = 1
+let g:NERDTreeHighlightFoldersFullName = 1
+'''
