@@ -23,6 +23,8 @@ hook_add = '''
 let g:NERDTreeShowHidden = 1
 augroup nerdtree_conf
   autocmd!
+  autocmd StdinReadPre * let s:std_in=1
+  autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
   autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 augroup END
@@ -61,3 +63,7 @@ let $FZF_DEFAULT_OPTS="--layout=reverse"
 let g:fzf_layout = { 'down': '~40%' }
 " let g:fzf_layout = {'up':'~90%', 'window': { 'width': 0.8, 'height': 0.8,'yoffset':0.5,'xoffset': 0.5, 'border': 'sharp' } }
 '''
+
+# commentary
+[[plugins]]
+repo = 'tpope/vim-commentary'
