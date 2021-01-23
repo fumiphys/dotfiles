@@ -12,3 +12,4 @@ set wildmenu
 
 " editor appearance
 set number
+set nowrap

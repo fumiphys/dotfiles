@@ -21,6 +21,11 @@ repo = 'preservim/nerdtree'
 depends = ['vim-devicons']
 hook_add = '''
 let g:NERDTreeShowHidden = 1
+augroup nerdtree_conf
+  autocmd!
+  autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
+    \ quit | endif
+augroup END
 '''
 
 [[plugins]]
