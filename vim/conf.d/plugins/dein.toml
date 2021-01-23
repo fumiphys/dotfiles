@@ -67,3 +67,11 @@ let g:fzf_layout = { 'down': '~40%' }
 # commentary
 [[plugins]]
 repo = 'tpope/vim-commentary'
+
+# colorscheme
+[[plugins]]
+repo = 'altercation/vim-colors-solarized'
+hook_add = '''
+set bg=dark
+colorscheme solarized
+'''
