@@ -13,3 +13,5 @@ set wildmenu
 " editor appearance
 set number
 set nowrap
+set laststatus=2
+set noshowmode

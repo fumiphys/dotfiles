@@ -9,6 +9,83 @@ repo = 'tpope/vim-fugitive'
 [[plugins]]
 repo = 'airblade/vim-gitgutter'
 
+# status line
+[[plugins]]
+repo = 'itchyny/lightline.vim'
+hook_add = '''
+let g:lightline = {
+      \ 'component_function': {
+      \   'mode': 'LightlineMode',
+      \   'gitbranch': 'LightlineGitbranch',
+      \   'lineinfo': 'LightlineLineinfo',
+      \   'filetype': 'LightlineFiletype',
+      \   'fileencoding': 'LightlineFileencoding',
+      \   'fileformat': 'LightlineFileformat',
+      \   'modified': 'LightlineModified',
+      \   'filename': 'LightlineFilename',
+      \   'readonly': 'LightlineReadonly',
+      \ },
+      \ 'active': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'inactive': {
+      \   'left': [ [ 'mode', 'paste' ],
+      \             [ 'gitbranch', 'readonly', 'filename', 'modified' ] ],
+      \   'right': [ [ 'lineinfo' ],
+      \              [ 'percent' ],
+      \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+      \ },
+      \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+      \ }
+
+" for the default component function, referred to https://github.com/itchyny/lightline.vim/issues/120
+function! LightlineMode()
+  return expand('%:t') =~# '^__Tagbar__' ? 'Tagbar':
+        \ expand('%:t') ==# 'ControlP' ? 'CtrlP' :
+        \ &filetype ==# 'unite' ? 'Unite' :
+        \ &filetype ==# 'vimfiler' ? 'VimFiler' :
+        \ &filetype ==# 'vimshell' ? 'VimShell' :
+        \ &filetype ==# 'nerdtree' ? 'NERDTree' :
+        \ lightline#mode()
+endfunction
+
+function! LightlineLineinfo()
+  return &filetype ==# 'nerdtree' ? '' : printf("%3d:%-2d", line('.'), col('.'))
+endfunction
+
+function! LightlineFiletype()
+  return &filetype ==# 'nerdtree' ? '' : strlen(&filetype) ? &filetype : 'no ft'
+endfunction
+
+function! LightlineFileencoding()
+  return &filetype ==# 'nerdtree' ? '' : strlen(&fenc) ? &fenc : &enc
+endfunction
+
+function! LightlineFileformat()
+  return &filetype ==# 'nerdtree' ? '' : &fileformat
+endfunction
+
+function! LightlineModified()
+  return &filetype ==# 'nerdtree' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+
+function! LightlineFilename()
+  return &filetype ==# 'nerdtree' ? '' : expand('%:t')
+endfunction
+
+function! LightlineReadonly()
+  return &filetype ==# 'nerdtree' ? '' : &readonly ? 'readonly' : ''
+endfunction
+
+function! LightlineGitbranch()
+  return &filetype ==# 'nerdtree' ? '' : FugitiveHead()
+endfunction
+'''
+
 # filer
 [[plugins]]
 repo = 'ryanoasis/vim-devicons'
@@ -24,7 +101,7 @@ let g:NERDTreeShowHidden = 1
 augroup nerdtree_conf
   autocmd!
   autocmd StdinReadPre * let s:std_in=1
-  autocmd VimEnter * NERDTree | if argc() > 0 || exists("s:std_in") | wincmd p | endif
+  autocmd VimEnter * NERDTree | call lightline#update() | if argc() > 0 || exists("s:std_in") | wincmd p | call lightline#update() | endif
   autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
 augroup END
