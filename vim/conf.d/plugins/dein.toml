@@ -22,6 +22,7 @@ autocmd vimrc VimEnter,ColorScheme * highlight SignColumn ctermbg=8
 repo = 'itchyny/lightline.vim'
 hook_add = '''
 let g:lightline = {
+      \ 'colorscheme': 'solarized',
       \ 'component_function': {
       \   'mode': 'LightlineMode',
       \   'gitbranch': 'LightlineGitbranch',
