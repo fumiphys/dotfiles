@@ -163,3 +163,7 @@ colorscheme solarized
 # bracket
 [[plugins]]
 repo = 'jiangmiao/auto-pairs'
+
+# yank
+[[plugins]]
+repo = 'machakann/vim-highlightedyank'
