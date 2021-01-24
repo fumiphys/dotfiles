@@ -14,6 +14,9 @@ set directory=/tmp
 " command line completion
 set wildmenu
 
+" editor configuration
+set tabstop=4
+
 " editor appearance
 set number
 set nowrap

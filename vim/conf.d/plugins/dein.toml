@@ -167,3 +167,7 @@ repo = 'jiangmiao/auto-pairs'
 # yank
 [[plugins]]
 repo = 'machakann/vim-highlightedyank'
+
+# indent
+[[plugins]]
+repo = 'Yggdroot/indentLine'
