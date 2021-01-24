@@ -19,6 +19,7 @@ set number
 set nowrap
 set laststatus=2
 set noshowmode
+set cursorline
 
 autocmd vimrc VimEnter,ColorScheme * highlight VertSplit ctermbg=8 ctermfg=0
 autocmd vimrc VimEnter,ColorScheme * highlight StatusLine ctermbg=12 ctermfg=0
