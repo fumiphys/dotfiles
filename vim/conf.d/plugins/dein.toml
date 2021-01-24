@@ -175,3 +175,7 @@ repo = 'Yggdroot/indentLine'
 # tag
 [[plugins]]
 repo = 'majutsushi/tagbar'
+
+# language pack
+[[plugins]]
+repo = 'sheerun/vim-polyglot'
