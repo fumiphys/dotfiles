@@ -68,6 +68,11 @@ if [ "$(uname)" = 'Darwin' ]; then
   export CPATH=$CPATH:/usr/local/Cellar/openssl/1.0.2p/include
 fi
 
+# ctags
+if [ "$(uname)" = 'Darwin' ]; then
+  alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+fi
+
 # libffi
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 

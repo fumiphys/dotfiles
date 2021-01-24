@@ -171,3 +171,7 @@ repo = 'machakann/vim-highlightedyank'
 # indent
 [[plugins]]
 repo = 'Yggdroot/indentLine'
+
+# tag
+[[plugins]]
+repo = 'majutsushi/tagbar'
