@@ -109,7 +109,7 @@ depends = ['vim-devicons']
 hook_add = '''
 let g:NERDTreeShowHidden = 1
 autocmd vimrc StdinReadPre * let s:std_in=1
-autocmd vimrc VimEnter * NERDTree | call lightline#update() | if argc() > 0 || exists("s:std_in") | wincmd p | call lightline#update() | endif
+autocmd vimrc VimEnter * NERDTree | call lightline#update() | wincmd p | call lightline#update()
 autocmd vimrc BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
 \ quit | endif
 '''
@@ -179,3 +179,14 @@ repo = 'majutsushi/tagbar'
 # language pack
 [[plugins]]
 repo = 'sheerun/vim-polyglot'
+
+# linter
+[[plugins]]
+repo = 'dense-analysis/ale'
+hook_add = '''
+let g:ale_linters = {
+      \ 'python': ['flake8', 'mypy', 'pylint'],
+      \ 'cpp': ['cc', 'cppcheck', 'cpplint']
+      \ }
+let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
+'''
