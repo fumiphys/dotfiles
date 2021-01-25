@@ -189,4 +189,9 @@ let g:ale_linters = {
       \ 'cpp': ['cc', 'cppcheck', 'cpplint']
       \ }
 let g:ale_echo_msg_format = '[%linter%] [%severity%] %s'
+
+let g:ale_fixers = {
+      \ '*': ['remove_trailing_lines', 'trim_whitespace'],
+      \ 'python': ['autoimport', 'reorder-python-imports', 'autopep8'],
+      \ }
 '''

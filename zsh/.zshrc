@@ -46,6 +46,12 @@ fi
 #   source <(kubectl completion zsh)
 # fi
 
+# default python
+if [ "$(uname)" = 'Darwin' ]; then
+  alias pip3.8=/usr/local/Cellar/python@3.8/3.8.7/bin/pip3
+  alias python3.8=/usr/local/Cellar/python@3.8/3.8.7/bin/python3
+fi
+
 # pyenv
 which pyenv > /dev/null 2>&1
 if [ $? -eq 0 ]; then
