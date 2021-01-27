@@ -116,7 +116,7 @@ autocmd vimrc BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:
 
 [[plugins]]
 repo = 'Xuyuanp/nerdtree-git-plugin'
-depends = ['nerdtree']
+on_source = ['nerdtree']
 hook_add = '''
 let g:NERDTreeGitStatusUseNerdFonts = 1
 let g:NERDTreeGitStatusConcealBrackets = 1
@@ -124,7 +124,7 @@ let g:NERDTreeGitStatusConcealBrackets = 1
 
 [[plugins]]
 repo = 'tiagofumo/vim-nerdtree-syntax-highlight'
-depends = ['nerdtree']
+on_source = ['nerdtree', 'vim-devicons']
 hook_add = '''
 let g:NERDTreeFileExtensionHighlightFullName = 1
 let g:NERDTreeExactMatchHighlightFullName = 1
@@ -195,3 +195,10 @@ let g:ale_fixers = {
       \ 'python': ['autoimport', 'reorder-python-imports', 'autopep8'],
       \ }
 '''
+
+# snippets
+[[plugins]]
+repo = 'SirVer/ultisnips'
+
+[[plugins]]
+repo = 'honza/vim-snippets'
