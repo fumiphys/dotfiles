@@ -199,6 +199,9 @@ let g:ale_fixers = {
 # snippets
 [[plugins]]
 repo = 'SirVer/ultisnips'
+hook_add = '''
+let g:UltiSnipsExpandTrigger = "<nop>"
+'''
 
 [[plugins]]
 repo = 'honza/vim-snippets'

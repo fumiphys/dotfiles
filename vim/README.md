@@ -10,3 +10,5 @@
  - ale
    - (python) flake8, mypy, pylint by `pip3 install flake8 mypy pylint`, autoimport by `pip3.8 install autoimport`
    - (cpp) cpplint by `pip3 install cpplint`, cppcheck by `brew install cppcheck`
+ - coc.nvim
+   - nodejs
