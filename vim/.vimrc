@@ -34,6 +34,7 @@ set incsearch
 
 " mapping
 nnoremap <ESC><ESC> :set hlsearch!<CR>
+nmap s <Plug>(easymotion-overwin-f2)
 
 " load programming contest configuration
 if getcwd() =~ expand("~/competitive_programming/")
