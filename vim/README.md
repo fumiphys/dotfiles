@@ -12,3 +12,4 @@
    - (cpp) cpplint by `pip3 install cpplint`, cppcheck by `brew install cppcheck`
  - coc.nvim
    - nodejs
+   - (cpp) clangd by `brew install llvm` or `:CocCommand clangd.install`

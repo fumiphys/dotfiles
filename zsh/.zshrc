@@ -88,6 +88,11 @@ export PGDATA=/usr/local/var/postgres
 # zsh
 # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
 
+# llvm
+if [ "$(uname)" = 'Darwin' ]; then
+  export PATH="/usr/local/opt/llvm/bin:$PATH"
+fi
+
 if [ "$(uname)" = 'Darwin' ]; then
   export PATH=$PATH:/Users/${USERNAME}/github/programming_contest/utils/procon_tools
 fi
