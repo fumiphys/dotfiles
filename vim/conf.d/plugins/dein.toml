@@ -212,7 +212,7 @@ repo = 'neoclide/coc.nvim'
 rev = 'release'
 merged = '0'
 hook_add = '''
-let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-vimlsp']
+let g:coc_global_extensions = ['coc-json', 'coc-clangd', 'coc-vimlsp', 'coc-pyright']
 
 inoremap <silent><expr> <TAB>
       \ pumvisible() ? "\<C-n>" :
