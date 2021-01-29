@@ -34,3 +34,8 @@ set incsearch
 
 " mapping
 nnoremap <ESC><ESC> :set hlsearch!<CR>
+
+" load programming contest configuration
+if getcwd() =~ expand("~/competitive_programming/")
+  runtime! conf.d/programming_contest/*.vim
+endif
