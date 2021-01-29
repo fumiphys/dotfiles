@@ -248,3 +248,10 @@ endfunction
 
 [[plugins]]
 repo = 'antoinemadec/coc-fzf'
+
+[[plugins]]
+repo = 'kassio/neoterm'
+hook_add = '''
+let g:neoterm_default_mod='belowright'
+let g:neoterm_size=13
+'''
