@@ -24,7 +24,7 @@ RPROMPT=$'%F{090}%(?..[status: %?])%f'
 # vim
 export VIM_PYTHON3_PATH="$(which python3)"
 if [ "$(uname)" = 'Darwin' ]; then
-  # alias vim='/usr/local/bin/vim'
+  alias vim='/usr/local/bin/vim'
   alias vi='vim'
   # alias emacs='/usr/local/Cellar/emacs-plus/26.2/bin/emacs'
 fi
@@ -45,6 +45,12 @@ fi
 #   alias k='kubectl'
 #   source <(kubectl completion zsh)
 # fi
+
+# default python
+if [ "$(uname)" = 'Darwin' ]; then
+  alias pip3.8=/usr/local/Cellar/python@3.8/3.8.7/bin/pip3
+  alias python3.8=/usr/local/Cellar/python@3.8/3.8.7/bin/python3
+fi
 
 # pyenv
 which pyenv > /dev/null 2>&1
@@ -68,6 +74,11 @@ if [ "$(uname)" = 'Darwin' ]; then
   export CPATH=$CPATH:/usr/local/Cellar/openssl/1.0.2p/include
 fi
 
+# ctags
+if [ "$(uname)" = 'Darwin' ]; then
+  alias ctags='/usr/local/Cellar/ctags/5.8/bin/ctags'
+fi
+
 # libffi
 export PKG_CONFIG_PATH="/usr/local/opt/libffi/lib/pkgconfig"
 
@@ -76,6 +87,11 @@ export PGDATA=/usr/local/var/postgres
 
 # zsh
 # export RUST_SRC_PATH="$(rustc --print sysroot)/lib/rustlib/src/rust/src"
+
+# llvm
+if [ "$(uname)" = 'Darwin' ]; then
+  export PATH="/usr/local/opt/llvm/bin:$PATH"
+fi
 
 if [ "$(uname)" = 'Darwin' ]; then
   export PATH=$PATH:/Users/${USERNAME}/github/programming_contest/utils/procon_tools
