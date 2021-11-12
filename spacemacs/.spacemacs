@@ -36,43 +36,25 @@ values."
      ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
      ;; <M-m f e R> (Emacs style) to install them.
      ;; ----------------------------------------------------------------
-     ivy
-     (auto-completion :variables
-                      auto-completion-enable-snippets-in-popup t)
+     helm
+     ;; auto-completion
      ;; better-defaults
      emacs-lisp
-     git
-     (markdown :variables markdown-live-preview-engine 'vmd)
-     (c-c++ :variables
-            c-c++-default-mode-for-headers 'c++-mode
-            c-c++-enable-clang-support t)
-     (python :variables
-             python-enable-yapf-format-on-save t
-             python-sort-imports-on-save t)
-     rust
+     ;; git
+     ;; markdown
      ;; org
-     (shell :variables
-            shell-default-height 50
-            shell-default-position 'right
-            shell-default-term-shell "zsh"
-            shell-default-shell 'multi-term
-            multi-term-program "zsh")
-     shell-scripts
+     ;; (shell :variables
+     ;;        shell-default-height 30
+     ;;        shell-default-position 'bottom)
      ;; spell-checking
-     (syntax-checking :variables
-                      syntax-checking-enable-by-default t)
-     semantic
+     ;; syntax-checking
      ;; version-control
      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
-   dotspacemacs-additional-packages '(
-                                      yasnippet-snippets
-                                      evil-numbers
-                                      evil-vimish-fold
-                                      )
+   dotspacemacs-additional-packages '()
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -151,7 +133,7 @@ values."
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
    ;; quickly tweak the mode-line size to make separators look not too crappy.
    dotspacemacs-default-font '("Source Code Pro"
-                               :size 13
+                               :size 16
                                :weight normal
                                :width normal
                                :powerline-scale 1.1)
@@ -327,70 +309,7 @@ layers configuration.
 This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
-  ;; backslash
-  (define-key evil-insert-state-map [165] [92])
-  ;; line number
-  (unless (display-graphic-p)
-    (setq linum-format (concat linum-format " ")))
-  ;; line wrap
-  (add-hook 'hack-local-variables-hook (lambda () (setq truncate-lines t)))
-  ;; mode line
-  ;; (setq powerline-default-separator 'arrow)
-  (spaceline-toggle-buffer-modified-on)
-  (spaceline-toggle-buffer-encoding-on)
-  (spaceline-toggle-minor-modes-off)
-  (spaceline-toggle-version-control-on)
-  (spaceline-toggle-python-pyenv-on)
-  ;; environment variables
-  (setenv "LANG" "en_US.UTF-8")
-  ;; cursor
-  (setq evil-insert-state-cursor '("chartreuse3" box))
-  ;; evil numbers
-  (define-key evil-normal-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
-  (define-key evil-visual-state-map (kbd "C-a") 'evil-numbers/inc-at-pt)
-  (define-key evil-normal-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
-  (define-key evil-visual-state-map (kbd "C-x") 'evil-numbers/dec-at-pt)
-  ;; single quotes
-  (setq-default sp-escape-quotes-after-insert nil)
-  ;; gj, gk
-  (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
-  (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
-  ;; vimish folding
-  (evil-vimish-fold-mode 1)
-  ;; tramp
-  (setq tramp-default-method "ssh")
-  ;; git
-  (global-git-commit-mode t)
-  ;; completion
-  (global-company-mode)
-  ;; c++
-  (add-hook 'c++-mode-hook (lambda () (setq flycheck-gcc-language-standard "c++14")))
-  (add-hook 'c++-mode-hook (lambda () (setq flycheck-clang-language-standard "c++14")))
-  ;; flycheck
-  (flycheck-pos-tip-mode nil)
-  (setq flycheck-display-errors-function 'flycheck-display-error-messages-unless-error-list)
-  (setq flycheck-display-errors-delay 0)
-  (setq flycheck-check-syntax-automatically '(mode-enabled save))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
 ;; auto-generate custom variable definitions.
-(custom-set-variables
- ;; custom-set-variables was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- '(ansi-color-names-vector
-   ["#080808" "#d70000" "#67b11d" "#875f00" "#268bd2" "#af00df" "#00ffff" "#b2b2b2"])
- '(custom-safe-themes
-   (quote
-    ("bffa9739ce0752a37d9b1eee78fc00ba159748f50dc328af4be661484848e476" default)))
- '(package-selected-packages
-   (quote
-    (rust-mode dash-functional anaconda-mode pythonic vimish-fold stickyfunc-enhance srefactor pos-tip flycheck company yasnippet auto-complete vmd-mode markdown-mode magit-popup magit transient git-commit with-editor define-word yasnippet-snippets yapfify yaml-mode xterm-color ws-butler winum which-key wgrep web-mode volatile-highlights vimrc-mode vi-tilde-fringe uuidgen use-package toml-mode toc-org tagedit sql-indent spaceline smex smeargle slim-mode shell-pop scss-mode sass-mode reveal-in-osx-finder restart-emacs request ranger rainbow-delimiters racer pyvenv pytest pyenv-mode py-isort pug-mode popwin pip-requirements persp-mode pcre2el pbcopy paradox ox-gfm osx-trash osx-dictionary orgit org-present org-pomodoro org-mime org-download org-bullets open-junk-file neotree multi-term move-text mmm-mode markdown-toc magit-gitflow macrostep lorem-ipsum live-py-mode linum-relative link-hint launchctl jedi ivy-hydra insert-shebang indent-guide hy-mode hungry-delete htmlize hl-todo highlight-parentheses highlight-numbers highlight-indentation helm-make google-translate golden-ratio gnuplot gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link gh-md fuzzy flycheck-rust flycheck-pos-tip flx-ido fish-mode fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-vimish-fold evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-magit evil-lisp-state evil-indent-plus evil-iedit-state evil-exchange evil-escape evil-ediff evil-args evil-anzu eval-sexp-fu eshell-z eshell-prompt-extras esh-help engine-mode emmet-mode elisp-slime-nav dumb-jump doom-modeline disaster diminish dactyl-mode cython-mode counsel-projectile company-web company-statistics company-shell company-c-headers company-auctex company-anaconda column-enforce-mode cmake-mode clean-aindent-mode clang-format cargo auto-yasnippet auto-highlight-symbol auto-compile auctex-latexmk atom-one-dark-theme aggressive-indent adaptive-wrap ace-window ace-link ac-ispell))))
-(custom-set-faces
- ;; custom-set-faces was added by Custom.
- ;; If you edit it by hand, you could mess it up, so be careful.
- ;; Your init file should contain only one such instance.
- ;; If there is more than one, they won't work right.
- )
